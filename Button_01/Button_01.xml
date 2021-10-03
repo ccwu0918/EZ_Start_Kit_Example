@@ -1,0 +1,49 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <block type="board_initializes_setup" id="0" x="90" y="110">
+    <field name="BOARD_TYPE">7697</field>
+    <statement name="CONTENT">
+      <block type="startPlus_neopixel_begin" id="{3L#!GdCa;9+hSi2.)yp">
+        <value name="BRIGHTNESS">
+          <block type="math_number" id="kA!|r+$lFhi`-APMfkb|">
+            <field name="NUM">30</field>
+          </block>
+        </value>
+        <next>
+          <block type="startPlus_neopixel_show" id="$t!6}+2Zi*lN$xoK05fL"></block>
+        </next>
+      </block>
+    </statement>
+    <next>
+      <block type="initializes_loop" id="1">
+        <statement name="CONTENT">
+          <block type="startPlus_button" id="h3qyiTzb$IOD7A`ZGTZ!">
+            <field name="AB_BUTTON">A</field>
+            <statement name="MSG_BUTTON_CALL">
+              <block type="startPlus_tone" id="DFZzNFYS_[VvKuCX;q!t">
+                <field name="FREQ">262</field>
+              </block>
+            </statement>
+            <next>
+              <block type="startPlus_button" id="d{*Re7x./{j6t)3aKbUA">
+                <field name="AB_BUTTON">B</field>
+                <statement name="MSG_BUTTON_CALL">
+                  <block type="startPlus_tone" id="*dV._L{CbHt:fC|)X;~H">
+                    <field name="FREQ">294</field>
+                  </block>
+                </statement>
+                <next>
+                  <block type="startPlus_button" id="wd]SqEmzX8)#cx$_sg~L">
+                    <field name="AB_BUTTON">C</field>
+                    <statement name="MSG_BUTTON_CALL">
+                      <block type="startPlus_no_tone" id="d6`=`!^4pnQ[8vi:Uz_3"></block>
+                    </statement>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+</xml>

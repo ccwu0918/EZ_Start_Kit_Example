@@ -1,0 +1,216 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <variables>
+    <variable id="OzD;p(3W[IkqU!)6n+^Z">btnState</variable>
+  </variables>
+  <block type="board_initializes_setup" id="QI7j!dHE#Y9M]qo!6t.h" x="70" y="70">
+    <field name="BOARD_TYPE">7697</field>
+    <statement name="CONTENT">
+      <block type="oled_display_setting_new" id="/#S0y~CAQLdv|.vNu{PS">
+        <next>
+          <block type="oled_display_clear" id="^5V$A^j!u83~7CqK!Ek}">
+            <next>
+              <block type="variables_set" id="x8@KD{_6+zYx5Ux!*=t2">
+                <field name="POSITION">global</field>
+                <field name="TYPE">String</field>
+                <field name="VAR" id="OzD;p(3W[IkqU!)6n+^Z">btnState</field>
+                <value name="VALUE">
+                  <shadow type="math_number" id="cg`o):Et()!PccNY]xmT">
+                    <field name="NUM">0</field>
+                  </shadow>
+                  <block type="text" id="Y2]S8SdrvtDhy?:ha+1L">
+                    <field name="TEXT">None</field>
+                  </block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <next>
+      <block type="initializes_loop" id="44">
+        <statement name="CONTENT">
+          <block type="startPlus_button" id="HpQ2$0I.1m;(T_8n!/:n">
+            <field name="AB_BUTTON">C</field>
+            <statement name="MSG_BUTTON_CALL">
+              <block type="variables_set3" id="P0UUVS(]8X}VIr$imrA%">
+                <field name="VAR" id="OzD;p(3W[IkqU!)6n+^Z">btnState</field>
+                <value name="DELTA">
+                  <shadow type="math_number">
+                    <field name="NUM">0</field>
+                  </shadow>
+                  <block type="text" id="x12xMA~:25qV_$HtWnCN">
+                    <field name="TEXT">A+B</field>
+                  </block>
+                </value>
+              </block>
+            </statement>
+            <next>
+              <block type="startPlus_button" id=";6Dsp6G/!OZjIw{`jMO;">
+                <field name="AB_BUTTON">A</field>
+                <statement name="MSG_BUTTON_CALL">
+                  <block type="variables_set3" id="MN-]Ltu@*Me{]:`~QY**">
+                    <field name="VAR" id="OzD;p(3W[IkqU!)6n+^Z">btnState</field>
+                    <value name="DELTA">
+                      <shadow type="math_number">
+                        <field name="NUM">0</field>
+                      </shadow>
+                      <block type="text" id=")3*gnt6w}nYV7B88^N|E">
+                        <field name="TEXT">A</field>
+                      </block>
+                    </value>
+                  </block>
+                </statement>
+                <next>
+                  <block type="startPlus_button" id="BZ}f(`mPR|E~65o+BK2,">
+                    <field name="AB_BUTTON">B</field>
+                    <statement name="MSG_BUTTON_CALL">
+                      <block type="variables_set3" id="8(reO.|Ke!|jX}HwsmRO">
+                        <field name="VAR" id="OzD;p(3W[IkqU!)6n+^Z">btnState</field>
+                        <value name="DELTA">
+                          <shadow type="math_number">
+                            <field name="NUM">0</field>
+                          </shadow>
+                          <block type="text" id="_z[Az]Ac]$dWn(yTWFS^">
+                            <field name="TEXT">B</field>
+                          </block>
+                        </value>
+                      </block>
+                    </statement>
+                    <next>
+                      <block type="oled_display_draw_commands" id="@#n4s_8DOb%@HnSvW$Ou">
+                        <statement name="DRAW_CMD">
+                          <block type="oled_display_draw_text" id="pcvON(_$Om-/P.F`],c9">
+                            <value name="START_X">
+                              <block type="math_number" id="kYFATU65u_;4-P9r/2xO">
+                                <field name="NUM">0</field>
+                              </block>
+                            </value>
+                            <value name="START_Y">
+                              <block type="math_number" id="-UEAT9eYItv@4}:6Q3du">
+                                <field name="NUM">0</field>
+                              </block>
+                            </value>
+                            <value name="CONTENT">
+                              <block type="text_join" id="61" inline="false">
+                                <mutation items="2"></mutation>
+                                <value name="ADD0">
+                                  <block type="text" id="62">
+                                    <field name="TEXT">State: </field>
+                                  </block>
+                                </value>
+                                <value name="ADD1">
+                                  <block type="variables_get" id="ep[xxJ$o#%!/B7Ymxjc!">
+                                    <field name="VAR" id="OzD;p(3W[IkqU!)6n+^Z">btnState</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="oled_display_draw_line" id="u^PhznCpR+J{|EoZn(AZ">
+                                <value name="START_X">
+                                  <block type="math_number" id="BAPZ1S6:m==i4iuY]iZM">
+                                    <field name="NUM">0</field>
+                                  </block>
+                                </value>
+                                <value name="START_Y">
+                                  <block type="math_number" id="C{c2Y)2.n|]xfi~[HZC|">
+                                    <field name="NUM">11</field>
+                                  </block>
+                                </value>
+                                <value name="END_X">
+                                  <block type="math_number" id="H1G]qX@#iL6nJPVZ@(;K">
+                                    <field name="NUM">80</field>
+                                  </block>
+                                </value>
+                                <value name="END_Y">
+                                  <block type="math_number" id="G^Kl)L?ENUU%(vK^@D{$">
+                                    <field name="NUM">11</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </next>
+                          </block>
+                        </statement>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+  <block type="initializes_temp" id="rR~oBERxOVcNd~i@iw9k" disabled="true" x="390" y="190">
+    <statement name="TEMP">
+      <block type="controls_if" id="45" inline="false">
+        <mutation elseif="2" else="1"></mutation>
+        <value name="IF0">
+          <block type="ez_start_kit_button" id="220">
+            <field name="AB_BUTTON">AB_</field>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="variables_set" id="47">
+            <field name="POSITION">global</field>
+            <field name="TYPE">String</field>
+            <field name="VAR" id="OzD;p(3W[IkqU!)6n+^Z">btnState</field>
+            <value name="VALUE">
+              <block type="text" id="48">
+                <field name="TEXT">AB</field>
+              </block>
+            </value>
+          </block>
+        </statement>
+        <value name="IF1">
+          <block type="ez_start_kit_button" id="221">
+            <field name="AB_BUTTON">A_</field>
+          </block>
+        </value>
+        <statement name="DO1">
+          <block type="variables_set" id="50">
+            <field name="POSITION">global</field>
+            <field name="TYPE">String</field>
+            <field name="VAR" id="OzD;p(3W[IkqU!)6n+^Z">btnState</field>
+            <value name="VALUE">
+              <block type="text" id="51">
+                <field name="TEXT">A</field>
+              </block>
+            </value>
+          </block>
+        </statement>
+        <value name="IF2">
+          <block type="ez_start_kit_button" id="222">
+            <field name="AB_BUTTON">B_</field>
+          </block>
+        </value>
+        <statement name="DO2">
+          <block type="variables_set" id="53">
+            <field name="POSITION">global</field>
+            <field name="TYPE">String</field>
+            <field name="VAR" id="OzD;p(3W[IkqU!)6n+^Z">btnState</field>
+            <value name="VALUE">
+              <block type="text" id="54">
+                <field name="TEXT">B</field>
+              </block>
+            </value>
+          </block>
+        </statement>
+        <statement name="ELSE">
+          <block type="variables_set" id="55">
+            <field name="POSITION">global</field>
+            <field name="TYPE">String</field>
+            <field name="VAR" id="OzD;p(3W[IkqU!)6n+^Z">btnState</field>
+            <value name="VALUE">
+              <block type="text" id="56">
+                <field name="TEXT">None</field>
+              </block>
+            </value>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
+</xml>

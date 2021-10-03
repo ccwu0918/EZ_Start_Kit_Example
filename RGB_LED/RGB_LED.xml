@@ -1,0 +1,159 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <variables>
+    <variable id="lkl9rKZ9w}^@#_;#sv(~">i</variable>
+  </variables>
+  <block type="board_initializes_setup" id="mM%or:$rWeIuaO9NRQDl" x="30" y="10">
+    <field name="BOARD_TYPE">7697</field>
+    <statement name="CONTENT">
+      <block type="startPlus_neopixel_begin" id=")Z{Ozv3#)Pw*7J}_g%kY">
+        <value name="BRIGHTNESS">
+          <block type="math_number" id="GK$%^;)6:p.C.R=5wPR)">
+            <field name="NUM">30</field>
+          </block>
+        </value>
+      </block>
+    </statement>
+    <next>
+      <block type="initializes_loop" id="899">
+        <statement name="CONTENT">
+          <block type="controls_for" id="900">
+            <field name="VAR" id="lkl9rKZ9w}^@#_;#sv(~">i</field>
+            <value name="FROM">
+              <block type="math_number" id="901">
+                <field name="NUM">0</field>
+              </block>
+            </value>
+            <value name="TO">
+              <block type="math_number" id="902">
+                <field name="NUM">2</field>
+              </block>
+            </value>
+            <value name="BY">
+              <block type="math_number" id="|l63{b~jZl=2z(~6m{5h">
+                <field name="NUM">1</field>
+              </block>
+            </value>
+            <statement name="DO">
+              <block type="startPlus_neopixel_set_color" id=")O)g|E~|xyWl+o0RZT7H">
+                <value name="INDEX">
+                  <block type="variables_get" id="G=N#532^,C(fSjP6=faT">
+                    <field name="VAR" id="lkl9rKZ9w}^@#_;#sv(~">i</field>
+                  </block>
+                </value>
+                <value name="COLOR">
+                  <block type="ttgo_getFromColorPicker" id="1ff;-=s_FKe{W1lC6ssu">
+                    <field name="RGB">#ff0000</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="startPlus_neopixel_show" id="}Y$2T}/;Ad+[g6_tBsht"></block>
+                </next>
+              </block>
+            </statement>
+            <next>
+              <block type="delay_custom" id="906" inline="false">
+                <value name="DELAY_TIME">
+                  <block type="math_number" id="907">
+                    <field name="NUM">500</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="controls_for" id="`;WR{-WH8Oja86cgiR1u">
+                    <field name="VAR" id="lkl9rKZ9w}^@#_;#sv(~">i</field>
+                    <value name="FROM">
+                      <block type="math_number" id="d4Mmji{EH:0#GdGb2r?8">
+                        <field name="NUM">0</field>
+                      </block>
+                    </value>
+                    <value name="TO">
+                      <block type="math_number" id="#]f8lHm|{hm(RGpHi:P@">
+                        <field name="NUM">2</field>
+                      </block>
+                    </value>
+                    <value name="BY">
+                      <block type="math_number" id="9ToOqroMgGZiT9!4.9s_">
+                        <field name="NUM">1</field>
+                      </block>
+                    </value>
+                    <statement name="DO">
+                      <block type="startPlus_neopixel_set_color" id="4gSkOHaw;m;V55AUH5_B">
+                        <value name="INDEX">
+                          <block type="variables_get" id=";cIF,]*`[gq-@-[Gw9@^">
+                            <field name="VAR" id="lkl9rKZ9w}^@#_;#sv(~">i</field>
+                          </block>
+                        </value>
+                        <value name="COLOR">
+                          <block type="ttgo_getFromColorPicker" id="62Ao]U3`Y%Pji?v`sPD_">
+                            <field name="RGB">#33ff33</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="startPlus_neopixel_show" id="_4;O81ARIf33:hYb.G$k"></block>
+                        </next>
+                      </block>
+                    </statement>
+                    <next>
+                      <block type="delay_custom" id="W(b|1mFs)+xjQU8sa$Z(" inline="false">
+                        <value name="DELAY_TIME">
+                          <block type="math_number" id="~v[JE^LJ/`A`3RsrI0w^">
+                            <field name="NUM">500</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="controls_for" id="`=jeC5p9V@XglM+Hd_i)">
+                            <field name="VAR" id="lkl9rKZ9w}^@#_;#sv(~">i</field>
+                            <value name="FROM">
+                              <block type="math_number" id="^-!rVB^@hY%;n?QK=i8N">
+                                <field name="NUM">0</field>
+                              </block>
+                            </value>
+                            <value name="TO">
+                              <block type="math_number" id="IPx^1QZ}}D^#yl6(iv]6">
+                                <field name="NUM">2</field>
+                              </block>
+                            </value>
+                            <value name="BY">
+                              <block type="math_number" id="07bR)Jxr!F5F1TcE3U]}">
+                                <field name="NUM">1</field>
+                              </block>
+                            </value>
+                            <statement name="DO">
+                              <block type="startPlus_neopixel_set_color" id="t3KrlEXPuLc^jxFiQylu">
+                                <value name="INDEX">
+                                  <block type="variables_get" id="X(kR!eZ}.;7KL_W7pP,P">
+                                    <field name="VAR" id="lkl9rKZ9w}^@#_;#sv(~">i</field>
+                                  </block>
+                                </value>
+                                <value name="COLOR">
+                                  <block type="ttgo_getFromColorPicker" id="(6C/TF8j:zQ$)Oa2;+IN">
+                                    <field name="RGB">#3333ff</field>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="startPlus_neopixel_show" id="}ENbRR;-7d0iC:::2v*^"></block>
+                                </next>
+                              </block>
+                            </statement>
+                            <next>
+                              <block type="delay_custom" id="F50FwM8Y5K:7PJ*2hkCr" inline="false">
+                                <value name="DELAY_TIME">
+                                  <block type="math_number" id="-f[SU9/vP-dQ;o`rtF@L">
+                                    <field name="NUM">500</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+</xml>

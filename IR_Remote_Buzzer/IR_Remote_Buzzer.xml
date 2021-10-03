@@ -1,0 +1,273 @@
+<xml version="F1" board="LinkIt 7697" xmlns="https://developers.google.com/blockly/xml">
+  <block type="board_initializes_setup" id="q!OEW;=T(lvGF3{%qmt." x="-130" y="-90">
+    <field name="BOARD_TYPE">7697</field>
+    <statement name="CONTENT">
+      <block type="oled_display_setting_new" id="y@6_K#uhQ8yIu%Ms`Fwa">
+        <next>
+          <block type="oled_display_clear" id="=G/,J)Gs7L@H#Uwu}lA*">
+            <next>
+              <block type="startPlus_ir_receive" id=")$sHG)fSXLLV?_SLcZ[b"></block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <next>
+      <block type="initializes_loop" id="qxvQkpCq^/vNqWxzEg=d">
+        <statement name="CONTENT">
+          <block type="ir_event" id="=E%jZ?Z^)Mr[2-x~xF77">
+            <statement name="IR_EVENT">
+              <block type="controls_if" id="49fVaAEN4osaCb~KHf$)">
+                <value name="IF0">
+                  <block type="logic_compare" id="vooyaPZ?vCc{,og9)R^Q">
+                    <field name="OP">EQ</field>
+                    <value name="A">
+                      <block type="ir_received_type" id="9;T3QCAA%J%wquDlPIQ@"></block>
+                    </value>
+                    <value name="B">
+                      <block type="text" id="DH`1~Ua7eX2DuY6:gz0+">
+                        <field name="TEXT">NEC</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <statement name="DO0">
+                  <block type="controls_if" id="k%PaYz;!ILGUS0hrao-1">
+                    <mutation elseif="8"></mutation>
+                    <value name="IF0">
+                      <block type="logic_compare" id="F/b33wLMB]]B}`#@;R(u">
+                        <field name="OP">EQ</field>
+                        <value name="A">
+                          <block type="ir_received_code" id="wYhL;~u6~wQ{1b_[!#py"></block>
+                        </value>
+                        <value name="B">
+                          <block type="text" id="e65{(s#TiY;rtYivQb7]">
+                            <field name="TEXT">ff30cf</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <statement name="DO0">
+                      <block type="startPlus_tone" id="#~kB)wxD-[N%;w/ejS]W">
+                        <field name="FREQ">262</field>
+                      </block>
+                    </statement>
+                    <value name="IF1">
+                      <block type="logic_compare" id=";$6;qm-l:{50sV`_ggSc">
+                        <field name="OP">EQ</field>
+                        <value name="A">
+                          <block type="ir_received_code" id="z^0e;t[J1^S;F~hgIUK#"></block>
+                        </value>
+                        <value name="B">
+                          <block type="text" id="B38xnfFem%UcghgYrVKc">
+                            <field name="TEXT">ff18e7</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <statement name="DO1">
+                      <block type="startPlus_tone" id="HD|$IqqEMYbAa6vMt+cp">
+                        <field name="FREQ">294</field>
+                      </block>
+                    </statement>
+                    <value name="IF2">
+                      <block type="logic_compare" id="^=K+L$wwhd!U0zo+~(Jt">
+                        <field name="OP">EQ</field>
+                        <value name="A">
+                          <block type="ir_received_code" id="C=G@t0k`)W9VhShKJd;)"></block>
+                        </value>
+                        <value name="B">
+                          <block type="text" id="l^%.yd?;6PIW)fiBqqdu">
+                            <field name="TEXT">ff7a85</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <statement name="DO2">
+                      <block type="startPlus_tone" id="@F]+8?)FA:He``!A^BA{">
+                        <field name="FREQ">330</field>
+                      </block>
+                    </statement>
+                    <value name="IF3">
+                      <block type="logic_compare" id="tJgE6;o=|bTK@nAxJM;^">
+                        <field name="OP">EQ</field>
+                        <value name="A">
+                          <block type="ir_received_code" id="1GKfq7M|gT[$0~eV.9,~"></block>
+                        </value>
+                        <value name="B">
+                          <block type="text" id="RoFT.@7UpCa|Y;%F2DTf">
+                            <field name="TEXT">ff10ef</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <statement name="DO3">
+                      <block type="startPlus_tone" id="1d}O*O)`Q=34KibRK4?a">
+                        <field name="FREQ">349</field>
+                      </block>
+                    </statement>
+                    <value name="IF4">
+                      <block type="logic_compare" id="F%V{tEJ^)iAtZ=VCSH~]">
+                        <field name="OP">EQ</field>
+                        <value name="A">
+                          <block type="ir_received_code" id="5aI[(=|5fx]rQaeLUKFP"></block>
+                        </value>
+                        <value name="B">
+                          <block type="text" id="Q/+)A2w}pS!=XV*+%0]^">
+                            <field name="TEXT">ff38c7</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <statement name="DO4">
+                      <block type="startPlus_tone" id="xAhYhq_TdC%;G2i}Wtvm">
+                        <field name="FREQ">392</field>
+                      </block>
+                    </statement>
+                    <value name="IF5">
+                      <block type="logic_compare" id="R.$Z%b~_[DR50Fr|othn">
+                        <field name="OP">EQ</field>
+                        <value name="A">
+                          <block type="ir_received_code" id="4R471W$DK)xVrN/ap,i8"></block>
+                        </value>
+                        <value name="B">
+                          <block type="text" id="1~cKiOwxM2Xzui~p)QHv">
+                            <field name="TEXT">ff5aa5</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <statement name="DO5">
+                      <block type="startPlus_tone" id="$Oh!%BHprfl@Y)@kE:GA">
+                        <field name="FREQ">440</field>
+                      </block>
+                    </statement>
+                    <value name="IF6">
+                      <block type="logic_compare" id="sZ=m5iBwKv~mK)19ICJ4">
+                        <field name="OP">EQ</field>
+                        <value name="A">
+                          <block type="ir_received_code" id="-#P#EYb9^XN?n(Xxb@Oc"></block>
+                        </value>
+                        <value name="B">
+                          <block type="text" id="]k4pz/raGt^y6wQCgB|s">
+                            <field name="TEXT">ff42bd</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <statement name="DO6">
+                      <block type="startPlus_tone" id="#?H_Xw{-Z(O(uQDb5;NP">
+                        <field name="FREQ">494</field>
+                      </block>
+                    </statement>
+                    <value name="IF7">
+                      <block type="logic_compare" id="ys=3?na5C,Sss4Zrj%6$">
+                        <field name="OP">EQ</field>
+                        <value name="A">
+                          <block type="ir_received_code" id="`V]KcnI_Pr_P4)TmDv0{"></block>
+                        </value>
+                        <value name="B">
+                          <block type="text" id="^[luq[K!QpS?9f0v,XQI">
+                            <field name="TEXT">ff4ab5</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <statement name="DO7">
+                      <block type="startPlus_tone" id="3zVJRn@P]Uc{l$94J$6i">
+                        <field name="FREQ">523</field>
+                      </block>
+                    </statement>
+                    <value name="IF8">
+                      <block type="logic_compare" id="TR*Vz6E[a~^|P$P|s#5:">
+                        <field name="OP">EQ</field>
+                        <value name="A">
+                          <block type="ir_received_code" id="aY}=*QaB+#u3.x//Zq^{"></block>
+                        </value>
+                        <value name="B">
+                          <block type="text" id="=vV{V=-+fi(r;s8$(|6y">
+                            <field name="TEXT">ff6897</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <statement name="DO8">
+                      <block type="startPlus_no_tone" id="^}scTa@)s[+q;_07YIX]"></block>
+                    </statement>
+                  </block>
+                </statement>
+                <next>
+                  <block type="oled_display_draw_commands" id="OXK}IeYT|0SKUsY(Hxfx">
+                    <statement name="DRAW_CMD">
+                      <block type="oled_display_draw_text" id="mkl?*u6N9$t@dO%@Dyhc">
+                        <value name="START_X">
+                          <block type="math_number" id="=ySF}Sy.1hS+V)VqRrF1">
+                            <field name="NUM">0</field>
+                          </block>
+                        </value>
+                        <value name="START_Y">
+                          <block type="math_number" id="d]=}C]Xicm5o=+s=qq_$">
+                            <field name="NUM">0</field>
+                          </block>
+                        </value>
+                        <value name="CONTENT">
+                          <block type="text_join" id=".9],bs%NiCMR{l}vHk.3" inline="false">
+                            <mutation items="2"></mutation>
+                            <value name="ADD0">
+                              <block type="text" id="o-HMH-_{K@(W|8aqj488">
+                                <field name="TEXT">Code: </field>
+                              </block>
+                            </value>
+                            <value name="ADD1">
+                              <block type="ir_received_code" id="A({`EGdirj7PVItR+Q7i"></block>
+                            </value>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="oled_display_draw_text" id="jifD_C6j~[H7F:L`YNQD">
+                            <value name="START_X">
+                              <block type="math_number" id="xf6LZ9`:x]mktY_?k7`|">
+                                <field name="NUM">0</field>
+                              </block>
+                            </value>
+                            <value name="START_Y">
+                              <block type="math_number" id="#Ss#R;b8EI$wv]1%Bh?^">
+                                <field name="NUM">10</field>
+                              </block>
+                            </value>
+                            <value name="CONTENT">
+                              <block type="text_join" id="))#|7b1FZPB,bSCQyEYs" inline="false">
+                                <mutation items="2"></mutation>
+                                <value name="ADD0">
+                                  <block type="text" id="Jc(0#cQLN`Eqk2/IkXCd">
+                                    <field name="TEXT">Type: </field>
+                                  </block>
+                                </value>
+                                <value name="ADD1">
+                                  <block type="ir_received_type" id="^|%F$!H-RhOy`W+@r2%v"></block>
+                                </value>
+                              </block>
+                            </value>
+                          </block>
+                        </next>
+                      </block>
+                    </statement>
+                    <next>
+                      <block type="delay_custom" id="g,J8)!hu?%D]0yDCzQr3" inline="false">
+                        <value name="DELAY_TIME">
+                          <block type="math_number" id="Td?U[x+`S+8KtT}a+R!L">
+                            <field name="NUM">100</field>
+                          </block>
+                        </value>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </statement>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+</xml>

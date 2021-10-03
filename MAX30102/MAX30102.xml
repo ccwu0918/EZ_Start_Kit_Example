@@ -1,0 +1,222 @@
+<xml version="F1" board="LinkIt 7697" xmlns="https://developers.google.com/blockly/xml">
+  <block type="board_initializes_setup" id="K7,U[kkPRv7$O;_|VpE%" x="130" y="30">
+    <field name="BOARD_TYPE">7697</field>
+    <statement name="CONTENT">
+      <block type="oled_display_setting_new" id=",Zy,+C3Kz%SID-daz]Y#">
+        <next>
+          <block type="oled_display_set_chinese_font" id="`mbA0xketY7@eEKhNlee">
+            <next>
+              <block type="max30105_init" id="^rLlLe07;:Zl?5nW`;R-">
+                <value name="LED">
+                  <block type="math_number" id="U-:z5[1fD}qTCLsO64Da">
+                    <field name="NUM">127</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="max30105_set_beat_range" id="iFP-s{J~sveDmT=+lw%U">
+                    <value name="MIN">
+                      <block type="math_number" id="FBF8ohX`ZX!YJq#tk3o-">
+                        <field name="NUM">20</field>
+                      </block>
+                    </value>
+                    <value name="MAX">
+                      <block type="math_number" id="1h?yQ.;yjB++kTo1Whs7">
+                        <field name="NUM">250</field>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <next>
+      <block type="initializes_loop" id="100">
+        <statement name="CONTENT">
+          <block type="controls_if" id="R)G[AxC[OHR.$+z2q`=!">
+            <mutation else="1"></mutation>
+            <value name="IF0">
+              <block type="max30105_check" id="0N-zR$S$m{oJO`-seo;5">
+                <field name="CHECK_TYPE">IR</field>
+              </block>
+            </value>
+            <statement name="DO0">
+              <block type="oled_display_draw_commands" id="`vtUem*XWCYApyY=Yi(/">
+                <statement name="DRAW_CMD">
+                  <block type="oled_display_draw_text" id="233">
+                    <value name="START_X">
+                      <block type="math_number" id="234">
+                        <field name="NUM">10</field>
+                      </block>
+                    </value>
+                    <value name="START_Y">
+                      <block type="math_number" id="235">
+                        <field name="NUM">5</field>
+                      </block>
+                    </value>
+                    <value name="CONTENT">
+                      <block type="text_join" id="105" inline="false">
+                        <mutation items="3"></mutation>
+                        <value name="ADD0">
+                          <block type="text" id="106">
+                            <field name="TEXT">心率: </field>
+                          </block>
+                        </value>
+                        <value name="ADD1">
+                          <block type="max30105_get_beat_rate" id="5^qe=XcsUn9@HB_~/K*]">
+                            <value name="AVG">
+                              <block type="math_number" id="Hd0lv!YaZe`@7uKDqQ`q">
+                                <field name="NUM">1</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <value name="ADD2">
+                          <block type="text" id="*tjr^G:6y/()wK2e93W*">
+                            <field name="TEXT"> BPM</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="oled_display_draw_text" id="242">
+                        <value name="START_X">
+                          <block type="math_number" id="243">
+                            <field name="NUM">10</field>
+                          </block>
+                        </value>
+                        <value name="START_Y">
+                          <block type="math_number" id="244">
+                            <field name="NUM">25</field>
+                          </block>
+                        </value>
+                        <value name="CONTENT">
+                          <block type="text_join" id="tS7[/k[BKgOpK8k#~5t[" inline="false">
+                            <mutation items="3"></mutation>
+                            <value name="ADD0">
+                              <block type="text" id="+Fb2($u$!jSa1`!}Y6!g">
+                                <field name="TEXT">血氧: </field>
+                              </block>
+                            </value>
+                            <value name="ADD1">
+                              <block type="max30105_get_spo2" id="=-}ioR^w6Yy(HdcK9O[h"></block>
+                            </value>
+                            <value name="ADD2">
+                              <block type="text" id="d`]ax[XtDi@I$=TaFl2M">
+                                <field name="TEXT"> %</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="oled_display_draw_text" id="2?hxgIc/W,l)`.d|.tX?">
+                            <value name="START_X">
+                              <block type="math_number" id="Jrgmn2|SvX$K!Dg7lu@m">
+                                <field name="NUM">10</field>
+                              </block>
+                            </value>
+                            <value name="START_Y">
+                              <block type="math_number" id="vg,6JKb7Sw=NmRj(Neza">
+                                <field name="NUM">45</field>
+                              </block>
+                            </value>
+                            <value name="CONTENT">
+                              <block type="text_join" id="_.+IES~y7fQrFgIIN{@J" inline="false">
+                                <mutation items="3"></mutation>
+                                <value name="ADD0">
+                                  <block type="text" id="SM9aT?tj#KDA!Tm}L!tS">
+                                    <field name="TEXT">溫度: </field>
+                                  </block>
+                                </value>
+                                <value name="ADD1">
+                                  <block type="max30105_get_temperature" id="RUz2S!h}6]SIiVfOFB*(">
+                                    <field name="TEMP_TYPE">C</field>
+                                  </block>
+                                </value>
+                                <value name="ADD2">
+                                  <block type="text" id="C?plrp|y~XLZ*?p4_,Aq">
+                                    <field name="TEXT"> C</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </statement>
+              </block>
+            </statement>
+            <statement name="ELSE">
+              <block type="oled_display_draw_commands" id="2X,Of.c@.WLBRbSd}n1,">
+                <statement name="DRAW_CMD">
+                  <block type="oled_display_draw_text" id="I8r9#VEpqlWp|l1OV2_6">
+                    <value name="START_X">
+                      <block type="math_number" id="Dd`Q11*K!*qxYtNZRhZ,">
+                        <field name="NUM">0</field>
+                      </block>
+                    </value>
+                    <value name="START_Y">
+                      <block type="math_number" id="gWXY*;,z,#Ux!!:rvFcS">
+                        <field name="NUM">1</field>
+                      </block>
+                    </value>
+                    <value name="CONTENT">
+                      <block type="text" id="zyfOmS~hk6/z?dDPI~SL">
+                        <field name="TEXT">EZ Starter Kit+</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="oled_display_draw_text" id="DS/2Ai||[l^Ojm(VNm;r">
+                        <value name="START_X">
+                          <block type="math_number" id="9@Sy78eKWv$r!WlIq^kg">
+                            <field name="NUM">0</field>
+                          </block>
+                        </value>
+                        <value name="START_Y">
+                          <block type="math_number" id="/P8)RUK/9+BK$rM-+S^Q">
+                            <field name="NUM">45</field>
+                          </block>
+                        </value>
+                        <value name="CONTENT">
+                          <block type="text" id="wF=nKyo-*YcYL$,{[_PZ">
+                            <field name="TEXT"> 心率血氧溫度感測</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="oled_display_draw_text" id="YE1spwz7:mva};LD#Dn#">
+                            <value name="START_X">
+                              <block type="math_number" id="fS8z4KaZT36dlDWhYj|G">
+                                <field name="NUM">0</field>
+                              </block>
+                            </value>
+                            <value name="START_Y">
+                              <block type="math_number" id=",?Hgim|-1sEI=SRZa4o,">
+                                <field name="NUM">45</field>
+                              </block>
+                            </value>
+                            <value name="CONTENT">
+                              <block type="text" id="eKcZHX]{d;YV4T8e*KaA">
+                                <field name="TEXT">請將手指放上感測器</field>
+                              </block>
+                            </value>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </statement>
+                <next>
+                  <block type="max30105_set_spo2_clear" id="YC5K3%(c*/OoZ|ZCQN]H"></block>
+                </next>
+              </block>
+            </statement>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+</xml>

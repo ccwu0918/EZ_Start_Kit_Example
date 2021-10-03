@@ -1,0 +1,215 @@
+<xml version="F1" board="LinkIt 7697" xmlns="https://developers.google.com/blockly/xml">
+  <block type="board_initializes_setup" id="K7,U[kkPRv7$O;_|VpE%" x="90" y="170">
+    <field name="BOARD_TYPE">7697</field>
+    <statement name="CONTENT">
+      <block type="oled_display_setting_new" id=",Zy,+C3Kz%SID-daz]Y#">
+        <next>
+          <block type="oled_display_set_chinese_font" id="`mbA0xketY7@eEKhNlee">
+            <next>
+              <block type="oled_display_draw_commands" id="}cu}mxSWE%790KXL56lW">
+                <statement name="DRAW_CMD">
+                  <block type="oled_display_draw_text" id="`k}HCab@(a?n!Y4qf?v_">
+                    <value name="START_X">
+                      <block type="math_number" id="{^)T:#|1t),!/!edBT-u">
+                        <field name="NUM">0</field>
+                      </block>
+                    </value>
+                    <value name="START_Y">
+                      <block type="math_number" id="fM*zyv3k+^b*O@6miWI5">
+                        <field name="NUM">1</field>
+                      </block>
+                    </value>
+                    <value name="CONTENT">
+                      <block type="text" id="|]IXyWP@M^u{CAv.Xe!{">
+                        <field name="TEXT">EZ Starter Kit+</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="oled_display_draw_text" id="Y9XZ5*OCEo(yiSe:JvGJ">
+                        <value name="START_X">
+                          <block type="math_number" id="}6trc;j`Y`C(@Y=W``0U">
+                            <field name="NUM">0</field>
+                          </block>
+                        </value>
+                        <value name="START_Y">
+                          <block type="math_number" id="mg=ygJQEz_|j,)3o5iKo">
+                            <field name="NUM">17</field>
+                          </block>
+                        </value>
+                        <value name="CONTENT">
+                          <block type="text" id="HJ9I+!ZYB?0DB2UvU[T5">
+                            <field name="TEXT">Wi-Fi connection......</field>
+                          </block>
+                        </value>
+                      </block>
+                    </next>
+                  </block>
+                </statement>
+                <next>
+                  <block type="linkit_wifi_wait_until_ready" id="]LVZ+4uwT1LO{:JY{se*">
+                    <value name="SSID">
+                      <block type="text" id="J|ToN)]YAI#fF1W7YyCt">
+                        <field name="TEXT">HUAWEI_A5C5</field>
+                      </block>
+                    </value>
+                    <value name="PASSWORD">
+                      <block type="text" id="yR0(,H^~Cl(h]:Qf+ulw">
+                        <field name="TEXT">0972866968</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="oled_display_draw_commands" id="eC!Rq,hWHQ{aH,U{6LYQ">
+                        <statement name="DRAW_CMD">
+                          <block type="oled_display_draw_text" id="i2?w*V-.WM(IG6#kvQUx">
+                            <value name="START_X">
+                              <block type="math_number" id="`LDiSN0KXWY(wc0Yl-m/">
+                                <field name="NUM">0</field>
+                              </block>
+                            </value>
+                            <value name="START_Y">
+                              <block type="math_number" id="~epR[fOBf[BbcdFQ@9n-">
+                                <field name="NUM">1</field>
+                              </block>
+                            </value>
+                            <value name="CONTENT">
+                              <block type="text" id="S$HY+7G1R+M`k-l9^~)|">
+                                <field name="TEXT">EZ Starter Kit+</field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="oled_display_draw_text" id="yv6Q@4xrdXCV5:+IP/~6">
+                                <value name="START_X">
+                                  <block type="math_number" id="FhBoylCoyyM770-7o1-r">
+                                    <field name="NUM">0</field>
+                                  </block>
+                                </value>
+                                <value name="START_Y">
+                                  <block type="math_number" id="*md-eTn6{k^NSUL+K8e#">
+                                    <field name="NUM">17</field>
+                                  </block>
+                                </value>
+                                <value name="CONTENT">
+                                  <block type="text" id="#VtF$pVZ.W*DWgQf07;4">
+                                    <field name="TEXT">Wi-Fi connected </field>
+                                  </block>
+                                </value>
+                              </block>
+                            </next>
+                          </block>
+                        </statement>
+                        <next>
+                          <block type="rtc_set_time_from_string" id="f_c$]Y8:`hmgHtPq)eGZ">
+                            <value name="TIME_STRING">
+                              <block type="ntp_get_datetime" id="-c/5_@fpW-K}dDuf`!sg"></block>
+                            </value>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <next>
+      <block type="initializes_loop" id="100">
+        <statement name="CONTENT">
+          <block type="controls_repeat_ext" id="cX1SEb7,zcf,~f618x%(">
+            <value name="TIMES">
+              <block type="math_number" id="}HZVMFCD!4PeleOc}%Y4">
+                <field name="NUM">10</field>
+              </block>
+            </value>
+            <statement name="DO">
+              <block type="oled_display_draw_commands" id="`vtUem*XWCYApyY=Yi(/">
+                <statement name="DRAW_CMD">
+                  <block type="oled_display_draw_text" id="JJ;zreX%]fBUr:oJQs#X">
+                    <value name="START_X">
+                      <block type="math_number" id=",~M$RorY{U.QB`Q{2/gK">
+                        <field name="NUM">0</field>
+                      </block>
+                    </value>
+                    <value name="START_Y">
+                      <block type="math_number" id="93P5pouU8/cqE=@0(LN9">
+                        <field name="NUM">1</field>
+                      </block>
+                    </value>
+                    <value name="CONTENT">
+                      <block type="text" id="Y0U^c^rd^7EsL]NJoM,]">
+                        <field name="TEXT">EZ Starter Kit+</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="oled_display_draw_text" id="233">
+                        <value name="START_X">
+                          <block type="math_number" id="234">
+                            <field name="NUM">0</field>
+                          </block>
+                        </value>
+                        <value name="START_Y">
+                          <block type="math_number" id="235">
+                            <field name="NUM">17</field>
+                          </block>
+                        </value>
+                        <value name="CONTENT">
+                          <block type="text_join" id="105" inline="false">
+                            <mutation items="2"></mutation>
+                            <value name="ADD0">
+                              <block type="text" id="106">
+                                <field name="TEXT">時間: </field>
+                              </block>
+                            </value>
+                            <value name="ADD1">
+                              <block type="rtc_get_time" id="k^jXUZ^WI*i]e$y,-|i`"></block>
+                            </value>
+                          </block>
+                        </value>
+                      </block>
+                    </next>
+                  </block>
+                </statement>
+                <next>
+                  <block type="delay_custom" id="2+HF!aca3Fwn,9[R=MAD">
+                    <value name="DELAY_TIME">
+                      <block type="math_number" id="AA5K=yl8K}fv`R7H=-Pu">
+                        <field name="NUM">1000</field>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </statement>
+            <next>
+              <block type="controls_repeat_ext" id="OPRA;J%SBEH}p4Pg|[HX">
+                <value name="TIMES">
+                  <block type="math_number" id="+/3rpO.Led9qv~EwZ,Q8">
+                    <field name="NUM">10</field>
+                  </block>
+                </value>
+                <statement name="DO">
+                  <block type="oled_display_draw_commands" id="@+_z9+-sPTbLYGU;~TH|">
+                    <statement name="DRAW_CMD">
+                      <block type="oled_display_clock" id="[dmHM5h+MQ6U@_W;8B%("></block>
+                    </statement>
+                    <next>
+                      <block type="delay_custom" id="dY(CN+ayeG@[rGW]3R.3">
+                        <value name="DELAY_TIME">
+                          <block type="math_number" id="`Gp?yRj%C|3@%dKL`F9D">
+                            <field name="NUM">1000</field>
+                          </block>
+                        </value>
+                      </block>
+                    </next>
+                  </block>
+                </statement>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+</xml>

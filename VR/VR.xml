@@ -1,0 +1,57 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <block type="initializes_setup" id="973" x="50" y="150">
+    <statement name="CONTENT">
+      <block type="oled_display_setting_new" id="qQ%(B=7Bw!YevjJK*n?n">
+        <next>
+          <block type="oled_display_clear" id="c+6,]ugR.L;amyW1tYsX"></block>
+        </next>
+      </block>
+    </statement>
+    <next>
+      <block type="initializes_loop" id="976">
+        <statement name="CONTENT">
+          <block type="oled_display_draw_commands" id="XRB8OE)YWajjvv9.^u,J">
+            <statement name="DRAW_CMD">
+              <block type="oled_display_draw_text" id="978">
+                <value name="START_X">
+                  <block type="math_number" id="979">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+                <value name="START_Y">
+                  <block type="math_number" id="980">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+                <value name="CONTENT">
+                  <block type="text_join" id="981" inline="false">
+                    <mutation items="2"></mutation>
+                    <value name="ADD0">
+                      <block type="text" id="982">
+                        <field name="TEXT">VR: </field>
+                      </block>
+                    </value>
+                    <value name="ADD1">
+                      <block type="startPlus_vr" id="o9BO*9xB90|-S03F+k((">
+                        <field name="TYPE">vr</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+              </block>
+            </statement>
+            <next>
+              <block type="delay_custom" id="984" inline="false">
+                <value name="DELAY_TIME">
+                  <block type="math_number" id="985">
+                    <field name="NUM">100</field>
+                  </block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+</xml>

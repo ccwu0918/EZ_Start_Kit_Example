@@ -1,0 +1,140 @@
+<xml version="F1" board="LinkIt 7697" xmlns="https://developers.google.com/blockly/xml">
+  <variables>
+    <variable id="64Kv4R2g/].js@%)|RT5">angle</variable>
+  </variables>
+  <block type="initializes_setup" id="973" x="110" y="-70">
+    <statement name="CONTENT">
+      <block type="oled_display_setting_new" id="qQ%(B=7Bw!YevjJK*n?n">
+        <next>
+          <block type="oled_display_clear" id="c+6,]ugR.L;amyW1tYsX">
+            <next>
+              <block type="variables_set" id="RpLI@1pI]n-Obo,pdSO!">
+                <field name="POSITION">global</field>
+                <field name="TYPE">String</field>
+                <field name="VAR" id="64Kv4R2g/].js@%)|RT5">angle</field>
+                <value name="VALUE">
+                  <shadow type="math_number" id="w#^Ss0Qs:x?A;hE8Hlsx">
+                    <field name="NUM">0</field>
+                  </shadow>
+                  <block type="math_number" id="}*Sjy.aQaij:U[K(OZ@N">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <next>
+      <block type="initializes_loop" id="976">
+        <statement name="CONTENT">
+          <block type="variables_set3" id="}m?R!@bYlDYft{NG~,Sc">
+            <field name="VAR" id="64Kv4R2g/].js@%)|RT5">angle</field>
+            <value name="DELTA">
+              <shadow type="math_number" id="Tf-u2P`Ny#~e~8J|mEtN">
+                <field name="NUM">0</field>
+              </shadow>
+              <block type="math_map_int" id="U#Fhrj#xWQ3{U_1FN0;J">
+                <field name="FROMLOW">0</field>
+                <field name="FROMHIGH">4095</field>
+                <field name="TOLOW">0</field>
+                <field name="TOHIGH">180</field>
+                <value name="VALUE">
+                  <block type="startPlus_vr" id="RB(47wd}S@g).@,uGtM?">
+                    <field name="TYPE">vr</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <next>
+              <block type="servo_write_pin" id="8k/_IAqq}F,2}sMJ21N|">
+                <value name="PIN">
+                  <block type="startPlus_pin" id="?8p{0jhG4z4kqwEp_2jd">
+                    <field name="PIN">1</field>
+                  </block>
+                </value>
+                <value name="ANGLE">
+                  <block type="variables_get" id="O~4JM/-?.6+Rg6Z2MVdF">
+                    <field name="VAR" id="64Kv4R2g/].js@%)|RT5">angle</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="delay_custom" id="984" inline="false">
+                    <value name="DELAY_TIME">
+                      <block type="math_number" id="985">
+                        <field name="NUM">100</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="oled_display_draw_commands" id="XRB8OE)YWajjvv9.^u,J">
+                        <statement name="DRAW_CMD">
+                          <block type="oled_display_draw_text" id="978">
+                            <value name="START_X">
+                              <block type="math_number" id="979">
+                                <field name="NUM">0</field>
+                              </block>
+                            </value>
+                            <value name="START_Y">
+                              <block type="math_number" id="980">
+                                <field name="NUM">0</field>
+                              </block>
+                            </value>
+                            <value name="CONTENT">
+                              <block type="text_join" id="981" inline="false">
+                                <mutation items="2"></mutation>
+                                <value name="ADD0">
+                                  <block type="text" id="982">
+                                    <field name="TEXT">VR: </field>
+                                  </block>
+                                </value>
+                                <value name="ADD1">
+                                  <block type="startPlus_vr" id="o9BO*9xB90|-S03F+k((">
+                                    <field name="TYPE">vr</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="oled_display_draw_text" id="=U)VuvHb`i#6u*9fK*G+">
+                                <value name="START_X">
+                                  <block type="math_number" id="`1K9!8{QUqcW|U1%mLhh">
+                                    <field name="NUM">0</field>
+                                  </block>
+                                </value>
+                                <value name="START_Y">
+                                  <block type="math_number" id="@O(HNq2U|yfek(j=(6z`">
+                                    <field name="NUM">17</field>
+                                  </block>
+                                </value>
+                                <value name="CONTENT">
+                                  <block type="text_join" id="K$g.z/X%dMmF7=YuJ3Ok" inline="false">
+                                    <mutation items="2"></mutation>
+                                    <value name="ADD0">
+                                      <block type="text" id="lO{ZYh,XF*=ylOuaU/`m">
+                                        <field name="TEXT">Angle: </field>
+                                      </block>
+                                    </value>
+                                    <value name="ADD1">
+                                      <block type="variables_get" id="1zAxiPGQt`g097gl*nf5">
+                                        <field name="VAR" id="64Kv4R2g/].js@%)|RT5">angle</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                              </block>
+                            </next>
+                          </block>
+                        </statement>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+</xml>

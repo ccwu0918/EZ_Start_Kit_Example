@@ -1,0 +1,171 @@
+<xml version="F1" board="LinkIt 7697" xmlns="https://developers.google.com/blockly/xml">
+  <block type="board_initializes_setup" id="0" x="331" y="150">
+    <field name="BOARD_TYPE">7697</field>
+    <statement name="CONTENT">
+      <block type="oled_display_setting_new" id="Mt#o$2Ca@xh0)t+n/4VE"></block>
+    </statement>
+    <next>
+      <block type="initializes_loop" id="1">
+        <statement name="CONTENT">
+          <block type="oled_display_set_chinese_font" id="ecSOxAd_]@%4!m$Fj+x6">
+            <next>
+              <block type="oled_display_draw_commands" id="K;t1D7Ea|QC+=?t.kr.:">
+                <statement name="DRAW_CMD">
+                  <block type="oled_display_draw_text" id="H.Kcz(4)C$H7ghJ#ZjwD">
+                    <value name="START_X">
+                      <block type="math_number" id="i*syG0DI:D#rBaFBmV_E">
+                        <field name="NUM">30</field>
+                      </block>
+                    </value>
+                    <value name="START_Y">
+                      <block type="math_number" id="*)nyr}LJ8yE*..dIPlb9">
+                        <field name="NUM">1</field>
+                      </block>
+                    </value>
+                    <value name="CONTENT">
+                      <block type="text" id="~w@`04cYnqr]|oO,0.?P">
+                        <field name="TEXT">中文顯示</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="oled_display_draw_line" id="1o|p9Z/,k/ZDu?,y7~by">
+                        <value name="START_X">
+                          <block type="math_number" id="?G:SHBg@=Zm?b:HT/4h^">
+                            <field name="NUM">30</field>
+                          </block>
+                        </value>
+                        <value name="START_Y">
+                          <block type="math_number" id="85jxPJKlUD[RUCK;9Dg;">
+                            <field name="NUM">17</field>
+                          </block>
+                        </value>
+                        <value name="END_X">
+                          <block type="math_number" id="2GbIr?i;oWLdX:?c/y*[">
+                            <field name="NUM">93</field>
+                          </block>
+                        </value>
+                        <value name="END_Y">
+                          <block type="math_number" id=";v0t;#Aag=0U,hVfC)#7">
+                            <field name="NUM">17</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="oled_display_draw_text" id="*71ewz41|qpQCg}R47Mp">
+                            <value name="START_X">
+                              <block type="math_number" id="{imHwiBisR1+-U[RzDzS">
+                                <field name="NUM">5</field>
+                              </block>
+                            </value>
+                            <value name="START_Y">
+                              <block type="math_number" id="DXm(D,^Z8oYxyXQ=CLdP">
+                                <field name="NUM">30</field>
+                              </block>
+                            </value>
+                            <value name="CONTENT">
+                              <block type="text" id="(YeH/~MzpgGWtWRaU%!c">
+                                <field name="TEXT">中文字顯示測試</field>
+                              </block>
+                            </value>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </statement>
+                <next>
+                  <block type="delay_custom" id="Oy!mv*na*}!x.QlQ0xlL">
+                    <value name="DELAY_TIME">
+                      <block type="math_number" id="z5r8sL2L0w?6IBM6hgy[">
+                        <field name="NUM">2000</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="oled_display_set_font" id="ToH~Oqhoph2+3=78Z.r3">
+                        <field name="FONT">u8g2_font_6x10_mf</field>
+                        <next>
+                          <block type="oled_display_draw_commands" id=";)vhXpz~h7O6moZKJTNW">
+                            <statement name="DRAW_CMD">
+                              <block type="oled_display_draw_text" id="m+iG?K#gK[Uc:E$QIOQv">
+                                <value name="START_X">
+                                  <block type="math_number" id="Q5IYK.z}QNC7`Z_l|HNG">
+                                    <field name="NUM">39</field>
+                                  </block>
+                                </value>
+                                <value name="START_Y">
+                                  <block type="math_number" id="wZ%}l]Vu2,hTfqOx$Pbe">
+                                    <field name="NUM">1</field>
+                                  </block>
+                                </value>
+                                <value name="CONTENT">
+                                  <block type="text" id="%h_,-Q3V?YmaeVkH#J.|">
+                                    <field name="TEXT">English</field>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="oled_display_draw_line" id="*QURd-Yrmgg=t:r_Vb6m">
+                                    <value name="START_X">
+                                      <block type="math_number" id="[LOo.)EVs5bZmAq^80/=">
+                                        <field name="NUM">39</field>
+                                      </block>
+                                    </value>
+                                    <value name="START_Y">
+                                      <block type="math_number" id="Vk{2bXJt=AB!Yh/t@YoI">
+                                        <field name="NUM">12</field>
+                                      </block>
+                                    </value>
+                                    <value name="END_X">
+                                      <block type="math_number" id="{MdbZO,m%6,NSxNB4},C">
+                                        <field name="NUM">80</field>
+                                      </block>
+                                    </value>
+                                    <value name="END_Y">
+                                      <block type="math_number" id="DHr)tU+Em5,w$OA=tq5P">
+                                        <field name="NUM">12</field>
+                                      </block>
+                                    </value>
+                                    <next>
+                                      <block type="oled_display_draw_text" id="?tm7z4y`PLHqn4e](it,">
+                                        <value name="START_X">
+                                          <block type="math_number" id=".@h4EbBpa.q1,}E%wz-.">
+                                            <field name="NUM">5</field>
+                                          </block>
+                                        </value>
+                                        <value name="START_Y">
+                                          <block type="math_number" id="~bOmYM,q?WXFqv.^N(%r">
+                                            <field name="NUM">30</field>
+                                          </block>
+                                        </value>
+                                        <value name="CONTENT">
+                                          <block type="text" id="3GkkDHQ|{)1+0^FGz]0Y">
+                                            <field name="TEXT">English Display Test</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </statement>
+                            <next>
+                              <block type="delay_custom" id="(0l#)1YMZ#H[PX1U+8S!">
+                                <value name="DELAY_TIME">
+                                  <block type="math_number" id="rWuqHZOQHBT7Rf]7z-_I">
+                                    <field name="NUM">2000</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+</xml>

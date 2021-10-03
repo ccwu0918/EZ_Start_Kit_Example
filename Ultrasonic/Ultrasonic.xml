@@ -1,0 +1,174 @@
+<xml version="F1" board="LinkIt 7697" xmlns="https://developers.google.com/blockly/xml">
+  <variables>
+    <variable id="iP1XK4,^7cfrWB%c,K;?">cm</variable>
+    <variable id=")$LaR_N{={~W]%TZ1i)g">in</variable>
+  </variables>
+  <block type="board_initializes_setup" id="K7,U[kkPRv7$O;_|VpE%" x="-490" y="-30">
+    <field name="BOARD_TYPE">7697</field>
+    <statement name="CONTENT">
+      <block type="oled_display_setting_new" id="=#cPDh(5_?+R8+`UHZ`-">
+        <next>
+          <block type="oled_display_clear" id="|li]22nb!sk%;?PmE7=|">
+            <next>
+              <block type="oled_display_set_chinese_font" id="wh.1M+VMP~$jM}z[+%hj">
+                <next>
+                  <block type="variables_set" id="Lj|sf|-V_i5=1%0N3^-X">
+                    <field name="POSITION">global</field>
+                    <field name="TYPE">int</field>
+                    <field name="VAR" id="iP1XK4,^7cfrWB%c,K;?">cm</field>
+                    <value name="VALUE">
+                      <shadow type="math_number" id="3w{TDwTtG#l!hR+.$K)f">
+                        <field name="NUM">0</field>
+                      </shadow>
+                      <block type="math_number" id="jesdpG,Cry[^%+)Su$,S">
+                        <field name="NUM">0</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="variables_set" id="uP|(89rz#F%R@nwc?3cL">
+                        <field name="POSITION">global</field>
+                        <field name="TYPE">int</field>
+                        <field name="VAR" id=")$LaR_N{={~W]%TZ1i)g">in</field>
+                        <value name="VALUE">
+                          <shadow type="math_number">
+                            <field name="NUM">0</field>
+                          </shadow>
+                          <block type="math_number" id="HaT=6V!:?N/O=Y/f;SSb">
+                            <field name="NUM">0</field>
+                          </block>
+                        </value>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <next>
+      <block type="initializes_loop" id="100">
+        <statement name="CONTENT">
+          <block type="variables_set3" id="l}{*CLr%R[0AA0i*Az73">
+            <field name="VAR" id="iP1XK4,^7cfrWB%c,K;?">cm</field>
+            <value name="DELTA">
+              <shadow type="math_number" id="%rTt:myr4j)j6ThdJnK0">
+                <field name="NUM">0</field>
+              </shadow>
+              <block type="ultrasonic_read_pin" id="1{2/$rtr8VcH,p_Q{8+*">
+                <field name="SENSOR">DUMMY</field>
+                <field name="MEASUREMENT">CM</field>
+                <value name="TRIG">
+                  <block type="startPlus_pin" id="Dg%F`=X`#[i-E$%AfdOH">
+                    <field name="PIN">1</field>
+                  </block>
+                </value>
+                <value name="ECHO">
+                  <block type="startPlus_pin" id="N8#r_1ZCFr1aDdSYLW-^">
+                    <field name="PIN">0</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <next>
+              <block type="variables_set3" id="NUh0q]|XX:Mm{gK)6{E+">
+                <field name="VAR" id=")$LaR_N{={~W]%TZ1i)g">in</field>
+                <value name="DELTA">
+                  <shadow type="math_number">
+                    <field name="NUM">0</field>
+                  </shadow>
+                  <block type="ultrasonic_read_pin" id="5yeYQ:Jlg$:[TR]kxAt]">
+                    <field name="SENSOR">DUMMY</field>
+                    <field name="MEASUREMENT">INCH</field>
+                    <value name="TRIG">
+                      <block type="startPlus_pin" id="Y9(M+{R7N=mdzQ*hG*Za">
+                        <field name="PIN">1</field>
+                      </block>
+                    </value>
+                    <value name="ECHO">
+                      <block type="startPlus_pin" id="kId6*QjW(vwZGHn8:pCn">
+                        <field name="PIN">0</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <next>
+                  <block type="oled_display_draw_commands" id="?7SeC-W9}$?KW5!I`[N9">
+                    <statement name="DRAW_CMD">
+                      <block type="oled_display_draw_text" id="233">
+                        <value name="START_X">
+                          <block type="math_number" id="234">
+                            <field name="NUM">0</field>
+                          </block>
+                        </value>
+                        <value name="START_Y">
+                          <block type="math_number" id="235">
+                            <field name="NUM">1</field>
+                          </block>
+                        </value>
+                        <value name="CONTENT">
+                          <block type="text_join" id="105" inline="false">
+                            <mutation items="2"></mutation>
+                            <value name="ADD0">
+                              <block type="text" id="106">
+                                <field name="TEXT">公分: </field>
+                              </block>
+                            </value>
+                            <value name="ADD1">
+                              <block type="variables_get" id=";`M7i]sUBc,1HGZT,`/8">
+                                <field name="VAR" id="iP1XK4,^7cfrWB%c,K;?">cm</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="oled_display_draw_text" id="242">
+                            <value name="START_X">
+                              <block type="math_number" id="243">
+                                <field name="NUM">0</field>
+                              </block>
+                            </value>
+                            <value name="START_Y">
+                              <block type="math_number" id="244">
+                                <field name="NUM">17</field>
+                              </block>
+                            </value>
+                            <value name="CONTENT">
+                              <block type="text_join" id="111" inline="false">
+                                <mutation items="2"></mutation>
+                                <value name="ADD0">
+                                  <block type="text" id="112">
+                                    <field name="TEXT">英吋: </field>
+                                  </block>
+                                </value>
+                                <value name="ADD1">
+                                  <block type="variables_get" id=")VEpgjqFASqJ6+?fRnhD">
+                                    <field name="VAR" id=")$LaR_N{={~W]%TZ1i)g">in</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                          </block>
+                        </next>
+                      </block>
+                    </statement>
+                    <next>
+                      <block type="delay_custom" id="114" inline="false">
+                        <value name="DELAY_TIME">
+                          <block type="math_number" id="115">
+                            <field name="NUM">100</field>
+                          </block>
+                        </value>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+</xml>

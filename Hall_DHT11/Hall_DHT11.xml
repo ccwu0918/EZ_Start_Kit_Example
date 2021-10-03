@@ -1,0 +1,149 @@
+<xml version="F1" board="LinkIt 7697" xmlns="https://developers.google.com/blockly/xml">
+  <variables>
+    <variable id="?S#?n)umL=[imA(V2uS^">alarm</variable>
+  </variables>
+  <block type="board_initializes_setup" id="K7,U[kkPRv7$O;_|VpE%" x="130" y="30">
+    <field name="BOARD_TYPE">7697</field>
+    <statement name="CONTENT">
+      <block type="oled_display_setting_new" id=",Zy,+C3Kz%SID-daz]Y#">
+        <next>
+          <block type="oled_display_set_chinese_font" id="`mbA0xketY7@eEKhNlee">
+            <next>
+              <block type="variables_set" id="`5JxJC)529:{V2P12gRk">
+                <field name="POSITION">global</field>
+                <field name="TYPE">int</field>
+                <field name="VAR" id="?S#?n)umL=[imA(V2uS^">alarm</field>
+                <value name="VALUE">
+                  <shadow type="math_number" id="(#u~|]xgutOA#ij#P:E2">
+                    <field name="NUM">0</field>
+                  </shadow>
+                  <block type="math_number" id="SQO-Uxbbn#FH;119IXRS">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <next>
+      <block type="initializes_loop" id="100">
+        <statement name="CONTENT">
+          <block type="oled_display_draw_commands" id="`vtUem*XWCYApyY=Yi(/">
+            <statement name="DRAW_CMD">
+              <block type="oled_display_draw_text" id="JJ;zreX%]fBUr:oJQs#X">
+                <value name="START_X">
+                  <block type="math_number" id=",~M$RorY{U.QB`Q{2/gK">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+                <value name="START_Y">
+                  <block type="math_number" id="93P5pouU8/cqE=@0(LN9">
+                    <field name="NUM">1</field>
+                  </block>
+                </value>
+                <value name="CONTENT">
+                  <block type="text" id="Y0U^c^rd^7EsL]NJoM,]">
+                    <field name="TEXT">EZ Starter Kit+</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="oled_display_draw_text" id="233">
+                    <value name="START_X">
+                      <block type="math_number" id="234">
+                        <field name="NUM">0</field>
+                      </block>
+                    </value>
+                    <value name="START_Y">
+                      <block type="math_number" id="235">
+                        <field name="NUM">17</field>
+                      </block>
+                    </value>
+                    <value name="CONTENT">
+                      <block type="text_join" id="105" inline="false">
+                        <mutation items="2"></mutation>
+                        <value name="ADD0">
+                          <block type="text" id="106">
+                            <field name="TEXT">DHT溫度: </field>
+                          </block>
+                        </value>
+                        <value name="ADD1">
+                          <block type="startPlus_dht11" id="T[VK*JHSYV%U|4z`VSlI">
+                            <field name="DHT">readTemperature</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="oled_display_draw_text" id="242">
+                        <value name="START_X">
+                          <block type="math_number" id="243">
+                            <field name="NUM">0</field>
+                          </block>
+                        </value>
+                        <value name="START_Y">
+                          <block type="math_number" id="244">
+                            <field name="NUM">33</field>
+                          </block>
+                        </value>
+                        <value name="CONTENT">
+                          <block type="text_join" id="111" inline="false">
+                            <mutation items="2"></mutation>
+                            <value name="ADD0">
+                              <block type="text" id="112">
+                                <field name="TEXT">DHT溼度: </field>
+                              </block>
+                            </value>
+                            <value name="ADD1">
+                              <block type="startPlus_dht11" id="TX|BhU1!n5wXTmH#DKq4">
+                                <field name="DHT">readHumidity</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="oled_display_draw_text" id="2?hxgIc/W,l)`.d|.tX?">
+                            <value name="START_X">
+                              <block type="math_number" id="Jrgmn2|SvX$K!Dg7lu@m">
+                                <field name="NUM">0</field>
+                              </block>
+                            </value>
+                            <value name="START_Y">
+                              <block type="math_number" id="vg,6JKb7Sw=NmRj(Neza">
+                                <field name="NUM">49</field>
+                              </block>
+                            </value>
+                            <value name="CONTENT">
+                              <block type="text_join" id="2w;3Fd}[oT5~6TV;z)C/" inline="false">
+                                <mutation items="2"></mutation>
+                                <value name="ADD0">
+                                  <block type="text" id="Es?D82uj^HY=Ly[TSfg7">
+                                    <field name="TEXT">Hall偵測: </field>
+                                  </block>
+                                </value>
+                                <value name="ADD1">
+                                  <block type="inout_custom_digital_read" id=",y$+u~V9@e8Hw.wnPt-I">
+                                    <value name="PIN_READ">
+                                      <block type="startPlus_pin" id="(naNaumD{ziV0$dKPU2;">
+                                        <field name="PIN">0</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </statement>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+</xml>

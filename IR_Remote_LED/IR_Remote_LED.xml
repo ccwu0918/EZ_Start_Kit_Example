@@ -1,0 +1,206 @@
+<xml version="F1" board="LinkIt 7697" xmlns="https://developers.google.com/blockly/xml">
+  <block type="board_initializes_setup" id="q!OEW;=T(lvGF3{%qmt." x="50" y="-90">
+    <field name="BOARD_TYPE">7697</field>
+    <statement name="CONTENT">
+      <block type="oled_display_setting_new" id="y@6_K#uhQ8yIu%Ms`Fwa">
+        <next>
+          <block type="oled_display_clear" id="=G/,J)Gs7L@H#Uwu}lA*">
+            <next>
+              <block type="startPlus_ir_receive" id=")$sHG)fSXLLV?_SLcZ[b"></block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <next>
+      <block type="initializes_loop" id="qxvQkpCq^/vNqWxzEg=d">
+        <statement name="CONTENT">
+          <block type="ir_event" id="=E%jZ?Z^)Mr[2-x~xF77">
+            <statement name="IR_EVENT">
+              <block type="controls_if" id="49fVaAEN4osaCb~KHf$)">
+                <value name="IF0">
+                  <block type="logic_compare" id="vooyaPZ?vCc{,og9)R^Q">
+                    <field name="OP">EQ</field>
+                    <value name="A">
+                      <block type="ir_received_type" id="9;T3QCAA%J%wquDlPIQ@"></block>
+                    </value>
+                    <value name="B">
+                      <block type="text" id="DH`1~Ua7eX2DuY6:gz0+">
+                        <field name="TEXT">NEC</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <statement name="DO0">
+                  <block type="controls_if" id="k%PaYz;!ILGUS0hrao-1">
+                    <mutation elseif="2"></mutation>
+                    <value name="IF0">
+                      <block type="logic_compare" id="F/b33wLMB]]B}`#@;R(u">
+                        <field name="OP">EQ</field>
+                        <value name="A">
+                          <block type="ir_received_code" id="wYhL;~u6~wQ{1b_[!#py"></block>
+                        </value>
+                        <value name="B">
+                          <block type="text" id="e65{(s#TiY;rtYivQb7]">
+                            <field name="TEXT">ffa25d</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <statement name="DO0">
+                      <block type="startPlus_led" id="=MED2^9%^Dztfdq2[}:)">
+                        <field name="LED">r_pin</field>
+                        <value name="ON_OFF">
+                          <block type="logic_negate" id="e^Lc.*mLq)MPPni~.M_N" inline="true">
+                            <value name="BOOL">
+                              <block type="inout_custom_digital_read" id="_b4H9+RPnff_QNGQ(h2_">
+                                <value name="PIN_READ">
+                                  <block type="math_number" id="?Fl*2w/OXt!T_|h7HZiR">
+                                    <field name="NUM">13</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                      </block>
+                    </statement>
+                    <value name="IF1">
+                      <block type="logic_compare" id=";$6;qm-l:{50sV`_ggSc">
+                        <field name="OP">EQ</field>
+                        <value name="A">
+                          <block type="ir_received_code" id="z^0e;t[J1^S;F~hgIUK#"></block>
+                        </value>
+                        <value name="B">
+                          <block type="text" id="B38xnfFem%UcghgYrVKc">
+                            <field name="TEXT">ff629d</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <statement name="DO1">
+                      <block type="startPlus_led" id="u;gPLQoz|w~-2hC-~l/^">
+                        <field name="LED">y_pin</field>
+                        <value name="ON_OFF">
+                          <block type="logic_negate" id="E|~RXcrtg_m1QRvSCJNI" inline="true">
+                            <value name="BOOL">
+                              <block type="inout_custom_digital_read" id="zCran7C?-;N$YOV0y8iQ">
+                                <value name="PIN_READ">
+                                  <block type="math_number" id="n=fbBvQ`@E2e(HNpgi8@">
+                                    <field name="NUM">12</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                      </block>
+                    </statement>
+                    <value name="IF2">
+                      <block type="logic_compare" id="^=K+L$wwhd!U0zo+~(Jt">
+                        <field name="OP">EQ</field>
+                        <value name="A">
+                          <block type="ir_received_code" id="C=G@t0k`)W9VhShKJd;)"></block>
+                        </value>
+                        <value name="B">
+                          <block type="text" id="l^%.yd?;6PIW)fiBqqdu">
+                            <field name="TEXT">ffe21d</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <statement name="DO2">
+                      <block type="startPlus_led" id="U`I3K/h#-c;_q(++]VN]">
+                        <field name="LED">g_pin</field>
+                        <value name="ON_OFF">
+                          <block type="logic_negate" id="JH]}j*NZ@ugmgQ/bk;td" inline="true">
+                            <value name="BOOL">
+                              <block type="inout_custom_digital_read" id="^Q*bHURL.|_7Ik]W`JJ(">
+                                <value name="PIN_READ">
+                                  <block type="math_number" id="@*|iXFFpAqzq[f!__MtC">
+                                    <field name="NUM">11</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                      </block>
+                    </statement>
+                  </block>
+                </statement>
+                <next>
+                  <block type="oled_display_draw_commands" id="OXK}IeYT|0SKUsY(Hxfx">
+                    <statement name="DRAW_CMD">
+                      <block type="oled_display_draw_text" id="mkl?*u6N9$t@dO%@Dyhc">
+                        <value name="START_X">
+                          <block type="math_number" id="=ySF}Sy.1hS+V)VqRrF1">
+                            <field name="NUM">0</field>
+                          </block>
+                        </value>
+                        <value name="START_Y">
+                          <block type="math_number" id="d]=}C]Xicm5o=+s=qq_$">
+                            <field name="NUM">0</field>
+                          </block>
+                        </value>
+                        <value name="CONTENT">
+                          <block type="text_join" id=".9],bs%NiCMR{l}vHk.3" inline="false">
+                            <mutation items="2"></mutation>
+                            <value name="ADD0">
+                              <block type="text" id="o-HMH-_{K@(W|8aqj488">
+                                <field name="TEXT">Code: </field>
+                              </block>
+                            </value>
+                            <value name="ADD1">
+                              <block type="ir_received_code" id="A({`EGdirj7PVItR+Q7i"></block>
+                            </value>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="oled_display_draw_text" id="jifD_C6j~[H7F:L`YNQD">
+                            <value name="START_X">
+                              <block type="math_number" id="xf6LZ9`:x]mktY_?k7`|">
+                                <field name="NUM">0</field>
+                              </block>
+                            </value>
+                            <value name="START_Y">
+                              <block type="math_number" id="#Ss#R;b8EI$wv]1%Bh?^">
+                                <field name="NUM">10</field>
+                              </block>
+                            </value>
+                            <value name="CONTENT">
+                              <block type="text_join" id="))#|7b1FZPB,bSCQyEYs" inline="false">
+                                <mutation items="2"></mutation>
+                                <value name="ADD0">
+                                  <block type="text" id="Jc(0#cQLN`Eqk2/IkXCd">
+                                    <field name="TEXT">Type: </field>
+                                  </block>
+                                </value>
+                                <value name="ADD1">
+                                  <block type="ir_received_type" id="^|%F$!H-RhOy`W+@r2%v"></block>
+                                </value>
+                              </block>
+                            </value>
+                          </block>
+                        </next>
+                      </block>
+                    </statement>
+                    <next>
+                      <block type="delay_custom" id="g,J8)!hu?%D]0yDCzQr3" inline="false">
+                        <value name="DELAY_TIME">
+                          <block type="math_number" id="Td?U[x+`S+8KtT}a+R!L">
+                            <field name="NUM">100</field>
+                          </block>
+                        </value>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </statement>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+</xml>

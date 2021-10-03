@@ -1,0 +1,58 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <block type="board_initializes_setup" id="v_/yogjFmA@P8oZ]jZHj" x="130" y="130">
+    <field name="BOARD_TYPE">7697</field>
+    <statement name="CONTENT">
+      <block type="oled_display_setting_new" id="DRKjPnKdVKW[|Aj+FIiL">
+        <next>
+          <block type="oled_display_clear" id="WLsDVGXPmd_@r]ihIyx*"></block>
+        </next>
+      </block>
+    </statement>
+    <next>
+      <block type="initializes_loop" id="K%s^J9;Xsh/7#O?mR7-U">
+        <statement name="CONTENT">
+          <block type="oled_display_draw_commands" id="Vi3cp4jrT5;V|4m!eY}h">
+            <statement name="DRAW_CMD">
+              <block type="oled_display_draw_text" id="!Xnnt5jcjLIUvor0_++?">
+                <value name="START_X">
+                  <block type="math_number" id="m|7b6}pNb*N_~Y{F!na}">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+                <value name="START_Y">
+                  <block type="math_number" id="m1#(IcK)Wf!+^}lXgZhn">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+                <value name="CONTENT">
+                  <block type="text_join" id="579" inline="false">
+                    <mutation items="2"></mutation>
+                    <value name="ADD0">
+                      <block type="text" id="580">
+                        <field name="TEXT">PHR: </field>
+                      </block>
+                    </value>
+                    <value name="ADD1">
+                      <block type="startPlus_vr" id="9YmSU9*(N,K=!Br*Lh/9">
+                        <field name="TYPE">phr</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+              </block>
+            </statement>
+            <next>
+              <block type="delay_custom" id="vv4EX%iZy?}zTwE}1q{9" inline="false">
+                <value name="DELAY_TIME">
+                  <block type="math_number" id="@z`yN6^=/D)s;TJS{+$E">
+                    <field name="NUM">100</field>
+                  </block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+</xml>

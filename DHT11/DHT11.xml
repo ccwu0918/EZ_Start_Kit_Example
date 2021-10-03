@@ -1,0 +1,87 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <block type="board_initializes_setup" id="K7,U[kkPRv7$O;_|VpE%" x="50" y="70">
+    <field name="BOARD_TYPE">7697</field>
+    <statement name="CONTENT">
+      <block type="oled_display_setting_new" id="=#cPDh(5_?+R8+`UHZ`-">
+        <next>
+          <block type="oled_display_clear" id="|li]22nb!sk%;?PmE7=|"></block>
+        </next>
+      </block>
+    </statement>
+    <next>
+      <block type="initializes_loop" id="100">
+        <statement name="CONTENT">
+          <block type="oled_display_draw_commands" id="?7SeC-W9}$?KW5!I`[N9">
+            <statement name="DRAW_CMD">
+              <block type="oled_display_draw_text" id="233">
+                <value name="START_X">
+                  <block type="math_number" id="234">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+                <value name="START_Y">
+                  <block type="math_number" id="235">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+                <value name="CONTENT">
+                  <block type="text_join" id="105" inline="false">
+                    <mutation items="2"></mutation>
+                    <value name="ADD0">
+                      <block type="text" id="106">
+                        <field name="TEXT">Temp: </field>
+                      </block>
+                    </value>
+                    <value name="ADD1">
+                      <block type="startPlus_dht11" id="|(j8-bvNPSK-^8-;Z`$D">
+                        <field name="DHT">readTemperature</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <next>
+                  <block type="oled_display_draw_text" id="242">
+                    <value name="START_X">
+                      <block type="math_number" id="243">
+                        <field name="NUM">0</field>
+                      </block>
+                    </value>
+                    <value name="START_Y">
+                      <block type="math_number" id="244">
+                        <field name="NUM">10</field>
+                      </block>
+                    </value>
+                    <value name="CONTENT">
+                      <block type="text_join" id="111" inline="false">
+                        <mutation items="2"></mutation>
+                        <value name="ADD0">
+                          <block type="text" id="112">
+                            <field name="TEXT">Humid: </field>
+                          </block>
+                        </value>
+                        <value name="ADD1">
+                          <block type="startPlus_dht11" id="G6U8QJecNe*4j|/M=9}:">
+                            <field name="DHT">readHumidity</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </statement>
+            <next>
+              <block type="delay_custom" id="114" inline="false">
+                <value name="DELAY_TIME">
+                  <block type="math_number" id="115">
+                    <field name="NUM">100</field>
+                  </block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+</xml>

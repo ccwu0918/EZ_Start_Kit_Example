@@ -1,0 +1,200 @@
+<xml version="F1" board="LinkIt 7697" xmlns="https://developers.google.com/blockly/xml">
+  <block type="board_initializes_setup" id="0" x="50" y="-90">
+    <field name="BOARD_TYPE">7697</field>
+    <statement name="CONTENT">
+      <block type="oled_display_setting_new" id="Mt#o$2Ca@xh0)t+n/4VE">
+        <next>
+          <block type="oled_display_set_chinese_font" id="ecSOxAd_]@%4!m$Fj+x6"></block>
+        </next>
+      </block>
+    </statement>
+    <next>
+      <block type="initializes_loop" id="1">
+        <statement name="CONTENT">
+          <block type="oled_display_set_color" id="5sWH-]vK^L#svf1mN{GB">
+            <field name="DRAW_COLOR">u8g2.setDrawColor(1);</field>
+            <next>
+              <block type="oled_display_draw_commands" id="K;t1D7Ea|QC+=?t.kr.:">
+                <statement name="DRAW_CMD">
+                  <block type="oled_display_draw_text" id="H.Kcz(4)C$H7ghJ#ZjwD">
+                    <value name="START_X">
+                      <block type="math_number" id="i*syG0DI:D#rBaFBmV_E">
+                        <field name="NUM">30</field>
+                      </block>
+                    </value>
+                    <value name="START_Y">
+                      <block type="math_number" id="*)nyr}LJ8yE*..dIPlb9">
+                        <field name="NUM">1</field>
+                      </block>
+                    </value>
+                    <value name="CONTENT">
+                      <block type="text" id="~w@`04cYnqr]|oO,0.?P">
+                        <field name="TEXT">中文反相字顯示</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="oled_display_draw_line" id="1o|p9Z/,k/ZDu?,y7~by">
+                        <value name="START_X">
+                          <block type="math_number" id="?G:SHBg@=Zm?b:HT/4h^">
+                            <field name="NUM">30</field>
+                          </block>
+                        </value>
+                        <value name="START_Y">
+                          <block type="math_number" id="85jxPJKlUD[RUCK;9Dg;">
+                            <field name="NUM">17</field>
+                          </block>
+                        </value>
+                        <value name="END_X">
+                          <block type="math_number" id="2GbIr?i;oWLdX:?c/y*[">
+                            <field name="NUM">93</field>
+                          </block>
+                        </value>
+                        <value name="END_Y">
+                          <block type="math_number" id=";v0t;#Aag=0U,hVfC)#7">
+                            <field name="NUM">17</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="oled_display_draw_text" id="*71ewz41|qpQCg}R47Mp">
+                            <value name="START_X">
+                              <block type="math_number" id="{imHwiBisR1+-U[RzDzS">
+                                <field name="NUM">5</field>
+                              </block>
+                            </value>
+                            <value name="START_Y">
+                              <block type="math_number" id="DXm(D,^Z8oYxyXQ=CLdP">
+                                <field name="NUM">30</field>
+                              </block>
+                            </value>
+                            <value name="CONTENT">
+                              <block type="text" id="(YeH/~MzpgGWtWRaU%!c">
+                                <field name="TEXT">中文反相字顯示測試</field>
+                              </block>
+                            </value>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </statement>
+                <next>
+                  <block type="delay_custom" id="Oy!mv*na*}!x.QlQ0xlL">
+                    <value name="DELAY_TIME">
+                      <block type="math_number" id="z5r8sL2L0w?6IBM6hgy[">
+                        <field name="NUM">2000</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="oled_display_draw_commands" id="H)Jlf)Z^%3*xvpL#0d%B">
+                        <statement name="DRAW_CMD">
+                          <block type="oled_display_draw_box" id="l#I05z^$5iF$YIgRH+wM">
+                            <value name="START_X">
+                              <block type="math_number" id="3m54LqD#!_-LRcvRH(vi">
+                                <field name="NUM">0</field>
+                              </block>
+                            </value>
+                            <value name="START_Y">
+                              <block type="math_number" id="v4N:nPDa{B4sH)O^L+UU">
+                                <field name="NUM">0</field>
+                              </block>
+                            </value>
+                            <value name="END_X">
+                              <block type="math_number" id="(D!@ymi-eACY[:FW_TI[">
+                                <field name="NUM">128</field>
+                              </block>
+                            </value>
+                            <value name="END_Y">
+                              <block type="math_number" id="x^]b~:J_EV=z5h~n`AR-">
+                                <field name="NUM">64</field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="oled_display_set_color" id="Dw}biVuVxeg1FaTT)fe?">
+                                <field name="DRAW_COLOR">u8g2.setDrawColor(0);</field>
+                                <next>
+                                  <block type="oled_display_draw_text" id="T=544rFcI.y#c9#_NRN7">
+                                    <value name="START_X">
+                                      <block type="math_number" id="9p$Nl!TQe4c8NCW#@oY^">
+                                        <field name="NUM">30</field>
+                                      </block>
+                                    </value>
+                                    <value name="START_Y">
+                                      <block type="math_number" id="u0`q@Rg}3Wz~rm3|a~j:">
+                                        <field name="NUM">1</field>
+                                      </block>
+                                    </value>
+                                    <value name="CONTENT">
+                                      <block type="text" id="oUJY}Dqhkq@C6{*aSk2u">
+                                        <field name="TEXT">中文反相字顯示</field>
+                                      </block>
+                                    </value>
+                                    <next>
+                                      <block type="oled_display_draw_line" id="k4mr,Rmy81tiV#-K)M$t">
+                                        <value name="START_X">
+                                          <block type="math_number" id="yS+n1iyRLi95LOQvW@9!">
+                                            <field name="NUM">30</field>
+                                          </block>
+                                        </value>
+                                        <value name="START_Y">
+                                          <block type="math_number" id="T=mz}Q$TRZr`Zgj213eR">
+                                            <field name="NUM">17</field>
+                                          </block>
+                                        </value>
+                                        <value name="END_X">
+                                          <block type="math_number" id="^dm/nql4/os!])?;oNjZ">
+                                            <field name="NUM">93</field>
+                                          </block>
+                                        </value>
+                                        <value name="END_Y">
+                                          <block type="math_number" id="`,wD$oC!/lVbc^(%AHre">
+                                            <field name="NUM">17</field>
+                                          </block>
+                                        </value>
+                                        <next>
+                                          <block type="oled_display_draw_text" id="c#z[JxhLiPz.iiKS#%AM">
+                                            <value name="START_X">
+                                              <block type="math_number" id="liZsTdi3{jRt8Mhx?wO6">
+                                                <field name="NUM">5</field>
+                                              </block>
+                                            </value>
+                                            <value name="START_Y">
+                                              <block type="math_number" id="[zop@!{}KTw2S`$!*]:z">
+                                                <field name="NUM">30</field>
+                                              </block>
+                                            </value>
+                                            <value name="CONTENT">
+                                              <block type="text" id=";cyriCPK2,{6R^sc}{j)">
+                                                <field name="TEXT">中文反相字顯示測試</field>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </statement>
+                        <next>
+                          <block type="delay_custom" id="/Q4L^kZo$T0P;IBw_F9j">
+                            <value name="DELAY_TIME">
+                              <block type="math_number" id="I%24{nwzEz0hRZrmBlqX">
+                                <field name="NUM">2000</field>
+                              </block>
+                            </value>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+</xml>

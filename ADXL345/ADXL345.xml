@@ -1,0 +1,251 @@
+<xml version="F1" board="LinkIt 7697" xmlns="https://developers.google.com/blockly/xml">
+  <block type="board_initializes_setup" id="K7,U[kkPRv7$O;_|VpE%" x="10" y="50">
+    <field name="BOARD_TYPE">7697</field>
+    <statement name="CONTENT">
+      <block type="serial_init" id="n%/+ipvMkcl3J~xtXZ(d">
+        <field name="SPEED">9600</field>
+        <next>
+          <block type="oled_display_setting_new" id=",Zy,+C3Kz%SID-daz]Y#">
+            <next>
+              <block type="oled_display_set_chinese_font" id="`mbA0xketY7@eEKhNlee"></block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <next>
+      <block type="initializes_loop" id="100">
+        <statement name="CONTENT">
+          <block type="serial_println" id="R=]X[|1e]Pry[WYWCu+[">
+            <value name="CONTENT">
+              <block type="text_join" id="X]Mb)nLXDs]XGn%nYRL1" inline="false">
+                <mutation items="2"></mutation>
+                <value name="ADD0">
+                  <block type="text" id="#qZV`cStQ.Y?-XmLV90I">
+                    <field name="TEXT">X: </field>
+                  </block>
+                </value>
+                <value name="ADD1">
+                  <block type="adxl345_read" id="NbS06O3g3c2IK2}8%2}Y">
+                    <field name="SENSOR">DUMMY</field>
+                    <field name="PIN">PIN</field>
+                    <field name="AXIS">X</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <next>
+              <block type="serial_println" id="HUSPN$Q7C.3wAD]MQP}@">
+                <value name="CONTENT">
+                  <block type="text_join" id=".A+ddH9.]uKuVyAN5[JC" inline="false">
+                    <mutation items="2"></mutation>
+                    <value name="ADD0">
+                      <block type="text" id="uNpjS=S1e|?pAFEG+@$)">
+                        <field name="TEXT">Y: </field>
+                      </block>
+                    </value>
+                    <value name="ADD1">
+                      <block type="adxl345_read" id="uxiC2H5LcpsnQFZF~/G-">
+                        <field name="SENSOR">DUMMY</field>
+                        <field name="PIN">PIN</field>
+                        <field name="AXIS">Y</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <next>
+                  <block type="serial_println" id="!X;2WOFi}li(bT6D}8mK">
+                    <value name="CONTENT">
+                      <block type="text_join" id="i]vr#U^yDe,;}C9(XoRQ" inline="false">
+                        <mutation items="2"></mutation>
+                        <value name="ADD0">
+                          <block type="text" id="qI[P8Ct;2_dsMi6@=Ql!">
+                            <field name="TEXT">Z: </field>
+                          </block>
+                        </value>
+                        <value name="ADD1">
+                          <block type="adxl345_read" id="L3d(mbPr,_P7RXB,*bV~">
+                            <field name="SENSOR">DUMMY</field>
+                            <field name="PIN">PIN</field>
+                            <field name="AXIS">Z</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="serial_println" id="3;#mZU!#$Se7(-~FTwFR">
+                        <value name="CONTENT">
+                          <block type="text_join" id="U2_yS1g:#dI-.G/4u.dS" inline="false">
+                            <mutation items="2"></mutation>
+                            <value name="ADD0">
+                              <block type="text" id="5a])7WMh.MPksjuNl;QA">
+                                <field name="TEXT">俯仰: </field>
+                              </block>
+                            </value>
+                            <value name="ADD1">
+                              <block type="adxl345_read_attitude" id="h_!{Ub^_~:@h?/Sdxewz">
+                                <field name="SENSOR">DUMMY</field>
+                                <field name="PIN">PIN</field>
+                                <field name="ATTITUDE">Pitch</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="serial_println" id="u-8v)b!*d_cvf=~!`j@/">
+                            <value name="CONTENT">
+                              <block type="text_join" id="5O)T_SW~XyCY4PCEJRF:" inline="false">
+                                <mutation items="2"></mutation>
+                                <value name="ADD0">
+                                  <block type="text" id="/hq)0=CS)3:?#0I3lm;_">
+                                    <field name="TEXT">翻滾: </field>
+                                  </block>
+                                </value>
+                                <value name="ADD1">
+                                  <block type="adxl345_read_attitude" id="s?-`i$Z}LU,kKSS|OIF+">
+                                    <field name="SENSOR">DUMMY</field>
+                                    <field name="PIN">PIN</field>
+                                    <field name="ATTITUDE">Roll</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="oled_display_draw_commands" id="`vtUem*XWCYApyY=Yi(/">
+                                <statement name="DRAW_CMD">
+                                  <block type="oled_display_draw_text" id="JJ;zreX%]fBUr:oJQs#X">
+                                    <value name="START_X">
+                                      <block type="math_number" id=",~M$RorY{U.QB`Q{2/gK">
+                                        <field name="NUM">0</field>
+                                      </block>
+                                    </value>
+                                    <value name="START_Y">
+                                      <block type="math_number" id="93P5pouU8/cqE=@0(LN9">
+                                        <field name="NUM">1</field>
+                                      </block>
+                                    </value>
+                                    <value name="CONTENT">
+                                      <block type="text" id="Y0U^c^rd^7EsL]NJoM,]">
+                                        <field name="TEXT">EZ Starter Kit+</field>
+                                      </block>
+                                    </value>
+                                    <next>
+                                      <block type="oled_display_draw_text" id="233">
+                                        <value name="START_X">
+                                          <block type="math_number" id="234">
+                                            <field name="NUM">0</field>
+                                          </block>
+                                        </value>
+                                        <value name="START_Y">
+                                          <block type="math_number" id="235">
+                                            <field name="NUM">17</field>
+                                          </block>
+                                        </value>
+                                        <value name="CONTENT">
+                                          <block type="text_join" id="105" inline="false">
+                                            <mutation items="2"></mutation>
+                                            <value name="ADD0">
+                                              <block type="text" id="106">
+                                                <field name="TEXT">X:</field>
+                                              </block>
+                                            </value>
+                                            <value name="ADD1">
+                                              <block type="adxl345_read" id="`zY^7SAa.xYG`Yba~#Wl">
+                                                <field name="SENSOR">DUMMY</field>
+                                                <field name="PIN">PIN</field>
+                                                <field name="AXIS">X</field>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </value>
+                                        <next>
+                                          <block type="oled_display_draw_text" id="242">
+                                            <value name="START_X">
+                                              <block type="math_number" id="243">
+                                                <field name="NUM">0</field>
+                                              </block>
+                                            </value>
+                                            <value name="START_Y">
+                                              <block type="math_number" id="244">
+                                                <field name="NUM">33</field>
+                                              </block>
+                                            </value>
+                                            <value name="CONTENT">
+                                              <block type="text_join" id="h7:U{=l8XLsECa$H6SpH" inline="false">
+                                                <mutation items="2"></mutation>
+                                                <value name="ADD0">
+                                                  <block type="text" id="sF%gBoguZ!QBuZ)*@Q9M">
+                                                    <field name="TEXT">Y:</field>
+                                                  </block>
+                                                </value>
+                                                <value name="ADD1">
+                                                  <block type="adxl345_read" id="$r_eK8+U0:iwdtC*id3v">
+                                                    <field name="SENSOR">DUMMY</field>
+                                                    <field name="PIN">PIN</field>
+                                                    <field name="AXIS">Y</field>
+                                                  </block>
+                                                </value>
+                                              </block>
+                                            </value>
+                                            <next>
+                                              <block type="oled_display_draw_text" id="2?hxgIc/W,l)`.d|.tX?">
+                                                <value name="START_X">
+                                                  <block type="math_number" id="Jrgmn2|SvX$K!Dg7lu@m">
+                                                    <field name="NUM">0</field>
+                                                  </block>
+                                                </value>
+                                                <value name="START_Y">
+                                                  <block type="math_number" id="vg,6JKb7Sw=NmRj(Neza">
+                                                    <field name="NUM">49</field>
+                                                  </block>
+                                                </value>
+                                                <value name="CONTENT">
+                                                  <block type="text_join" id=",[C~=GWLbu^h$TMgF]M}" inline="false">
+                                                    <mutation items="2"></mutation>
+                                                    <value name="ADD0">
+                                                      <block type="text" id="r(587!v|O|W^7mABL/~W">
+                                                        <field name="TEXT">Z:</field>
+                                                      </block>
+                                                    </value>
+                                                    <value name="ADD1">
+                                                      <block type="adxl345_read" id="FUp%K*]DJe#sg(Vgn`|z">
+                                                        <field name="SENSOR">DUMMY</field>
+                                                        <field name="PIN">PIN</field>
+                                                        <field name="AXIS">Z</field>
+                                                      </block>
+                                                    </value>
+                                                  </block>
+                                                </value>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </statement>
+                                <next>
+                                  <block type="delay_custom" id="XFxmt2mR|_u0Ckz;lnI}">
+                                    <value name="DELAY_TIME">
+                                      <block type="math_number" id="5I*{0rmL7hUk7M~:3GEV">
+                                        <field name="NUM">500</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+</xml>

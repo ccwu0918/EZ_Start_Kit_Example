@@ -1,0 +1,110 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <variables>
+    <variable id="1JLi0;ydZLO%$zO*W!L?">image</variable>
+  </variables>
+  <block type="board_initializes_setup" id="0" x="110" y="-50">
+    <field name="BOARD_TYPE">7697</field>
+    <statement name="CONTENT">
+      <block type="oled_display_setting_new" id="Ov@P/]8gnMIViJ^6FTy[">
+        <next>
+          <block type="oled_display_clear" id="M_(pI?b[~kMe$-Pp~G@Y">
+            <next>
+              <block type="variables_set1" id="U~9/.F6Ed6cw0p0h4|(,">
+                <field name="POSITION">global</field>
+                <field name="TYPE">String</field>
+                <field name="VAR" id="1JLi0;ydZLO%$zO*W!L?">image</field>
+                <value name="LEN">
+                  <block type="math_number" id="~]N8;R#8-r:OmSqhh6b1">
+                    <field name="NUM">1</field>
+                  </block>
+                </value>
+                <value name="VALUE">
+                  <shadow type="text" id="1EU7N~@rIlNZFdb[1.ct">
+                    <field name="TEXT"></field>
+                  </shadow>
+                  <block type="text" id="6De{_W(3YCImYjPdNECq">
+                    <field name="TEXT">FF,FF,FF,FF,FF,FF,FF,FF,FF,FF,FF,FF, F8,FF,FF,FF,FF,FF,FF,FF,FF,FF,FF,FF, FF,FF,FF,7F,E0,FF,FF,FF,FF,FF,FF,FF, FF,FF,FF,FF,FF,FF,FF,81,03,F8,FF,FF, FF,FF,FF,FF,FF,FF,FF,FF,FF,FF,3F,FC, C2,C1,FF,FF,FF,B7,FF,BF,FF,FF,FF,FF, FF,FF,87,BF,F3,9F,FF,FF,FF,83,3F,00, FF,F3,3F,FF,FF,FF,F3,CF,F9,3F,FF,FF, 3F,F4,7F,B7,FF,0B,BF,07,FE,FF,FD,F7, F8,7F,FE,FF,BF,EF,7F,A3,7F,F0,DF,DC, FF,FF,FE,FB,FC,FF,FC,FF,BF,68,7F,B8, BF,FB,1F,DE,FF,7F,FF,79,FE,FF,F9,FF, 3F,6F,7F,C5,FF,FB,DF,5E,FC,9F,FF,3D, FE,FF,F3,FF,5F,98,7F,DD,FF,C3,5F,82, FD,CF,FF,3E,FF,FF,F7,FF,5F,93,7F,C0, FF,F8,9F,D7,FE,E7,FF,9E,FF,FF,E7,FF, 5F,9D,7F,FF,FF,FF,DF,D5,FE,E7,7F,CE, FF,FF,CF,FF,EF,AE,FD,77,FE,07,1F,94, FE,F3,7F,E7,FF,FF,CF,FF,EF,BD,BD,EF, 7D,B8,DF,56,FF,F9,7F,F7,FF,FF,9F,FF, 1F,4B,BD,DE,7D,9F,DF,DC,FF,F9,7F,FB, FF,FF,9F,FF,5F,D7,DC,BD,7F,DF,1F,DF, FF,FC,BF,FF,FF,FF,BF,FF,DF,F0,CC,C3, FF,02,FF,DF,FF,C4,B7,FF,FF,FF,BF,FF, FF,FF,FF,FF,FF,FF,FF,FF,7F,38,BA,03, F0,FF,BF,FF,FF,FF,FF,FF,FF,FF,FF,FF, BF,BF,79,3C,F0,FF,BF,FF,FF,FF,FF,FF, FF,FF,FF,FF,DF,9F,C3,07,F8,FF,3F,FF, FF,FF,FF,FF,FF,FF,FF,FF,9F,03,C3,F1, F8,FF,3F,FF,7F,CD,FF,EE,FF,FF,FF,FF, CF,3C,01,FF,F3,FF,7F,FF,6F,89,FF,85, FF,FC,CF,FF,4F,E3,80,FF,EF,FF,7F,FF, 6F,94,3F,F0,FF,C2,EF,81,67,9D,DF,3F, BE,FF,7F,FF,CF,09,FF,F1,1F,FC,37,F7, A7,BE,C3,FF,7C,FF,7F,FF,33,24,DB,F9, EF,FE,87,F7,B7,FE,BF,FF,F2,FE,7F,FF, 5F,B1,83,C1,FF,FE,B7,17,57,FF,C7,3F, EF,FD,7F,FF,A7,C2,5B,DA,FF,F0,97,60, 53,9F,BF,3F,DF,FD,7F,FF,EF,DE,DB,C2, 3F,FE,E7,B5,5B,9F,C7,3F,DF,F8,7F,FF, C3,C2,8B,FC,FF,FF,77,B5,EB,FE,F0,FF, 0F,FA,7F,FF,DF,C6,F7,E1,FF,C1,07,A5, E9,78,70,FF,83,F7,7F,FF,C3,DA,7F,7C, 1F,EE,B7,D5,ED,00,38,FE,C1,F7,7F,FE, DB,82,FF,81,DF,E7,37,F7,75,C0,19,00, E0,F7,7F,FE,C3,C8,1F,CE,DF,F7,C7,F7, 34,7F,F8,1F,F8,EF,FF,FE,F7,9D,FF,3E, BF,C0,FF,F7,D6,7F,F8,7F,FC,EF,FF,FE, FF,FF,7F,7F,FF,FF,FF,FF,DA,7F,F8,FF, F6,EF,FF,FC,FF,FF,FF,FF,FF,FF,FF,FF, 9A,3F,F0,7F,F3,EF,FF,FD,FF,FF,FF,FF, 07,FE,80,7F,BA,1F,86,BF,F1,C7,FF,F9, 1F,F8,FF,F8,F3,FC,BE,7F,7B,CF,1F,BE, F0,D9,FF,FB,DF,FB,7F,FE,FB,FC,BE,7F, 7B,77,3D,B8,78,DE,FF,FB,DF,FB,3F,FF, FB,FE,BE,7F,7D,71,59,B0,B8,DF,FF,F3, DF,FB,1F,F8,73,FE,9E,7F,7D,38,59,20, CC,9F,FF,F7,DF,FB,DF,F3,07,FE,DF,3F, 7D,2C,C9,20,F3,BF,FF,E7,FF,FB,DF,E7, FF,FE,DF,BF,7D,26,49,C1,FC,BF,FF,EF, FF,FB,DF,EF,FF,FE,DF,BF,7D,92,64,36, FF,BF,FF,EF,FF,FD,3F,F0,FF,FE,DF,BF, BE,00,00,2C,00,BF,FF,CF,FF,FD,FF,FF, FF,FF,FF,BF,9E,E1,07,C4,FF,BF,FF,DF, FF,FD,EF,FF,6F,ED,9F,B0,9E,FE,FF,87, FF,7F,FF,9F,FF,FD,DF,C7,83,F1,A7,76, 7E,FC,FF,0B,F0,FF,E0,BF,FF,FF,9F,D8, E7,E2,B7,72,FF,F8,FF,F0,00,FE,C7,BF, FF,FF,E7,DB,57,E7,C7,7C,FF,F3,7F,FE, 3F,F8,1F,3F,FF,FF,EF,DD,93,E9,FF,70, FE,CF,7F,FF,7F,F0,7F,7C,FF,FF,1F,E5, A7,E1,07,F7,F9,9F,BF,FF,7F,F0,FF,79, FF,FF,E3,EE,87,ED,6F,F9,F3,7F,BE,FF, FF,F0,FF,63,FF,FF,EF,CF,B7,E1,0F,FA, C7,FF,DC,FF,FF,F0,FF,CF,FF,FF,97,90, 87,EF,6F,F9,9F,FF,E1,FF,7F,F0,FF,9F, FF,FF,EB,DD,57,E8,1F,FE,3F,FE,F3,FF, 7F,F2,FF,3F,FF,FF,E3,8D,B7,EB,6F,FF, FF,F8,FF,FF,3F,F7,FF,BF,FF,FF,1D,F5, 37,EC,7F,80,FF,83,FF,FF,3F,EF,FF,BF, FF,FF,FD,F8,B7,ED,03,FF,FF,3F,FF,FF, 7F,DF,FF,9F,FF,FF,FF,87,37,EE,7F,FF, FF,7F,FE,FF,7F,9F,FF,C7,FF,FF,FF,FF, FF,CF,7F,FF,FF,FF,FC,FF,3F,1E,00,F0, FF,FF,FF,FF,FF,FF,FF,FF,FF,FF,01,FF, 81,C0,FF,FF,</field>
+                  </block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <next>
+      <block type="initializes_loop" id="1">
+        <statement name="CONTENT">
+          <block type="oled_display_set_color" id="3f=BD(4r6!E;:YB/k1O`">
+            <field name="DRAW_COLOR">u8g2.setDrawColor(1);</field>
+            <next>
+              <block type="oled_display_draw_commands" id="=hdFMdK^m#BMJ[0ah:Yq">
+                <statement name="DRAW_CMD">
+                  <block type="oled_display_show_xbm" id=")UO81Ab?Vg]?rR9z@qDN">
+                    <value name="XBM">
+                      <block type="variables_set5" id="mcGZ:[L)ql-ZPwfY@k1^">
+                        <field name="VAR" id="1JLi0;ydZLO%$zO*W!L?">image</field>
+                        <value name="INDEX">
+                          <block type="math_number" id="Gw2Z}a#~{aLuX{,L(JpF">
+                            <field name="NUM">0</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                  </block>
+                </statement>
+                <next>
+                  <block type="delay_custom" id="20P#vRfOa,3JjX3z^jBX">
+                    <value name="DELAY_TIME">
+                      <block type="math_number" id="dewj_~NFf6b0Aw=5F+$E">
+                        <field name="NUM">500</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="oled_display_set_color" id="Y6O,KGsaP5YA^ShE^#`6">
+                        <field name="DRAW_COLOR">u8g2.setDrawColor(0);</field>
+                        <next>
+                          <block type="oled_display_draw_commands" id="K%17EivctX^vAm~1Bi4r">
+                            <statement name="DRAW_CMD">
+                              <block type="oled_display_show_xbm" id="hBI#6Ipwo#6_]DYlm=(S">
+                                <value name="XBM">
+                                  <block type="variables_set5" id="ff-4v=]77(SWG]3|o_NK">
+                                    <field name="VAR" id="1JLi0;ydZLO%$zO*W!L?">image</field>
+                                    <value name="INDEX">
+                                      <block type="math_number" id="nxI4PT*=^Do?*d;Kz9SA">
+                                        <field name="NUM">0</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                              </block>
+                            </statement>
+                            <next>
+                              <block type="delay_custom" id=")Mw6Z$y_cs^k$}Sw@[:c">
+                                <value name="DELAY_TIME">
+                                  <block type="math_number" id="r|mw#3hj)F}}3?w!$o9G">
+                                    <field name="NUM">500</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+  <block type="text" id="wRnJNVt}Hem(lkPHl4Ai" disabled="true" x="570" y="-10">
+    <field name="TEXT">00,00,00,00,00,00,00,00,00,00,00,00, 00,00,00,00,00,00,00,00,00,00,00,00, 00,00,00,00,00,00,00,00,00,00,00,00, 00,00,00,00,00,00,00,00,00,00,00,00, 00,00,00,18,00,00,00,00,00,00,00,00, 00,00,00,00,00,00,00,04,00,00,00,00, 00,00,00,00,00,00,00,00,00,00,00,60, 00,00,00,00,00,00,00,00,00,00,00,00, 00,00,00,18,00,00,00,00,00,00,00,00, 00,00,00,00,00,00,00,26,00,00,00,00, 00,00,00,00,00,00,00,00,00,00,00,35, 0C,00,00,00,00,00,00,00,00,00,00,00, 00,00,D0,81,11,00,00,00,00,00,00,00, 00,00,00,00,00,80,49,68,C9,00,00,00, 00,00,00,00,00,00,00,00,00,20,2A,46, 12,0A,00,00,18,00,08,80,00,00,38,00, 00,64,C4,00,1A,52,00,00,1E,00,F8,F9, 03,7C,0C,00,00,08,19,00,C0,89,00,00, 3E,00,38,1B,03,EC,32,00,00,93,01,00, 60,69,00,80,F7,00,9C,1B,03,C6,38,00, 00,64,02,00,00,94,00,80,E1,01,C8,7D, 03,FE,CF,00,00,06,00,00,00,20,00,C0, FF,07,EC,3D,03,E6,77,00,00,00,00,00, 00,80,00,E0,9F,1F,9C,99,07,EE,7E,00, 00,40,11,02,04,02,00,30,0C,04,8C,F9, 03,E6,6E,00,00,80,C8,00,62,04,00,18, 7C,00,EC,31,07,6C,7E,00,00,00,11,01, 14,05,00,C0,7F,00,7C,00,07,F6,FF,00, 00,40,55,00,C9,01,00,80,1F,00,0C,00, 07,7E,1A,00,00,40,CC,02,59,04,00,00, 9E,03,0C,00,83,1F,D8,00,00,80,11,00, 12,01,00,C0,CD,00,0C,00,83,F9,9B,01, 00,1F,00,7C,00,F0,00,40,6C,00,1C,80, 07,99,99,01,00,3E,00,6E,00,DC,00,80, FE,03,08,00,03,39,1B,01,00,3E,00,6C, 00,FC,00,E0,FF,03,08,80,01,18,1C,00, 00,3E,00,FC,00,F0,00,60,09,00,08,C0, 01,04,06,00,00,3E,00,3C,00,DC,00,00, 00,00,00,00,00,00,00,00,00,00,48,80, 9A,00,00,00,00,00,00,00,00,00,00,00, 00,80,A9,01,00,01,00,00,00,00,00,00, 00,00,00,00,00,40,22,01,6D,02,00,00, 00,00,00,00,00,00,00,00,00,00,4D,01, D3,00,00,00,00,00,00,00,00,00,00,00, 00,80,20,00,08,02,00,00,00,00,00,00, 00,00,00,00,00,26,00,6C,00,D8,00,00, 00,00,00,00,00,00,00,00,00,7F,00,FC, 00,FC,00,00,00,00,00,00,00,00,00,00, 00,3E,00,7C,00,F8,00,80,00,00,00,07, 00,00,09,00,00,37,10,78,20,7C,00,80, 83,00,00,AE,03,C0,0F,00,00,7E,26,6E, 30,F8,00,C0,C3,00,F0,FF,07,C0,01,00, 00,3E,08,7C,44,F0,00,E0,CB,00,FE,FF, 07,C0,1F,00,00,3F,12,EC,68,F8,00,E0, ED,02,BC,33,00,F0,3B,00,00,3E,08,7C, 10,F8,00,80,6F,0F,80,F3,00,78,01,00, 00,54,94,4A,6A,0C,00,C0,EF,03,E0,7F, 00,98,07,00,00,49,69,A8,08,B2,00,F8, F3,01,E0,01,00,E8,03,00,00,B6,22,2B, CB,48,00,F8,B6,03,00,3D,00,8C,07,00, 00,08,C6,60,10,A3,00,C0,9F,01,80,33, 00,0C,03,00,00,52,55,55,A5,9A,00,E0, B6,01,C0,71,00,44,35,00,00,36,10,04, 24,A8,00,30,B3,01,C0,7F,00,FE,17,00, 00,5F,00,00,00,F8,00,90,E3,01,C0,F0, 00,9F,52,00,00,3E,00,00,00,F8,00,F8, E3,03,C0,7F,00,FB,74,00,00,37,00,00, 00,B8,00,18,F2,0F,C0,71,00,E1,01,00, 00,3E,00,00,00,F8,00,04,0B,1F,C0,70, 80,B0,1F,00,00,3E,00,00,00,F8,00,C0, 01,3E,C0,78,80,08,FE,01,00,3F,00,00, 00,B8,00,80,00,00,00,38,00,00,F0,00, 00,3E,00,00,00,F8,00,00,00,00,00,00, 00,00,00,00,00,7E,00,00,00,D8,00,00, 00,00,00,00,00,00,00,00,00,3E,00,00, 00,B8,00,00,00,00,00,00,00,00,00,00, 00,37,00,00,00,F8,00,00,00,00,00,00, 00,00,00,00,00,3E,00,00,00,F8,00,00, 00,00,00,00,00,00,00,00,00,3E,00,00, 00,E8,00,00,00,00,00,00,00,00,00,00, 00,12,00,00,00,A0,00,00,00,00,00,00, 00,00,00,00,00,00,00,00,00,00,00,00, 00,00,00,00,00,00,00,00,00,00,00,00, 00,00,00,00,00,00,00,00,00,00,00,00, 00,00,00,00,00,00,00,00,00,00,00,00, 00,00,00,00,</field>
+  </block>
+  <block type="text" id="=2m|umJ?;EQI}JfedYzO" disabled="true" x="570" y="90">
+    <field name="TEXT">00,00,00,00,00,00,00,00,00,00,00,00, 00,00,00,00,00,00,00,00,00,00,00,00, 00,00,00,00,00,00,00,00,00,00,00,00, 00,00,00,00,00,00,00,00,00,00,00,00, 00,00,00,00,00,00,00,00,00,00,00,00, 00,00,00,00,00,00,00,00,00,00,00,00, 00,00,00,00,00,00,00,00,00,00,00,00, 00,00,00,00,00,00,00,00,00,00,00,00, 00,00,00,00,00,00,00,00,00,00,00,00, 00,00,00,00,00,00,00,40,00,00,00,00, 00,00,00,00,00,00,00,00,00,00,00,00, 00,00,00,00,60,00,00,00,00,00,E0,00, 00,00,00,20,00,00,00,00,70,00,E0,E7, 0F,F0,71,00,00,00,00,88,0A,00,00,00, F8,00,E0,EE,0E,70,9F,00,00,00,00,10, 20,00,00,00,DC,01,60,6E,0C,10,E3,00, 00,00,00,00,01,00,00,00,8E,07,70,FE, 0D,F8,73,00,00,00,00,89,80,00,00,00, A7,0F,A0,E7,0C,18,9F,03,00,00,80,20, 10,00,00,80,FF,1F,30,77,1C,F0,DF,01, 00,00,00,00,04,00,00,80,7D,7C,30,6E, 0E,38,F9,00,00,00,40,00,20,00,00,C0, 30,00,30,E7,0F,50,B3,01,00,00,00,01, 00,01,00,40,F8,01,B0,43,0C,B8,FD,03, 00,00,10,00,80,00,00,00,FF,03,B0,01, 1C,D0,7F,03,00,00,04,00,00,08,00,00, 7E,00,30,00,0C,F8,65,00,00,00,08,00, 00,20,00,00,30,06,30,00,0E,7E,60,02, 00,00,00,00,00,02,00,00,33,07,30,00, 0C,E6,6F,06,00,00,01,00,00,00,00,00, B3,00,70,00,0C,C4,67,06,00,10,00,00, 00,40,00,00,F8,07,20,00,0E,64,64,06, 00,00,00,00,00,00,00,80,FF,0F,70,00, 0E,60,60,00,00,12,00,14,01,00,00,80, BF,0E,20,00,07,20,38,00,00,00,00,1C, 07,00,08,00,00,00,00,00,00,00,00,00, 00,00,00,98,02,00,00,00,00,00,00,00, 00,00,00,00,00,00,00,2C,02,00,00,00, 00,00,00,00,00,00,00,00,00,00,00,80, 01,00,02,00,00,00,00,00,00,00,00,00, 00,00,00,00,00,80,02,00,00,00,00,00, 00,00,00,00,00,08,00,18,03,00,01,00, 00,00,00,00,00,00,00,00,00,04,00,94, 00,30,02,00,00,00,00,00,00,00,00,00, 00,A0,00,18,07,E0,01,00,00,00,00,00, 00,00,00,00,00,10,05,9C,01,9E,01,00, 00,00,00,00,00,00,00,00,00,80,00,00, 02,69,01,00,00,00,00,08,00,00,00,00, 00,00,51,00,E0,BB,02,00,06,02,00,38, 00,00,3E,00,00,A0,08,00,90,9C,01,00, 0E,06,00,F8,1F,00,1E,00,00,18,45,00, B2,67,22,00,0F,03,F0,FF,1F,00,07,00, 00,82,20,05,6D,B9,0B,80,6F,03,F0,FF, 18,00,FE,00,00,04,4A,1A,D7,6E,0A,00, B7,13,F0,CD,01,C0,CF,00,00,A1,10,80, 3C,DA,13,00,BE,3F,00,E6,01,E0,05,00, 80,A0,02,82,E7,93,01,80,BF,1F,00,FF, 01,60,3E,00,00,04,AA,24,B5,6E,2A,E0, CF,07,00,0F,00,60,0F,00,00,80,54,A5, BF,7D,11,E0,D7,04,00,E4,00,20,1E,00, 00,14,01,80,55,93,09,00,7F,04,00,FE, 00,30,0C,00,80,A1,88,A4,7E,FE,09,80, FB,06,00,C6,01,90,E0,00,00,04,21,85, D7,49,21,80,C5,06,00,FE,01,98,7F,00, 00,82,80,81,CF,72,10,C0,8C,07,00,C7, 01,78,5A,00,00,20,15,A8,7E,1F,06,40, 8F,07,00,C3,01,FC,D3,01,00,06,40,82, 65,85,13,E0,8D,0F,00,FF,01,AC,CB,01, 00,A0,28,94,BF,61,04,10,E8,1F,00,C7, 01,84,07,00,00,20,80,8C,3F,9C,15,00, 24,7C,00,C3,01,C2,7E,00,00,86,14,92, AD,CA,04,00,07,F8,00,E3,01,02,F8,07, 00,00,29,80,86,1E,00,00,03,00,00,E0, 00,00,E0,03,00,00,88,92,B3,01,00,00, 00,00,00,00,00,00,00,00,00,00,00,82, 04,00,00,00,00,00,00,00,00,00,00,00, 00,00,00,00,00,00,00,00,00,00,00,00, 00,00,00,00,00,00,00,00,00,00,00,00, 00,00,00,00,00,00,00,00,00,00,00,00, 00,00,00,00,00,00,00,00,00,00,00,00, 00,00,00,00,00,00,00,00,00,00,00,00, 00,00,00,00,00,00,00,00,00,00,00,00, 00,00,00,00,00,00,00,00,00,00,00,00, 00,00,00,00,00,00,00,00,00,00,00,00, 00,00,00,00,00,00,00,00,00,00,00,00, 00,00,00,00,</field>
+  </block>
+</xml>

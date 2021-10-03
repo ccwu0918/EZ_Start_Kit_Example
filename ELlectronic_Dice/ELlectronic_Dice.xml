@@ -1,0 +1,146 @@
+<xml version="F1" board="LinkIt 7697" xmlns="https://developers.google.com/blockly/xml">
+  <block type="board_initializes_setup" id="K7,U[kkPRv7$O;_|VpE%" x="-430" y="-70">
+    <field name="BOARD_TYPE">7697</field>
+    <statement name="CONTENT">
+      <block type="serial_init" id="n%/+ipvMkcl3J~xtXZ(d">
+        <field name="SPEED">9600</field>
+        <next>
+          <block type="oled_display_setting_new" id=",Zy,+C3Kz%SID-daz]Y#">
+            <next>
+              <block type="oled_display_set_chinese_font" id="`mbA0xketY7@eEKhNlee"></block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <next>
+      <block type="initializes_loop" id="100">
+        <statement name="CONTENT">
+          <block type="adxl345_detect" id="dg-b)F$)7C]jw(qH?:,~">
+            <field name="SENSOR">DUMMY</field>
+            <next>
+              <block type="controls_if" id="|k*bn!tf37,9,vKlCC8#">
+                <mutation elseif="2"></mutation>
+                <value name="IF0">
+                  <block type="adxl345_gesture_detected" id="6cuKlu;`d*+!@Y_:FmmW">
+                    <field name="SENSOR">DUMMY</field>
+                    <field name="GESTURE">Tap</field>
+                  </block>
+                </value>
+                <statement name="DO0">
+                  <block type="serial_println" id="HUSPN$Q7C.3wAD]MQP}@">
+                    <value name="CONTENT">
+                      <block type="text" id="uNpjS=S1e|?pAFEG+@$)">
+                        <field name="TEXT">偵測到點一下</field>
+                      </block>
+                    </value>
+                  </block>
+                </statement>
+                <value name="IF1">
+                  <block type="adxl345_gesture_detected" id="G@ILz{yQy3fK_EW_HvYk">
+                    <field name="SENSOR">DUMMY</field>
+                    <field name="GESTURE">DoubleTap</field>
+                  </block>
+                </value>
+                <statement name="DO1">
+                  <block type="serial_println" id="G;ouq1^:kzzEy+:iB.W8">
+                    <value name="CONTENT">
+                      <block type="text" id="$!,lsc{[W0uG3AtEz#G(">
+                        <field name="TEXT">偵測到點二下</field>
+                      </block>
+                    </value>
+                  </block>
+                </statement>
+                <value name="IF2">
+                  <block type="adxl345_gesture_detected" id="%ji6b4~,ERvx1(Q-ZA=|">
+                    <field name="SENSOR">DUMMY</field>
+                    <field name="GESTURE">Activity</field>
+                  </block>
+                </value>
+                <statement name="DO2">
+                  <block type="serial_println" id="0ltlR.L1ax^lS[[m.r|:">
+                    <value name="CONTENT">
+                      <block type="text" id="N83Pg9w9OP4+J^3c=g_^">
+                        <field name="TEXT">移動</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="oled_display_draw_commands" id="`vtUem*XWCYApyY=Yi(/">
+                        <statement name="DRAW_CMD">
+                          <block type="oled_display_draw_text" id="JJ;zreX%]fBUr:oJQs#X">
+                            <value name="START_X">
+                              <block type="math_number" id=",~M$RorY{U.QB`Q{2/gK">
+                                <field name="NUM">0</field>
+                              </block>
+                            </value>
+                            <value name="START_Y">
+                              <block type="math_number" id="93P5pouU8/cqE=@0(LN9">
+                                <field name="NUM">1</field>
+                              </block>
+                            </value>
+                            <value name="CONTENT">
+                              <block type="text" id="Y0U^c^rd^7EsL]NJoM,]">
+                                <field name="TEXT">Electronic Dice</field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="oled_display_draw_text" id="233">
+                                <value name="START_X">
+                                  <block type="math_number" id="234">
+                                    <field name="NUM">0</field>
+                                  </block>
+                                </value>
+                                <value name="START_Y">
+                                  <block type="math_number" id="235">
+                                    <field name="NUM">17</field>
+                                  </block>
+                                </value>
+                                <value name="CONTENT">
+                                  <block type="text_join" id="105" inline="false">
+                                    <mutation items="2"></mutation>
+                                    <value name="ADD0">
+                                      <block type="text" id="106">
+                                        <field name="TEXT">點數:</field>
+                                      </block>
+                                    </value>
+                                    <value name="ADD1">
+                                      <block type="math_random_max_min" id="O?RwhO4kl41Y$38bRdU@">
+                                        <value name="MIN">
+                                          <block type="math_number" id="$n+/!tJ+L6VGgUHaaEB?">
+                                            <field name="NUM">1</field>
+                                          </block>
+                                        </value>
+                                        <value name="MAX">
+                                          <block type="math_number" id="9@Stp/+8[uqk$V$7l3|^">
+                                            <field name="NUM">6</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                              </block>
+                            </next>
+                          </block>
+                        </statement>
+                      </block>
+                    </next>
+                  </block>
+                </statement>
+                <next>
+                  <block type="delay_custom" id="XFxmt2mR|_u0Ckz;lnI}">
+                    <value name="DELAY_TIME">
+                      <block type="math_number" id="5I*{0rmL7hUk7M~:3GEV">
+                        <field name="NUM">200</field>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+</xml>

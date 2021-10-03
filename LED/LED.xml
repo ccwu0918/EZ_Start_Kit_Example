@@ -1,0 +1,245 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <variables>
+    <variable id="Y_H1-0$kfb``L)/?]*%}">i</variable>
+  </variables>
+  <block type="initializes_setup" id="469" x="-10" y="-110">
+    <next>
+      <block type="initializes_loop" id="470">
+        <statement name="CONTENT">
+          <block type="controls_for" id="471">
+            <field name="VAR" id="Y_H1-0$kfb``L)/?]*%}">i</field>
+            <value name="FROM">
+              <block type="math_number" id="472">
+                <field name="NUM">0</field>
+              </block>
+            </value>
+            <value name="TO">
+              <block type="math_number" id="473">
+                <field name="NUM">255</field>
+              </block>
+            </value>
+            <value name="BY">
+              <block type="math_number" id="E#C;R*5uW:6QJ;$Gu$hn">
+                <field name="NUM">1</field>
+              </block>
+            </value>
+            <statement name="DO">
+              <block type="startPlus_led_analog" id="(blfFGjsHfe{vFb4aCbr">
+                <field name="LED">r_pin</field>
+                <value name="NUM">
+                  <block type="variables_get" id="+:DUH2D0g12oEzM!uQh|">
+                    <field name="VAR" id="Y_H1-0$kfb``L)/?]*%}">i</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="delay_custom" id="476" inline="false">
+                    <value name="DELAY_TIME">
+                      <block type="math_number" id="477">
+                        <field name="NUM">1</field>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </statement>
+            <next>
+              <block type="controls_for" id="478">
+                <field name="VAR" id="Y_H1-0$kfb``L)/?]*%}">i</field>
+                <value name="FROM">
+                  <block type="math_number" id="479">
+                    <field name="NUM">255</field>
+                  </block>
+                </value>
+                <value name="TO">
+                  <block type="math_number" id="480">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+                <value name="BY">
+                  <block type="math_number" id="ddE=_oz)u||hJ]-i!HWq">
+                    <field name="NUM">1</field>
+                  </block>
+                </value>
+                <statement name="DO">
+                  <block type="startPlus_led_analog" id="B1]Kv[P!$sJWR#{`N4~^">
+                    <field name="LED">r_pin</field>
+                    <value name="NUM">
+                      <block type="variables_get" id="YrIxea4Bp:c6}g:r}LQk">
+                        <field name="VAR" id="Y_H1-0$kfb``L)/?]*%}">i</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="delay_custom" id="483" inline="false">
+                        <value name="DELAY_TIME">
+                          <block type="math_number" id="484">
+                            <field name="NUM">1</field>
+                          </block>
+                        </value>
+                      </block>
+                    </next>
+                  </block>
+                </statement>
+                <next>
+                  <block type="controls_for" id="485">
+                    <field name="VAR" id="Y_H1-0$kfb``L)/?]*%}">i</field>
+                    <value name="FROM">
+                      <block type="math_number" id="486">
+                        <field name="NUM">0</field>
+                      </block>
+                    </value>
+                    <value name="TO">
+                      <block type="math_number" id="487">
+                        <field name="NUM">255</field>
+                      </block>
+                    </value>
+                    <value name="BY">
+                      <block type="math_number" id="JfB0g%tu5}~u+3GhA#LM">
+                        <field name="NUM">1</field>
+                      </block>
+                    </value>
+                    <statement name="DO">
+                      <block type="startPlus_led_analog" id="E*vB8UyI@33/X7a;mC+y">
+                        <field name="LED">y_pin</field>
+                        <value name="NUM">
+                          <block type="variables_get" id=".b|0|rMr|48)OWC[C_yG">
+                            <field name="VAR" id="Y_H1-0$kfb``L)/?]*%}">i</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="delay_custom" id="490" inline="false">
+                            <value name="DELAY_TIME">
+                              <block type="math_number" id="491">
+                                <field name="NUM">1</field>
+                              </block>
+                            </value>
+                          </block>
+                        </next>
+                      </block>
+                    </statement>
+                    <next>
+                      <block type="controls_for" id="492">
+                        <field name="VAR" id="Y_H1-0$kfb``L)/?]*%}">i</field>
+                        <value name="FROM">
+                          <block type="math_number" id="493">
+                            <field name="NUM">255</field>
+                          </block>
+                        </value>
+                        <value name="TO">
+                          <block type="math_number" id="494">
+                            <field name="NUM">0</field>
+                          </block>
+                        </value>
+                        <value name="BY">
+                          <block type="math_number" id="|0DjlzRb|5@t]}Vg/k~g">
+                            <field name="NUM">1</field>
+                          </block>
+                        </value>
+                        <statement name="DO">
+                          <block type="startPlus_led_analog" id="nt`AP`6)6F~+P?/AX|C-">
+                            <field name="LED">y_pin</field>
+                            <value name="NUM">
+                              <block type="variables_get" id="Qo^(@yK/*A12j2xIQ[[[">
+                                <field name="VAR" id="Y_H1-0$kfb``L)/?]*%}">i</field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="delay_custom" id="497" inline="false">
+                                <value name="DELAY_TIME">
+                                  <block type="math_number" id="498">
+                                    <field name="NUM">1</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </next>
+                          </block>
+                        </statement>
+                        <next>
+                          <block type="controls_for" id="499">
+                            <field name="VAR" id="Y_H1-0$kfb``L)/?]*%}">i</field>
+                            <value name="FROM">
+                              <block type="math_number" id="500">
+                                <field name="NUM">0</field>
+                              </block>
+                            </value>
+                            <value name="TO">
+                              <block type="math_number" id="501">
+                                <field name="NUM">255</field>
+                              </block>
+                            </value>
+                            <value name="BY">
+                              <block type="math_number" id="m@suYHBq8JykaeKwyE;9">
+                                <field name="NUM">1</field>
+                              </block>
+                            </value>
+                            <statement name="DO">
+                              <block type="startPlus_led_analog" id="6%MU0lX}*G@dH^d$~xo5">
+                                <field name="LED">g_pin</field>
+                                <value name="NUM">
+                                  <block type="variables_get" id="n~1L?jXNpVlRaR6%o_gE">
+                                    <field name="VAR" id="Y_H1-0$kfb``L)/?]*%}">i</field>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="delay_custom" id="504" inline="false">
+                                    <value name="DELAY_TIME">
+                                      <block type="math_number" id="505">
+                                        <field name="NUM">1</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </next>
+                              </block>
+                            </statement>
+                            <next>
+                              <block type="controls_for" id="506">
+                                <field name="VAR" id="Y_H1-0$kfb``L)/?]*%}">i</field>
+                                <value name="FROM">
+                                  <block type="math_number" id="507">
+                                    <field name="NUM">255</field>
+                                  </block>
+                                </value>
+                                <value name="TO">
+                                  <block type="math_number" id="508">
+                                    <field name="NUM">0</field>
+                                  </block>
+                                </value>
+                                <value name="BY">
+                                  <block type="math_number" id="H$hB}xs_}]^`HktDgHxP">
+                                    <field name="NUM">1</field>
+                                  </block>
+                                </value>
+                                <statement name="DO">
+                                  <block type="startPlus_led_analog" id="%1RvlBCBlQl0eg;(Br5.">
+                                    <field name="LED">g_pin</field>
+                                    <value name="NUM">
+                                      <block type="variables_get" id="4+jz-]bO_6nv{/Y(*e`h">
+                                        <field name="VAR" id="Y_H1-0$kfb``L)/?]*%}">i</field>
+                                      </block>
+                                    </value>
+                                    <next>
+                                      <block type="delay_custom" id="511" inline="false">
+                                        <value name="DELAY_TIME">
+                                          <block type="math_number" id="512">
+                                            <field name="NUM">1</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </statement>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+</xml>

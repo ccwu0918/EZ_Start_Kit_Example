@@ -1,0 +1,91 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <block type="board_initializes_setup" id="q!OEW;=T(lvGF3{%qmt." x="50" y="290">
+    <field name="BOARD_TYPE">7697</field>
+    <statement name="CONTENT">
+      <block type="oled_display_setting_new" id="y@6_K#uhQ8yIu%Ms`Fwa">
+        <next>
+          <block type="oled_display_clear" id="=G/,J)Gs7L@H#Uwu}lA*">
+            <next>
+              <block type="startPlus_ir_receive" id=")$sHG)fSXLLV?_SLcZ[b"></block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <next>
+      <block type="initializes_loop" id="qxvQkpCq^/vNqWxzEg=d">
+        <statement name="CONTENT">
+          <block type="ir_event" id="=E%jZ?Z^)Mr[2-x~xF77">
+            <statement name="IR_EVENT">
+              <block type="oled_display_draw_commands" id="OXK}IeYT|0SKUsY(Hxfx">
+                <statement name="DRAW_CMD">
+                  <block type="oled_display_draw_text" id="mkl?*u6N9$t@dO%@Dyhc">
+                    <value name="START_X">
+                      <block type="math_number" id="=ySF}Sy.1hS+V)VqRrF1">
+                        <field name="NUM">0</field>
+                      </block>
+                    </value>
+                    <value name="START_Y">
+                      <block type="math_number" id="d]=}C]Xicm5o=+s=qq_$">
+                        <field name="NUM">0</field>
+                      </block>
+                    </value>
+                    <value name="CONTENT">
+                      <block type="text_join" id=".9],bs%NiCMR{l}vHk.3" inline="false">
+                        <mutation items="2"></mutation>
+                        <value name="ADD0">
+                          <block type="text" id="o-HMH-_{K@(W|8aqj488">
+                            <field name="TEXT">Code: </field>
+                          </block>
+                        </value>
+                        <value name="ADD1">
+                          <block type="ir_received_code" id="A({`EGdirj7PVItR+Q7i"></block>
+                        </value>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="oled_display_draw_text" id="jifD_C6j~[H7F:L`YNQD">
+                        <value name="START_X">
+                          <block type="math_number" id="xf6LZ9`:x]mktY_?k7`|">
+                            <field name="NUM">0</field>
+                          </block>
+                        </value>
+                        <value name="START_Y">
+                          <block type="math_number" id="#Ss#R;b8EI$wv]1%Bh?^">
+                            <field name="NUM">10</field>
+                          </block>
+                        </value>
+                        <value name="CONTENT">
+                          <block type="text_join" id="))#|7b1FZPB,bSCQyEYs" inline="false">
+                            <mutation items="2"></mutation>
+                            <value name="ADD0">
+                              <block type="text" id="Jc(0#cQLN`Eqk2/IkXCd">
+                                <field name="TEXT">Type: </field>
+                              </block>
+                            </value>
+                            <value name="ADD1">
+                              <block type="ir_received_type" id="^|%F$!H-RhOy`W+@r2%v"></block>
+                            </value>
+                          </block>
+                        </value>
+                      </block>
+                    </next>
+                  </block>
+                </statement>
+                <next>
+                  <block type="delay_custom" id="g,J8)!hu?%D]0yDCzQr3" inline="false">
+                    <value name="DELAY_TIME">
+                      <block type="math_number" id="Td?U[x+`S+8KtT}a+R!L">
+                        <field name="NUM">100</field>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </statement>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+</xml>
