@@ -1,0 +1,348 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <variables>
+    <variable id="/XxVL%_rss(6)Fa;_W*6">message</variable>
+  </variables>
+  <block type="board_initializes_setup" id="0" x="-290" y="-450">
+    <field name="BOARD_TYPE">7697</field>
+    <statement name="CONTENT">
+      <block type="oled_display_setting_new" id="@-.rjBnW`^[n_^r,,V@9">
+        <next>
+          <block type="oled_display_set_chinese_font" id="iVzfvu0yJ:nc`d,Zc,*Y">
+            <next>
+              <block type="oled_display_draw_commands" id="+?vYdZ~az#W?X=wtl04%">
+                <statement name="DRAW_CMD">
+                  <block type="oled_display_draw_text" id="JMVG)H}Z[Fr16taL|2U4">
+                    <value name="START_X">
+                      <block type="math_number" id=":Vh[TjReG+](K@r]P@v_">
+                        <field name="NUM">0</field>
+                      </block>
+                    </value>
+                    <value name="START_Y">
+                      <block type="math_number" id="0k+xGz$PNJt|0o?iK4Qk">
+                        <field name="NUM">1</field>
+                      </block>
+                    </value>
+                    <value name="CONTENT">
+                      <block type="text" id="}C6p%;7{7^:GhEUVY_TV">
+                        <field name="TEXT">請說「您好小恩」</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="oled_display_draw_text" id="nL8^Skw`.#Ud~h-#44?l">
+                        <value name="START_X">
+                          <block type="math_number" id="Rp7@RXXdRS3rjUQw9)2`">
+                            <field name="NUM">0</field>
+                          </block>
+                        </value>
+                        <value name="START_Y">
+                          <block type="math_number" id="cHMMd@R9pMGM1AKxG.RG">
+                            <field name="NUM">17</field>
+                          </block>
+                        </value>
+                        <value name="CONTENT">
+                          <block type="text" id="Ez){Of-H$Q1|%LlDy-My">
+                            <field name="TEXT">啟動語音辨識</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="oled_display_draw_text" id="|=?AXHqh~kQj2,?@N6es">
+                            <value name="START_X">
+                              <block type="math_number" id="dMw6Y,=R?b(1K-{r:`/L">
+                                <field name="NUM">0</field>
+                              </block>
+                            </value>
+                            <value name="START_Y">
+                              <block type="math_number" id="wHx+p/C5sfD5HTLMQq.U">
+                                <field name="NUM">33</field>
+                              </block>
+                            </value>
+                            <value name="CONTENT">
+                              <block type="text" id="FS894K!s(Anc[xzc.y?]">
+                                <field name="TEXT">A:學習 B:清除</field>
+                              </block>
+                            </value>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </statement>
+                <next>
+                  <block type="variables_set" id="MyWK-vnVWO[[kwgWp2rU">
+                    <field name="POSITION">global</field>
+                    <field name="TYPE">String</field>
+                    <field name="VAR" id="/XxVL%_rss(6)Fa;_W*6">message</field>
+                    <value name="VALUE">
+                      <shadow type="math_number" id="U^a^$GG,AH)asgfjWfW+">
+                        <field name="NUM">0</field>
+                      </shadow>
+                      <block type="text" id="J(S+RCu~Q{=/kpZ]|$|]">
+                        <field name="TEXT"></field>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <next>
+      <block type="initializes_loop" id="1">
+        <statement name="CONTENT">
+          <block type="startPlus_button" id="sztcnIV;G_V!s%onWo#p">
+            <field name="AB_BUTTON">A</field>
+            <statement name="MSG_BUTTON_CALL">
+              <block type="asr_learn" id="?5D5!mH/(DU-;VH{2@Y@"></block>
+            </statement>
+            <next>
+              <block type="startPlus_button" id="vwx8lU@E^vbqXS6,(iE.">
+                <field name="AB_BUTTON">B</field>
+                <statement name="MSG_BUTTON_CALL">
+                  <block type="asr_clear" id="XtD3dgrr}S;Ql25L-qX;"></block>
+                </statement>
+                <next>
+                  <block type="asr_check" id="QB@F|bA%u6$xpaA!@RDf">
+                    <next>
+                      <block type="controls_if" id="@_;[vZQUG:saXbc:^^dj">
+                        <mutation elseif="5"></mutation>
+                        <value name="IF0">
+                          <block type="asr_check_result" id="9^*o3q/x*z2pLq:MX)mN">
+                            <field name="RESULT">80</field>
+                          </block>
+                        </value>
+                        <statement name="DO0">
+                          <block type="startPlus_led" id="@3LQ4QU8rGL`PXy3;cv]">
+                            <field name="LED">r_pin</field>
+                            <value name="ON_OFF">
+                              <block type="inout_highlow" id="lH[bNigt?/2M1c_p]my)">
+                                <field name="BOOL">HIGH</field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="variables_set3" id="b[eqiQLLHo8gB8vQb_N)">
+                                <field name="VAR" id="/XxVL%_rss(6)Fa;_W*6">message</field>
+                                <value name="DELTA">
+                                  <shadow type="math_number" id="W-6(uC@yAF/-sQgoYQi(">
+                                    <field name="NUM">0</field>
+                                  </shadow>
+                                  <block type="text" id="o?DI}$gm9d?`G4[Vu5tY">
+                                    <field name="TEXT">紅燈已開啟</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </next>
+                          </block>
+                        </statement>
+                        <value name="IF1">
+                          <block type="asr_check_result" id="K_)^QMdC9CWRiZIMxz$E">
+                            <field name="RESULT">81</field>
+                          </block>
+                        </value>
+                        <statement name="DO1">
+                          <block type="startPlus_led" id="G5w%hRh]hygB`tCpD$J(">
+                            <field name="LED">r_pin</field>
+                            <value name="ON_OFF">
+                              <block type="inout_highlow" id="bbuH,7Zuy`$^V.9)jO_=">
+                                <field name="BOOL">LOW</field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="variables_set3" id="zKbOfK?u}?CpP|z{{1)L">
+                                <field name="VAR" id="/XxVL%_rss(6)Fa;_W*6">message</field>
+                                <value name="DELTA">
+                                  <shadow type="math_number">
+                                    <field name="NUM">0</field>
+                                  </shadow>
+                                  <block type="text" id="c;+iT+w@C_Eh`518KW9/">
+                                    <field name="TEXT">紅燈已關閉</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </next>
+                          </block>
+                        </statement>
+                        <value name="IF2">
+                          <block type="asr_check_result" id="Aa0Q.f=}N^+@NLeuMO}A">
+                            <field name="RESULT">82</field>
+                          </block>
+                        </value>
+                        <statement name="DO2">
+                          <block type="startPlus_led" id="iQ~AttkX#O}`Ps@3^amk">
+                            <field name="LED">y_pin</field>
+                            <value name="ON_OFF">
+                              <block type="inout_highlow" id="7QXss_$mvakd`1j2lNQb">
+                                <field name="BOOL">HIGH</field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="variables_set3" id="a^~r|sYnI*~7~N:u~u~b">
+                                <field name="VAR" id="/XxVL%_rss(6)Fa;_W*6">message</field>
+                                <value name="DELTA">
+                                  <shadow type="math_number">
+                                    <field name="NUM">0</field>
+                                  </shadow>
+                                  <block type="text" id="4hpEIf;gHxm,;kCuWHH;">
+                                    <field name="TEXT">黃燈已開啟</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </next>
+                          </block>
+                        </statement>
+                        <value name="IF3">
+                          <block type="asr_check_result" id="SdLwg!.c(6dOceG]}Smm">
+                            <field name="RESULT">83</field>
+                          </block>
+                        </value>
+                        <statement name="DO3">
+                          <block type="startPlus_led" id="+fLDWhA2`%KC3_q:q[Dm">
+                            <field name="LED">y_pin</field>
+                            <value name="ON_OFF">
+                              <block type="inout_highlow" id="a#3Qv03rOEU2tRw~8R6(">
+                                <field name="BOOL">LOW</field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="variables_set3" id="dW=Q2e7Jx=M)*3S/4I9`">
+                                <field name="VAR" id="/XxVL%_rss(6)Fa;_W*6">message</field>
+                                <value name="DELTA">
+                                  <shadow type="math_number">
+                                    <field name="NUM">0</field>
+                                  </shadow>
+                                  <block type="text" id="KkzKX:Ha2SJes^kXL*yl">
+                                    <field name="TEXT">黃燈已關閉</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </next>
+                          </block>
+                        </statement>
+                        <value name="IF4">
+                          <block type="asr_check_result" id="+W_8_*|MO;==qawi*Kkf">
+                            <field name="RESULT">84</field>
+                          </block>
+                        </value>
+                        <statement name="DO4">
+                          <block type="startPlus_led" id="/zt.hr}`k-(n=lt`n)7-">
+                            <field name="LED">g_pin</field>
+                            <value name="ON_OFF">
+                              <block type="inout_highlow" id="wB.+/t85MryTEYk`x@gC">
+                                <field name="BOOL">HIGH</field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="variables_set3" id="i[f6x_;K_[7VYT5^mre[">
+                                <field name="VAR" id="/XxVL%_rss(6)Fa;_W*6">message</field>
+                                <value name="DELTA">
+                                  <shadow type="math_number" id="(0/Y:c:c)K-kUcqWpg{c">
+                                    <field name="NUM">0</field>
+                                  </shadow>
+                                  <block type="text" id="E%D=fG~MfaSSJViTHR`[">
+                                    <field name="TEXT">綠燈已開啟</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </next>
+                          </block>
+                        </statement>
+                        <value name="IF5">
+                          <block type="asr_check_result" id="KC|ZQIP^u6MS`jQ5jr6:">
+                            <field name="RESULT">85</field>
+                          </block>
+                        </value>
+                        <statement name="DO5">
+                          <block type="startPlus_led" id="o~8M7b#y,lvCi,cOks(x">
+                            <field name="LED">g_pin</field>
+                            <value name="ON_OFF">
+                              <block type="inout_highlow" id="z)6(va~5L2l((;jatbI+">
+                                <field name="BOOL">LOW</field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="variables_set3" id="-5$.^?sK0LPHS^?E(kn[">
+                                <field name="VAR" id="/XxVL%_rss(6)Fa;_W*6">message</field>
+                                <value name="DELTA">
+                                  <shadow type="math_number" id="}l,y@{jj+5SnBQC^J]*@">
+                                    <field name="NUM">0</field>
+                                  </shadow>
+                                  <block type="text" id="F!+6*~.vXiPd5ZbdEsS!">
+                                    <field name="TEXT">綠燈已關閉</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </next>
+                          </block>
+                        </statement>
+                        <next>
+                          <block type="controls_if" id="?HU|9x0@$2qGvOc|{Ck|">
+                            <value name="IF0">
+                              <block type="logic_compare" id="B26/A*9Z(k-EjS]Cr(@h">
+                                <field name="OP">NEQ</field>
+                                <value name="A">
+                                  <block type="variables_get" id="8G$OC/E}`V[aUGYmTnB#">
+                                    <field name="VAR" id="/XxVL%_rss(6)Fa;_W*6">message</field>
+                                  </block>
+                                </value>
+                                <value name="B">
+                                  <block type="text" id="}as[R,!v-o9tu^/L!?UP">
+                                    <field name="TEXT"></field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <statement name="DO0">
+                              <block type="oled_display_clear" id="+l*0W,o7(23soTc`zW($">
+                                <next>
+                                  <block type="oled_display_draw_commands" id="t0%?sgPjB_F.G4-^8wrM">
+                                    <statement name="DRAW_CMD">
+                                      <block type="oled_display_draw_text" id="yhk+L!6tj]Dyn00={SB!">
+                                        <value name="START_X">
+                                          <block type="math_number" id="F7tC3QyF;c%Zw$kaBgp=">
+                                            <field name="NUM">0</field>
+                                          </block>
+                                        </value>
+                                        <value name="START_Y">
+                                          <block type="math_number" id="Cd;**6Bb87y.,lAiuoXu">
+                                            <field name="NUM">1</field>
+                                          </block>
+                                        </value>
+                                        <value name="CONTENT">
+                                          <block type="variables_get" id="vQv]y,`*[8UmQW/Yv}S%">
+                                            <field name="VAR" id="/XxVL%_rss(6)Fa;_W*6">message</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </statement>
+                                    <next>
+                                      <block type="variables_set3" id="Ey$;DW.zK*UOS-r1?@jp">
+                                        <field name="VAR" id="/XxVL%_rss(6)Fa;_W*6">message</field>
+                                        <value name="DELTA">
+                                          <shadow type="math_number" id="w=I|=nVBAxCSemDMHo6E">
+                                            <field name="NUM">0</field>
+                                          </shadow>
+                                          <block type="text" id="RhwW)M(eoEM~E-slL3C1">
+                                            <field name="TEXT"></field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </statement>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+</xml>

@@ -1,0 +1,169 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <block type="board_initializes_setup" id="i#lh.8mR^kP(vL1N0]i~" x="410" y="-510">
+    <field name="BOARD_TYPE">7697</field>
+    <statement name="CONTENT">
+      <block type="oled_display_setting_new" id="=#cPDh(5_?+R8+`UHZ`-">
+        <next>
+          <block type="oled_display_clear" id="|li]22nb!sk%;?PmE7=|">
+            <next>
+              <block type="linkit_wifi_wait_until_ready" id=":ix{n41|_suePr*K=wRf">
+                <value name="SSID">
+                  <block type="text" id="$IFX9m65ALo@=*Uv~lu=">
+                    <field name="TEXT">HUAWEI_E5576_A5C5</field>
+                  </block>
+                </value>
+                <value name="PASSWORD">
+                  <block type="text" id="=GYiI.ZY$6P,7#}IZbq5">
+                    <field name="TEXT">0972866968</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="connect_mqtt" id="AkhnNM5=-?BaEVj,X4_,">
+                    <value name="BROKER">
+                      <block type="text" id="n~$UP11xtr;cH)4k`l*)">
+                        <field name="TEXT">broker.emqx.io</field>
+                      </block>
+                    </value>
+                    <value name="PORT">
+                      <block type="math_number" id="bVCSH0_z.p!c#/H!`?T[">
+                        <field name="NUM">1883</field>
+                      </block>
+                    </value>
+                    <value name="ID">
+                      <block type="text" id="Sd=Jm9`[qcIRJ/0|8pX*">
+                        <field name="TEXT"></field>
+                      </block>
+                    </value>
+                    <value name="USERNAME">
+                      <block type="text" id="yz#BZmK8C/vL94BD4-L!">
+                        <field name="TEXT"></field>
+                      </block>
+                    </value>
+                    <value name="PASSWORD">
+                      <block type="text" id="RS4sjH{r.,g#`NYGc=$a">
+                        <field name="TEXT"></field>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <next>
+      <block type="initializes_loop" id="100">
+        <statement name="CONTENT">
+          <block type="oled_display_draw_commands" id="?7SeC-W9}$?KW5!I`[N9">
+            <statement name="DRAW_CMD">
+              <block type="oled_display_draw_text" id="233">
+                <value name="START_X">
+                  <block type="math_number" id="234">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+                <value name="START_Y">
+                  <block type="math_number" id="235">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+                <value name="CONTENT">
+                  <block type="text_join" id="105" inline="false">
+                    <mutation items="2"></mutation>
+                    <value name="ADD0">
+                      <block type="text" id="106">
+                        <field name="TEXT">Temp: </field>
+                      </block>
+                    </value>
+                    <value name="ADD1">
+                      <block type="startPlus_dht11" id="7FUT,0=CkqKzwQsHcGA9">
+                        <field name="DHT">readTemperature</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <next>
+                  <block type="oled_display_draw_text" id="242">
+                    <value name="START_X">
+                      <block type="math_number" id="243">
+                        <field name="NUM">0</field>
+                      </block>
+                    </value>
+                    <value name="START_Y">
+                      <block type="math_number" id="244">
+                        <field name="NUM">10</field>
+                      </block>
+                    </value>
+                    <value name="CONTENT">
+                      <block type="text_join" id="111" inline="false">
+                        <mutation items="2"></mutation>
+                        <value name="ADD0">
+                          <block type="text" id="112">
+                            <field name="TEXT">Humid: </field>
+                          </block>
+                        </value>
+                        <value name="ADD1">
+                          <block type="startPlus_dht11" id="|(j8-bvNPSK-^8-;Z`$D">
+                            <field name="DHT">readHumidity</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </statement>
+            <next>
+              <block type="publish_mqtt" id="`B@(({d!u@1+64K(Xp9O">
+                <value name="TOPIC">
+                  <block type="text" id="ts@X5@,=E$eN||JODe/1">
+                    <field name="TEXT">ccwu0918/temp</field>
+                  </block>
+                </value>
+                <value name="MESSAGE">
+                  <block type="cast_number" id="3)lwf*|?j%C[LwW4{r6k">
+                    <field name="TYPE">String(%1)</field>
+                    <value name="VAR">
+                      <block type="startPlus_dht11" id="G6U8QJecNe*4j|/M=9}:">
+                        <field name="DHT">readTemperature</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <next>
+                  <block type="publish_mqtt" id="2C-N|`7Ls*!UFW3#r%ck">
+                    <value name="TOPIC">
+                      <block type="text" id="vYg`=TzAd3;7L=Q7xBLN">
+                        <field name="TEXT">ccwu0918/humid</field>
+                      </block>
+                    </value>
+                    <value name="MESSAGE">
+                      <block type="cast_number" id="Ws7OpB~/;Jp0l#EXtdC2">
+                        <field name="TYPE">String(%1)</field>
+                        <value name="VAR">
+                          <block type="startPlus_dht11" id="B-ZiAfZd/%[n4BnzLhih">
+                            <field name="DHT">readHumidity</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="delay_custom" id="114" inline="false">
+                        <value name="DELAY_TIME">
+                          <block type="math_number" id="115">
+                            <field name="NUM">15000</field>
+                          </block>
+                        </value>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+</xml>

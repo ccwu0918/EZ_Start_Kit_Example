@@ -1,0 +1,159 @@
+<xml version="F1" board="LinkIt 7697" xmlns="https://developers.google.com/blockly/xml">
+  <block type="board_initializes_setup" id="0" x="-430" y="-190">
+    <field name="BOARD_TYPE">ESP8266</field>
+    <statement name="CONTENT">
+      <block type="linkit_wifi_wait_until_ready" id="1]h:OiwCi/qZIQX=6`;/">
+        <value name="SSID">
+          <block type="text" id="KV[R~*j:BW??IJy/MNXg">
+            <field name="TEXT">HUAWEI_E5576_A5C5</field>
+          </block>
+        </value>
+        <value name="PASSWORD">
+          <block type="text" id="GO;{@#V{BVMx!^9a6%9B">
+            <field name="TEXT">0972866968</field>
+          </block>
+        </value>
+        <next>
+          <block type="connect_mqtt" id="4du%28`o/Gw](#%i@!4H">
+            <value name="BROKER">
+              <block type="text" id="^|`-kqIRBEx!wWuwM)vR">
+                <field name="TEXT">broker.emqx.io</field>
+              </block>
+            </value>
+            <value name="PORT">
+              <block type="math_number" id="IhCc%t`4O%jT}w~1gA.b">
+                <field name="NUM">1883</field>
+              </block>
+            </value>
+            <value name="ID">
+              <block type="text" id="+Csx){`y2@+ESac9IIy(">
+                <field name="TEXT"></field>
+              </block>
+            </value>
+            <value name="USERNAME">
+              <block type="text" id="gLH-q=8EEVHaqZ$WCw@f">
+                <field name="TEXT"></field>
+              </block>
+            </value>
+            <value name="PASSWORD">
+              <block type="text" id="Ugn%Owl)C-dM%5k6jSI{">
+                <field name="TEXT"></field>
+              </block>
+            </value>
+            <next>
+              <block type="subscribe_mqtt" id="|-Y-[?ENV_/R4Vg]:(:h">
+                <value name="TOPIC">
+                  <block type="text" id="g(@B]Ug/Yw|a,1mbJCuG">
+                    <field name="TEXT">ccwu0918/ButtonR</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="controls_repeat_ext" id="^]Q5j[Wj.-e/P_=:U2:P">
+                    <value name="TIMES">
+                      <block type="math_number" id="v!.)oczpbbUN;0+2`$;p">
+                        <field name="NUM">3</field>
+                      </block>
+                    </value>
+                    <statement name="DO">
+                      <block type="s20_led" id="SoE/eJXAfwhxi+?LcVS?">
+                        <value name="ON_OFF">
+                          <block type="inout_highlow" id="_zDh@0fFqQV|L9%k5au%">
+                            <field name="BOOL">HIGH</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="delay_custom" id="E#=3/_U]P2;;e+xT9c~D">
+                            <value name="DELAY_TIME">
+                              <block type="math_number" id="|OJ6S*Ld41vqnf-_STo.">
+                                <field name="NUM">200</field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="s20_led" id="E51`ZpSS96=8cS$#[t]L">
+                                <value name="ON_OFF">
+                                  <block type="inout_highlow" id="8+6bFT(Z7=L4|UX2W]n*">
+                                    <field name="BOOL">LOW</field>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="delay_custom" id="=9-pk?i9ZJ$@?;1.F!F!">
+                                    <value name="DELAY_TIME">
+                                      <block type="math_number" id=",,%UPRZP6WJ_?uSbH)3t">
+                                        <field name="NUM">200</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </statement>
+                    <next>
+                      <block type="s20_led" id="HL*u,G*.eewFK_-4i|1[">
+                        <value name="ON_OFF">
+                          <block type="inout_highlow" id="c/5Vi/x,PN2xNjFwdQ8]">
+                            <field name="BOOL">HIGH</field>
+                          </block>
+                        </value>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <next>
+      <block type="initializes_loop" id="1">
+        <statement name="CONTENT">
+          <block type="s20_button" id="oCA5*|s$n2KI*$,{FD_o">
+            <statement name="MSG_BUTTON_CALL">
+              <block type="s20_relay" id="N)GxWDBF58uj@8]@;qhZ">
+                <value name="ON_OFF">
+                  <block type="logic_ternary" id="sF|E+aEb`s]dF3teUcbp">
+                    <value name="IF">
+                      <block type="s20_relay_bool" id="$O!!GIB,,zu54f:viOQ_"></block>
+                    </value>
+                    <value name="THEN">
+                      <block type="logic_boolean" id="So5wtBv:|r!CZcUrj2-J">
+                        <field name="BOOL">FALSE</field>
+                      </block>
+                    </value>
+                    <value name="ELSE">
+                      <block type="logic_boolean" id="27(,[$8Up3{Z4h-]!{2R">
+                        <field name="BOOL">TRUE</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+              </block>
+            </statement>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+  <block type="mqtt_event" id="ifSeg-;{}x#G,eIBNf/=" x="10" y="-210">
+    <statement name="MSG_TOPIC_EQAL">
+      <block type="s20_relay" id="Xw_fL7h!@cVc`kxvgfWv">
+        <value name="ON_OFF">
+          <block type="logic_compare" id="7}q17I!v{*upnvDFZQgI">
+            <field name="OP">EQ</field>
+            <value name="A">
+              <block type="mqtt_received_msg" id="fN},VrTCL3POS3*Fj+4{"></block>
+            </value>
+            <value name="B">
+              <block type="text" id="[QmQhi~jP=Y~X40O]$D^">
+                <field name="TEXT">On</field>
+              </block>
+            </value>
+          </block>
+        </value>
+      </block>
+    </statement>
+  </block>
+</xml>

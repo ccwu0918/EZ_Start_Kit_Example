@@ -1,0 +1,151 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <block type="board_initializes_setup" id="i#lh.8mR^kP(vL1N0]i~" x="-70" y="-790">
+    <field name="BOARD_TYPE">7697</field>
+    <statement name="CONTENT">
+      <block type="oled_display_setting_new" id="=#cPDh(5_?+R8+`UHZ`-">
+        <next>
+          <block type="oled_display_clear" id="|li]22nb!sk%;?PmE7=|">
+            <next>
+              <block type="linkit_wifi_wait_until_ready" id=":ix{n41|_suePr*K=wRf">
+                <value name="SSID">
+                  <block type="text" id="$IFX9m65ALo@=*Uv~lu=">
+                    <field name="TEXT">HUAWEI_E5576_A5C5</field>
+                  </block>
+                </value>
+                <value name="PASSWORD">
+                  <block type="text" id="=GYiI.ZY$6P,7#}IZbq5">
+                    <field name="TEXT">0972866968</field>
+                  </block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <next>
+      <block type="initializes_loop" id="100">
+        <statement name="CONTENT">
+          <block type="oled_display_draw_commands" id="?7SeC-W9}$?KW5!I`[N9">
+            <statement name="DRAW_CMD">
+              <block type="oled_display_draw_text" id="233">
+                <value name="START_X">
+                  <block type="math_number" id="234">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+                <value name="START_Y">
+                  <block type="math_number" id="235">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+                <value name="CONTENT">
+                  <block type="text_join" id="105" inline="false">
+                    <mutation items="2"></mutation>
+                    <value name="ADD0">
+                      <block type="text" id="106">
+                        <field name="TEXT">Temp: </field>
+                      </block>
+                    </value>
+                    <value name="ADD1">
+                      <block type="startPlus_dht11" id="7FUT,0=CkqKzwQsHcGA9">
+                        <field name="DHT">readTemperature</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <next>
+                  <block type="oled_display_draw_text" id="242">
+                    <value name="START_X">
+                      <block type="math_number" id="243">
+                        <field name="NUM">0</field>
+                      </block>
+                    </value>
+                    <value name="START_Y">
+                      <block type="math_number" id="244">
+                        <field name="NUM">10</field>
+                      </block>
+                    </value>
+                    <value name="CONTENT">
+                      <block type="text_join" id="111" inline="false">
+                        <mutation items="2"></mutation>
+                        <value name="ADD0">
+                          <block type="text" id="112">
+                            <field name="TEXT">Humid: </field>
+                          </block>
+                        </value>
+                        <value name="ADD1">
+                          <block type="startPlus_dht11" id="|(j8-bvNPSK-^8-;Z`$D">
+                            <field name="DHT">readHumidity</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </statement>
+            <next>
+              <block type="things_get_url" id=":Xa:4Co:*-b.f)#fYR+K">
+                <value name="KEY">
+                  <block type="text" id="=.]$u3U9ou6z7HsiTw6(">
+                    <field name="TEXT">LF5SWKAZ4MS24P2B</field>
+                  </block>
+                </value>
+                <value name="FIELD1">
+                  <block type="startPlus_dht11" id="B0r)^ed]KCOwhT*{XQ7!">
+                    <field name="DHT">readTemperature</field>
+                  </block>
+                </value>
+                <value name="FIELD2">
+                  <block type="startPlus_dht11" id="Z1Q64:cChxNz8o#LFS}n">
+                    <field name="DHT">readHumidity</field>
+                  </block>
+                </value>
+                <value name="FIELD3">
+                  <block type="math_number" id="`CQcuiQh=(_Vq3W{+%rW">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+                <value name="FIELD4">
+                  <block type="math_number" id="b]0p%*nP,|*Egi/L2$fk">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+                <value name="FIELD5">
+                  <block type="math_number" id="h45rvMte#}gd(=lEn+$C">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+                <value name="FIELD6">
+                  <block type="math_number" id="T7TQ11bD^ZKR,.H]V!6n">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+                <value name="FIELD7">
+                  <block type="math_number" id="iveQI^UXH8~Gv;xMw[_]">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+                <value name="FIELD8">
+                  <block type="math_number" id="o$LQB[Pi-%:?9!AmW@vL">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="delay_custom" id="114" inline="false">
+                    <value name="DELAY_TIME">
+                      <block type="math_number" id="115">
+                        <field name="NUM">15000</field>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+</xml>
