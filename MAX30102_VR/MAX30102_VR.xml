@@ -1,0 +1,499 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <variables>
+    <variable id="dsD!=qlmI~I#1=QUuda7">index</variable>
+  </variables>
+  <block type="board_initializes_setup" id="K7,U[kkPRv7$O;_|VpE%" x="130" y="30">
+    <field name="BOARD_TYPE">7697</field>
+    <statement name="CONTENT">
+      <block type="oled_display_setting_new" id=",Zy,+C3Kz%SID-daz]Y#">
+        <next>
+          <block type="oled_display_set_chinese_font" id="`mbA0xketY7@eEKhNlee">
+            <next>
+              <block type="max30105_init" id="^rLlLe07;:Zl?5nW`;R-">
+                <value name="LED">
+                  <block type="math_number" id="U-:z5[1fD}qTCLsO64Da">
+                    <field name="NUM">127</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="max30105_set_beat_range" id="iFP-s{J~sveDmT=+lw%U">
+                    <value name="MIN">
+                      <block type="math_number" id="FBF8ohX`ZX!YJq#tk3o-">
+                        <field name="NUM">20</field>
+                      </block>
+                    </value>
+                    <value name="MAX">
+                      <block type="math_number" id="1h?yQ.;yjB++kTo1Whs7">
+                        <field name="NUM">250</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="variables_set" id="L@ys%m!ZEb:jQh;#ty(0">
+                        <field name="POSITION">global</field>
+                        <field name="TYPE">int</field>
+                        <field name="VAR" id="dsD!=qlmI~I#1=QUuda7">index</field>
+                        <value name="VALUE">
+                          <shadow type="math_number" id="6=a[n,a1t_6FvNdn|K]E">
+                            <field name="NUM">0</field>
+                          </shadow>
+                          <block type="math_number" id="GT=ySXLwc/w8|cH#9|kW">
+                            <field name="NUM">0</field>
+                          </block>
+                        </value>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <next>
+      <block type="initializes_loop" id="100">
+        <statement name="CONTENT">
+          <block type="controls_if" id="R)G[AxC[OHR.$+z2q`=!">
+            <mutation else="1"></mutation>
+            <value name="IF0">
+              <block type="max30105_check" id="0N-zR$S$m{oJO`-seo;5">
+                <field name="CHECK_TYPE">IR</field>
+              </block>
+            </value>
+            <statement name="DO0">
+              <block type="variables_set3" id="+*qd9XzDvlFAGmeZ8Uca">
+                <field name="VAR" id="dsD!=qlmI~I#1=QUuda7">index</field>
+                <value name="DELTA">
+                  <shadow type="math_number" id="}U]URF^`GCqUtd17VoY4">
+                    <field name="NUM">0</field>
+                  </shadow>
+                  <block type="math_map_int" id="6kIXbR2duas.v7P}9KRr">
+                    <field name="FROMLOW">0</field>
+                    <field name="FROMHIGH">4095</field>
+                    <field name="TOLOW">0</field>
+                    <field name="TOHIGH">3</field>
+                    <value name="VALUE">
+                      <block type="startPlus_vr" id="Rz0`s`~C_~6C/HwG8,;:">
+                        <field name="TYPE">vr</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <next>
+                  <block type="controls_if" id="^6oo~o.j|-zm[3JO*Y1A">
+                    <mutation elseif="3"></mutation>
+                    <value name="IF0">
+                      <block type="logic_compare" id="p6fT;VjyomL:0aS))3=9">
+                        <field name="OP">EQ</field>
+                        <value name="A">
+                          <block type="variables_get" id="F+B!PC8J}Yg0_IUC6:h6">
+                            <field name="VAR" id="dsD!=qlmI~I#1=QUuda7">index</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="math_number" id="%9Z~~0C|2KCxYa8`oH#-">
+                            <field name="NUM">0</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <statement name="DO0">
+                      <block type="oled_display_draw_commands" id="`vtUem*XWCYApyY=Yi(/">
+                        <statement name="DRAW_CMD">
+                          <block type="oled_display_draw_text" id="233">
+                            <value name="START_X">
+                              <block type="math_number" id="234">
+                                <field name="NUM">10</field>
+                              </block>
+                            </value>
+                            <value name="START_Y">
+                              <block type="math_number" id="235">
+                                <field name="NUM">5</field>
+                              </block>
+                            </value>
+                            <value name="CONTENT">
+                              <block type="text_join" id="105" inline="false">
+                                <mutation items="3"></mutation>
+                                <value name="ADD0">
+                                  <block type="text" id="106">
+                                    <field name="TEXT">心率: </field>
+                                  </block>
+                                </value>
+                                <value name="ADD1">
+                                  <block type="max30105_get_beat_rate" id="5^qe=XcsUn9@HB_~/K*]">
+                                    <value name="AVG">
+                                      <block type="math_number" id="Hd0lv!YaZe`@7uKDqQ`q">
+                                        <field name="NUM">1</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                                <value name="ADD2">
+                                  <block type="text" id="*tjr^G:6y/()wK2e93W*">
+                                    <field name="TEXT"> BPM</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="oled_display_draw_text" id="242">
+                                <value name="START_X">
+                                  <block type="math_number" id="243">
+                                    <field name="NUM">10</field>
+                                  </block>
+                                </value>
+                                <value name="START_Y">
+                                  <block type="math_number" id="244">
+                                    <field name="NUM">25</field>
+                                  </block>
+                                </value>
+                                <value name="CONTENT">
+                                  <block type="text_join" id="tS7[/k[BKgOpK8k#~5t[" inline="false">
+                                    <mutation items="3"></mutation>
+                                    <value name="ADD0">
+                                      <block type="text" id="+Fb2($u$!jSa1`!}Y6!g">
+                                        <field name="TEXT">血氧: </field>
+                                      </block>
+                                    </value>
+                                    <value name="ADD1">
+                                      <block type="max30105_get_spo2" id="=-}ioR^w6Yy(HdcK9O[h"></block>
+                                    </value>
+                                    <value name="ADD2">
+                                      <block type="text" id="d`]ax[XtDi@I$=TaFl2M">
+                                        <field name="TEXT"> %</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="oled_display_draw_text" id="2?hxgIc/W,l)`.d|.tX?">
+                                    <value name="START_X">
+                                      <block type="math_number" id="Jrgmn2|SvX$K!Dg7lu@m">
+                                        <field name="NUM">10</field>
+                                      </block>
+                                    </value>
+                                    <value name="START_Y">
+                                      <block type="math_number" id="vg,6JKb7Sw=NmRj(Neza">
+                                        <field name="NUM">45</field>
+                                      </block>
+                                    </value>
+                                    <value name="CONTENT">
+                                      <block type="text_join" id="_.+IES~y7fQrFgIIN{@J" inline="false">
+                                        <mutation items="3"></mutation>
+                                        <value name="ADD0">
+                                          <block type="text" id="SM9aT?tj#KDA!Tm}L!tS">
+                                            <field name="TEXT">溫度: </field>
+                                          </block>
+                                        </value>
+                                        <value name="ADD1">
+                                          <block type="max30105_get_temperature" id="RUz2S!h}6]SIiVfOFB*(">
+                                            <field name="TEMP_TYPE">C</field>
+                                          </block>
+                                        </value>
+                                        <value name="ADD2">
+                                          <block type="text" id="C?plrp|y~XLZ*?p4_,Aq">
+                                            <field name="TEXT"> C</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </statement>
+                      </block>
+                    </statement>
+                    <value name="IF1">
+                      <block type="logic_compare" id="aZ=rw?eq$qnu%HIlDSWZ">
+                        <field name="OP">EQ</field>
+                        <value name="A">
+                          <block type="variables_get" id="i-TF-O6I9xp5JWo//%xY">
+                            <field name="VAR" id="dsD!=qlmI~I#1=QUuda7">index</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="math_number" id="Isd?XixUj;mlYiS*F{XF">
+                            <field name="NUM">1</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <statement name="DO1">
+                      <block type="oled_display_draw_chart" id="@f:T^C7F6^1?P1eBKN#a">
+                        <field name="CHART_TYPE">0</field>
+                        <field name="DIR_TYPE">0</field>
+                        <value name="INPUT">
+                          <block type="max30105_get_beat_rate" id="*dT5;X)NZtr@gW*UHJg.">
+                            <value name="AVG">
+                              <block type="math_number" id="PmI@BozaQ{#1JO)CLH/q">
+                                <field name="NUM">1</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <value name="MIN">
+                          <block type="math_number" id="Ugyj=n7I*UwY8W?=.6l/">
+                            <field name="NUM">0</field>
+                          </block>
+                        </value>
+                        <value name="MAX">
+                          <block type="math_number" id="24a^8juQbd+j88,Qoc3O">
+                            <field name="NUM">350</field>
+                          </block>
+                        </value>
+                        <statement name="EXTRA">
+                          <block type="oled_display_draw_text" id="0.~DoA#`s27s:+pubDA/">
+                            <value name="START_X">
+                              <block type="math_number" id="F9RV`iB^f8@5NuM.WkK@">
+                                <field name="NUM">10</field>
+                              </block>
+                            </value>
+                            <value name="START_Y">
+                              <block type="math_number" id="8kgJZSoM7TpX$)i7+mhK">
+                                <field name="NUM">5</field>
+                              </block>
+                            </value>
+                            <value name="CONTENT">
+                              <block type="text_join" id="E~.g}iT_?V#$]L_OQ,e`" inline="false">
+                                <mutation items="3"></mutation>
+                                <value name="ADD0">
+                                  <block type="text" id="`(iAc$i*uQ-t[2n+sIQp">
+                                    <field name="TEXT">心率: </field>
+                                  </block>
+                                </value>
+                                <value name="ADD1">
+                                  <block type="max30105_get_beat_rate" id="Tfohk#oB9kW@7KO1uQ/t">
+                                    <value name="AVG">
+                                      <block type="math_number" id="`~6e3|gkS$OS:5%QBi3z">
+                                        <field name="NUM">1</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                                <value name="ADD2">
+                                  <block type="text" id="j7$5`KHk])0sgf}QR8M~">
+                                    <field name="TEXT"> BPM</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                          </block>
+                        </statement>
+                      </block>
+                    </statement>
+                    <value name="IF2">
+                      <block type="logic_compare" id="5R+VpA#4[};$|Vw@dV(r">
+                        <field name="OP">EQ</field>
+                        <value name="A">
+                          <block type="variables_get" id="*4{QeLU=-Y{a)O7E.Dx/">
+                            <field name="VAR" id="dsD!=qlmI~I#1=QUuda7">index</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="math_number" id="H:,%|~JK/qp3ndaCz[[.">
+                            <field name="NUM">2</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <statement name="DO2">
+                      <block type="oled_display_draw_chart" id="y{,(Yi}!8k7c@T557a6+">
+                        <field name="CHART_TYPE">0</field>
+                        <field name="DIR_TYPE">0</field>
+                        <value name="INPUT">
+                          <block type="max30105_get_spo2" id="c,m:JNH%Vv-hzpkl;zaF"></block>
+                        </value>
+                        <value name="MIN">
+                          <block type="math_number" id="[}ALBnR6J{.r6nwaV[6:">
+                            <field name="NUM">0</field>
+                          </block>
+                        </value>
+                        <value name="MAX">
+                          <block type="math_number" id="FIRJYns[;IQuy#Bu%bOD">
+                            <field name="NUM">200</field>
+                          </block>
+                        </value>
+                        <statement name="EXTRA">
+                          <block type="oled_display_draw_text" id="|rVpn{B1L_RRlwSZgOXr">
+                            <value name="START_X">
+                              <block type="math_number" id="Y.DYkyLf1S7T;g{icUt^">
+                                <field name="NUM">10</field>
+                              </block>
+                            </value>
+                            <value name="START_Y">
+                              <block type="math_number" id="L@+7cg734!}mA%!i]!Hy">
+                                <field name="NUM">5</field>
+                              </block>
+                            </value>
+                            <value name="CONTENT">
+                              <block type="text_join" id="=sf^kI%WnxByh2VPk{D." inline="false">
+                                <mutation items="3"></mutation>
+                                <value name="ADD0">
+                                  <block type="text" id="F?q~]hLoT2]l:uV)t//a">
+                                    <field name="TEXT">血氧: </field>
+                                  </block>
+                                </value>
+                                <value name="ADD1">
+                                  <block type="max30105_get_spo2" id="zB#w7q:M%FA6:`mn$lei"></block>
+                                </value>
+                                <value name="ADD2">
+                                  <block type="text" id="JuOy.p:7L6,uS}h-jCMg">
+                                    <field name="TEXT"> %</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                          </block>
+                        </statement>
+                      </block>
+                    </statement>
+                    <value name="IF3">
+                      <block type="logic_compare" id="ODDSL5QOy@5XRLbk+ybo">
+                        <field name="OP">EQ</field>
+                        <value name="A">
+                          <block type="variables_get" id="Yt]Ke(hJ?V37GP7iYqx8">
+                            <field name="VAR" id="dsD!=qlmI~I#1=QUuda7">index</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="math_number" id="l`Ni{[Ncn7.(-:d$vJzb">
+                            <field name="NUM">3</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <statement name="DO3">
+                      <block type="oled_display_draw_chart" id="!0g.q^$v;9[EjLrtT^F=">
+                        <field name="CHART_TYPE">0</field>
+                        <field name="DIR_TYPE">0</field>
+                        <value name="INPUT">
+                          <block type="max30105_get_temperature" id="1^z:)U$YR#{.9j=i,7ZW">
+                            <field name="TEMP_TYPE">C</field>
+                          </block>
+                        </value>
+                        <value name="MIN">
+                          <block type="math_number" id="(X6|mgq%6(i4ioaK_Gj)">
+                            <field name="NUM">0</field>
+                          </block>
+                        </value>
+                        <value name="MAX">
+                          <block type="math_number" id="!u^l=~G$D8)8yswN:@CI">
+                            <field name="NUM">100</field>
+                          </block>
+                        </value>
+                        <statement name="EXTRA">
+                          <block type="oled_display_draw_text" id=".R??:c{lwlZ*dPDP{71a">
+                            <value name="START_X">
+                              <block type="math_number" id="}yGl@@IFMO+I}ckh@y@?">
+                                <field name="NUM">10</field>
+                              </block>
+                            </value>
+                            <value name="START_Y">
+                              <block type="math_number" id="fDl_[0x(]^NpH]0gNz5c">
+                                <field name="NUM">5</field>
+                              </block>
+                            </value>
+                            <value name="CONTENT">
+                              <block type="text_join" id="3@;`an/fdoxCnd6{T/F[" inline="false">
+                                <mutation items="3"></mutation>
+                                <value name="ADD0">
+                                  <block type="text" id="rGKAzgag$F1_H|PkFh|~">
+                                    <field name="TEXT">溫度: </field>
+                                  </block>
+                                </value>
+                                <value name="ADD1">
+                                  <block type="max30105_get_temperature" id="{{a#Zs/={;SvNp6RQO8M">
+                                    <field name="TEMP_TYPE">C</field>
+                                  </block>
+                                </value>
+                                <value name="ADD2">
+                                  <block type="text" id="egI8:2rmkr^Sz6!Vlyb{">
+                                    <field name="TEXT"> C</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                          </block>
+                        </statement>
+                      </block>
+                    </statement>
+                  </block>
+                </next>
+              </block>
+            </statement>
+            <statement name="ELSE">
+              <block type="oled_display_draw_commands" id="2X,Of.c@.WLBRbSd}n1,">
+                <statement name="DRAW_CMD">
+                  <block type="oled_display_draw_text" id="I8r9#VEpqlWp|l1OV2_6">
+                    <value name="START_X">
+                      <block type="math_number" id="Dd`Q11*K!*qxYtNZRhZ,">
+                        <field name="NUM">0</field>
+                      </block>
+                    </value>
+                    <value name="START_Y">
+                      <block type="math_number" id="gWXY*;,z,#Ux!!:rvFcS">
+                        <field name="NUM">1</field>
+                      </block>
+                    </value>
+                    <value name="CONTENT">
+                      <block type="text" id="zyfOmS~hk6/z?dDPI~SL">
+                        <field name="TEXT">EZ Starter Kit+</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="oled_display_draw_text" id="DS/2Ai||[l^Ojm(VNm;r">
+                        <value name="START_X">
+                          <block type="math_number" id="9@Sy78eKWv$r!WlIq^kg">
+                            <field name="NUM">0</field>
+                          </block>
+                        </value>
+                        <value name="START_Y">
+                          <block type="math_number" id="/P8)RUK/9+BK$rM-+S^Q">
+                            <field name="NUM">25</field>
+                          </block>
+                        </value>
+                        <value name="CONTENT">
+                          <block type="text" id="wF=nKyo-*YcYL$,{[_PZ">
+                            <field name="TEXT">心率血氧溫度感測</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="oled_display_draw_text" id="YE1spwz7:mva};LD#Dn#">
+                            <value name="START_X">
+                              <block type="math_number" id="fS8z4KaZT36dlDWhYj|G">
+                                <field name="NUM">0</field>
+                              </block>
+                            </value>
+                            <value name="START_Y">
+                              <block type="math_number" id=",?Hgim|-1sEI=SRZa4o,">
+                                <field name="NUM">45</field>
+                              </block>
+                            </value>
+                            <value name="CONTENT">
+                              <block type="text" id="eKcZHX]{d;YV4T8e*KaA">
+                                <field name="TEXT">請將手指放感測器</field>
+                              </block>
+                            </value>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </statement>
+                <next>
+                  <block type="oled_display_clear_chart" id="ET/::A%u4n1wS7LqXf42">
+                    <next>
+                      <block type="max30105_set_spo2_clear" id="YC5K3%(c*/OoZ|ZCQN]H"></block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </statement>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+</xml>
