@@ -1,4 +1,4 @@
-<xml version="F1" board="LinkIt 7697" xmlns="https://developers.google.com/blockly/xml">
+<xml xmlns="https://developers.google.com/blockly/xml">
   <block type="board_initializes_setup" id="K7,U[kkPRv7$O;_|VpE%" x="130" y="30">
     <field name="BOARD_TYPE">7697</field>
     <statement name="CONTENT">
@@ -178,12 +178,12 @@
                         </value>
                         <value name="START_Y">
                           <block type="math_number" id="/P8)RUK/9+BK$rM-+S^Q">
-                            <field name="NUM">45</field>
+                            <field name="NUM">25</field>
                           </block>
                         </value>
                         <value name="CONTENT">
                           <block type="text" id="wF=nKyo-*YcYL$,{[_PZ">
-                            <field name="TEXT"> 心率血氧溫度感測</field>
+                            <field name="TEXT">心率血氧溫度感測</field>
                           </block>
                         </value>
                         <next>
@@ -200,7 +200,7 @@
                             </value>
                             <value name="CONTENT">
                               <block type="text" id="eKcZHX]{d;YV4T8e*KaA">
-                                <field name="TEXT">請將手指放上感測器</field>
+                                <field name="TEXT">請將手指放感測器</field>
                               </block>
                             </value>
                           </block>
@@ -214,6 +214,15 @@
                 </next>
               </block>
             </statement>
+            <next>
+              <block type="delay_custom" id="9ag4X`o}nNwH^;,|sGkh">
+                <value name="DELAY_TIME">
+                  <block type="math_number" id="la9:j1U-Jei1^+DHAajJ">
+                    <field name="NUM">500</field>
+                  </block>
+                </value>
+              </block>
+            </next>
           </block>
         </statement>
       </block>

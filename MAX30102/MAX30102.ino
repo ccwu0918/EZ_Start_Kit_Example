@@ -3,7 +3,7 @@
  *
  * https://github.com/MediaTek-Labs/BlocklyDuino-for-LinkIt
  *
- * Date: Sun, 03 Oct 2021 14:42:47 GMT
+ * Date: Wed, 10 Nov 2021 07:19:54 GMT
  */
 /*  部份程式由吉哥積木產生  */
 /*  https://sites.google.com/jes.mlc.edu.tw/ljj/linkit7697  */
@@ -124,10 +124,10 @@ void loop()
     do {
       u8g2.setCursor(0, 1);
       u8g2.print(String("EZ Starter Kit+").c_str());
+      u8g2.setCursor(0, 25);
+      u8g2.print(String("心率血氧溫度感測").c_str());
       u8g2.setCursor(0, 45);
-      u8g2.print(String(" 心率血氧溫度感測").c_str());
-      u8g2.setCursor(0, 45);
-      u8g2.print(String("請將手指放上感測器").c_str());
+      u8g2.print(String("請將手指放感測器").c_str());
 
       u8g2.sendBuffer();
     } while (u8g2.nextPage());
@@ -135,4 +135,5 @@ void loop()
     avgIR = 0;
     ESpO2 = MINIMUM_SPO2;
   }
+  delay(500);
 }
