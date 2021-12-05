@@ -3,7 +3,7 @@
  *
  * https://github.com/MediaTek-Labs/BlocklyDuino-for-LinkIt
  *
- * Date: Sun, 05 Dec 2021 17:30:19 GMT
+ * Date: Sun, 05 Dec 2021 18:33:24 GMT
  */
 /*  部份程式由吉哥積木產生  */
 /*  https://sites.google.com/jes.mlc.edu.tw/ljj/linkit7697  */
@@ -56,11 +56,14 @@ void mqttCallback(char* topic, byte* payload, unsigned int length){
   receivedMsg.trim();
   if (receivedTopic == "ccwu0918/relay") {
     digitalWrite(5, (receivedMsg.toInt()));
-  } else if (receivedTopic == "ccwu0918/red_led") {
+  }
+  if (receivedTopic == "ccwu0918/red_led") {
     analogWrite(r_pin, (receivedMsg.toInt()));
-  } else if (receivedTopic == "ccwu0918/yellow_led") {
+  }
+  if (receivedTopic == "ccwu0918/yellow_led") {
     analogWrite(y_pin, (receivedMsg.toInt()));
-  } else if (receivedTopic == "ccwu0918/green_led") {
+  }
+  if (receivedTopic == "ccwu0918/green_led") {
     analogWrite(g_pin, (receivedMsg.toInt()));
   }
 
