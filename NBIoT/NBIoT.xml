@@ -1,0 +1,455 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <variables>
+    <variable id="]79NLOe#*7wrB-6Fhk/*">timer</variable>
+  </variables>
+  <block type="board_initializes_setup" id="0" x="130" y="-110">
+    <field name="BOARD_TYPE">7697</field>
+    <statement name="CONTENT">
+      <block type="variables_set" id="|A]UnUNIGs#E6+krvYI$">
+        <field name="POSITION">global</field>
+        <field name="TYPE">unsigned long</field>
+        <field name="VAR" id="]79NLOe#*7wrB-6Fhk/*">timer</field>
+        <value name="VALUE">
+          <shadow type="math_number" id="Vvm|o@eYsRoZ(y-y?vZa">
+            <field name="NUM">0</field>
+          </shadow>
+          <block type="math_number" id="x4@~Cso[2c;s~Gk$9;U6">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+        <next>
+          <block type="ez_start_kit_neopixel_begin" id="biTcTQK*Gu8Q9*hm|3=J">
+            <value name="NVALUE">
+              <block type="math_number" id="c@OF=-O)|:}fp3s4!FTB">
+                <field name="NUM">30</field>
+              </block>
+            </value>
+            <next>
+              <block type="serial_init" id="{Q4Sa](GX,%j?X{plpFw">
+                <field name="SPEED">115200</field>
+                <next>
+                  <block type="ez_start_kit_oled_display_setting" id="q3C]{27FS1T~w`Zo}UH~">
+                    <next>
+                      <block type="ez_start_kit_oled_display_draw_commands" id="/VCb{6%!I$91u+9}vb63">
+                        <statement name="DRAW_CMD">
+                          <block type="oled_display_draw_text" id="`w?jX_8O1;wd%g`OGJ6~">
+                            <value name="START_X">
+                              <block type="math_number" id="{d7LPQK/03?=:@Gh^4PS">
+                                <field name="NUM">0</field>
+                              </block>
+                            </value>
+                            <value name="START_Y">
+                              <block type="math_number" id="S/;6aCU:wPU~2CE6+m]z">
+                                <field name="NUM">0</field>
+                              </block>
+                            </value>
+                            <value name="CONTENT">
+                              <block type="text" id="y:nEMlLWHN`JY*Bfr@2:">
+                                <field name="TEXT">AM7020 Init ...</field>
+                              </block>
+                            </value>
+                          </block>
+                        </statement>
+                        <next>
+                          <block type="am7020_init" id="p~Gqzb7R|1,Od(qj1GC0">
+                            <field name="BAUDRATE">115200</field>
+                            <field name="RESET_PIN">3</field>
+                            <next>
+                              <block type="am7020_connect" id="uFt:-k1KCu}R)_}SuA::">
+                                <field name="APN">iot4ga2</field>
+                                <next>
+                                  <block type="ez_start_kit_oled_display_draw_commands" id="tq]mv3y8R]$at=Ary#F~">
+                                    <statement name="DRAW_CMD">
+                                      <block type="oled_display_draw_text" id="r.Z!Y,w-gnj(.B#bPlqa">
+                                        <value name="START_X">
+                                          <block type="math_number" id=",l{nk1E)PsBm+Zz-IeXp">
+                                            <field name="NUM">0</field>
+                                          </block>
+                                        </value>
+                                        <value name="START_Y">
+                                          <block type="math_number" id="E=8Jvr=Q8R_Q)Y]NsVVF">
+                                            <field name="NUM">0</field>
+                                          </block>
+                                        </value>
+                                        <value name="CONTENT">
+                                          <block type="text" id="iNrT7NS0[C!uU3Vrg(_@">
+                                            <field name="TEXT">NBIoT Connecting...</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </statement>
+                                    <next>
+                                      <block type="am7020_connect_mqtt" id="v+3/;.4@?.;VtW#;UV~B">
+                                        <value name="BROKER">
+                                          <block type="text" id="9p2682dGA}7*B89`%3F)">
+                                            <field name="TEXT">broker.hivemq.com</field>
+                                          </block>
+                                        </value>
+                                        <value name="PORT">
+                                          <block type="math_number" id="ZR{B,O0Kp]6j,2u38O@,">
+                                            <field name="NUM">1883</field>
+                                          </block>
+                                        </value>
+                                        <value name="ID">
+                                          <block type="text" id="lo{]wI|(nx7SZN$W@zz)">
+                                            <field name="TEXT"></field>
+                                          </block>
+                                        </value>
+                                        <value name="USERNAME">
+                                          <block type="text" id="bj%w4F7/ABy$IwFs(}P(">
+                                            <field name="TEXT"></field>
+                                          </block>
+                                        </value>
+                                        <value name="PASSWORD">
+                                          <block type="text" id="^^u?7$u6|}CbLXzOX5zR">
+                                            <field name="TEXT"></field>
+                                          </block>
+                                        </value>
+                                        <value name="KEEPALIVE">
+                                          <block type="math_number" id="iDr;$x}LIm#7oc9O?.kg">
+                                            <field name="NUM">270</field>
+                                          </block>
+                                        </value>
+                                        <next>
+                                          <block type="ez_start_kit_oled_display_draw_commands" id="lslxh1J1(c5JuhVQi.^9">
+                                            <statement name="DRAW_CMD">
+                                              <block type="oled_display_draw_text" id="m6Wn6[3FURAdIk@HquzV">
+                                                <value name="START_X">
+                                                  <block type="math_number" id="Rj$xqgmU{N6!w=N_MI@P">
+                                                    <field name="NUM">0</field>
+                                                  </block>
+                                                </value>
+                                                <value name="START_Y">
+                                                  <block type="math_number" id="Oeb7O7~St,SYTccIR0EB">
+                                                    <field name="NUM">0</field>
+                                                  </block>
+                                                </value>
+                                                <value name="CONTENT">
+                                                  <block type="text" id="m[ByZdP*i}kXT;FRAEqJ">
+                                                    <field name="TEXT">MQTT Connecting...</field>
+                                                  </block>
+                                                </value>
+                                              </block>
+                                            </statement>
+                                            <next>
+                                              <block type="am7020_subscribe_mqtt" id="xAj#5pmX0DaP(ptbxPB,">
+                                                <value name="TOPIC">
+                                                  <block type="text" id="jc;LGD;SqDqha-QpqWmO">
+                                                    <field name="TEXT">ccwu0918/msg</field>
+                                                  </block>
+                                                </value>
+                                                <next>
+                                                  <block type="ez_start_kit_oled_display_draw_commands" id="BmjEkjM5x[~Yf5FnBNm8">
+                                                    <statement name="DRAW_CMD">
+                                                      <block type="oled_display_draw_text" id="w,Ub7%1J!qtn6)fB=UfZ">
+                                                        <value name="START_X">
+                                                          <block type="math_number" id="fPCJ[6Dnm~/}9#wv4G_?">
+                                                            <field name="NUM">0</field>
+                                                          </block>
+                                                        </value>
+                                                        <value name="START_Y">
+                                                          <block type="math_number" id="xcU+DUHygFBS/.L0vQ;T">
+                                                            <field name="NUM">0</field>
+                                                          </block>
+                                                        </value>
+                                                        <value name="CONTENT">
+                                                          <block type="text" id="VPVG-i+n~i[RRy}3+VPk">
+                                                            <field name="TEXT">MQTT Connected !</field>
+                                                          </block>
+                                                        </value>
+                                                      </block>
+                                                    </statement>
+                                                  </block>
+                                                </next>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <next>
+      <block type="initializes_loop" id="1">
+        <statement name="CONTENT">
+          <block type="controls_if" id="t?ti7cAfVQU8mJLHPM.p">
+            <value name="IF0">
+              <block type="logic_negate" id="qNw@PWxK!sl4^9%viE:;">
+                <value name="BOOL">
+                  <block type="am7020_connected" id="a9?Y1H#mg^IEdb1jq+7H"></block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO0">
+              <block type="am7020_reconnect" id="YY0N7pYI^4,q?6]Vbb7K"></block>
+            </statement>
+            <next>
+              <block type="controls_if" id="]vlcTpDtM9eDGVMzqoD/">
+                <value name="IF0">
+                  <block type="logic_negate" id="_Q|_2vm}-D.U?6OW$jHF">
+                    <value name="BOOL">
+                      <block type="am7020_mqtt_connected" id="c]JnN5$z043OB0VyEz[3"></block>
+                    </value>
+                  </block>
+                </value>
+                <statement name="DO0">
+                  <block type="am7020_mqtt_reconnect" id="]jx%^J[$b|*xz1zr7Kv/">
+                    <next>
+                      <block type="am7020_subscribe_mqtt" id="b2EX3bMYyE3Di9vPH-IT">
+                        <value name="TOPIC">
+                          <block type="text" id="XxCMSkbol*r:HT5Jh?uc">
+                            <field name="TEXT">ccwu0918/msg</field>
+                          </block>
+                        </value>
+                      </block>
+                    </next>
+                  </block>
+                </statement>
+                <next>
+                  <block type="am7020_mqtt_handle" id="ye|:_[o~]:;Y__FLTz}s">
+                    <next>
+                      <block type="ez_start_kit_oled_display_draw_commands" id="n)S8|go[xZdxcm,eX5%D">
+                        <statement name="DRAW_CMD">
+                          <block type="oled_display_draw_commands" id="lV/C2CFr`{3;zaHt3M*)">
+                            <statement name="DRAW_CMD">
+                              <block type="oled_display_draw_text" id="LKui$,^5)tSC)%DXJc]{">
+                                <value name="START_X">
+                                  <block type="math_number" id="S~|dK2wHoxquY+Aj+}+[">
+                                    <field name="NUM">0</field>
+                                  </block>
+                                </value>
+                                <value name="START_Y">
+                                  <block type="math_number" id="`0xB_cN~-/=C;@yXe[o*">
+                                    <field name="NUM">0</field>
+                                  </block>
+                                </value>
+                                <value name="CONTENT">
+                                  <block type="text_join" id="}5U;0o=3HPceVA~zPHo*" inline="false">
+                                    <mutation items="2"></mutation>
+                                    <value name="ADD0">
+                                      <block type="text" id="CnvdRiY+VJxV^wxQk2PL">
+                                        <field name="TEXT">Temperature: </field>
+                                      </block>
+                                    </value>
+                                    <value name="ADD1">
+                                      <block type="ez_start_kit_dht" id="nh8C1PP*6[t1fsoq7sA4">
+                                        <field name="EZ_DHT">ez_t</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="oled_display_draw_text" id=",]7/FOtuH3vIO|FeKTAm">
+                                    <value name="START_X">
+                                      <block type="math_number" id="b]M-StD_9?`kwV|nS2_d">
+                                        <field name="NUM">0</field>
+                                      </block>
+                                    </value>
+                                    <value name="START_Y">
+                                      <block type="math_number" id="F-Gvc@^O3d@-k=|^+0y$">
+                                        <field name="NUM">12</field>
+                                      </block>
+                                    </value>
+                                    <value name="CONTENT">
+                                      <block type="text_join" id="H1ThnmH)t%;(X$@}(u`Z" inline="false">
+                                        <mutation items="2"></mutation>
+                                        <value name="ADD0">
+                                          <block type="text" id="V%WbG}Jpeo-4dPZyt;La">
+                                            <field name="TEXT">Humidity: </field>
+                                          </block>
+                                        </value>
+                                        <value name="ADD1">
+                                          <block type="ez_start_kit_dht" id="6aLhqI=QEu91},zEjNL1">
+                                            <field name="EZ_DHT">ez_h</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                    <next>
+                                      <block type="delay_custom" id="G0su;RKS{3s3[_*%;rW4">
+                                        <value name="DELAY_TIME">
+                                          <block type="math_number" id="o3xF30gR)+Mk@+n6se$_">
+                                            <field name="NUM">1000</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </statement>
+                          </block>
+                        </statement>
+                        <next>
+                          <block type="controls_if" id="nF8/l%~mlnXa.^sIQ2_8">
+                            <value name="IF0">
+                              <block type="logic_compare" id="-#~rmvatdB_C|(|+fXfU">
+                                <field name="OP">GTE</field>
+                                <value name="A">
+                                  <block type="millis" id="Qg#pi(o?%)6NvveTv1vE"></block>
+                                </value>
+                                <value name="B">
+                                  <block type="variables_get" id="C%;5:zu]O)wrhF(L/jny">
+                                    <field name="VAR" id="]79NLOe#*7wrB-6Fhk/*">timer</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <statement name="DO0">
+                              <block type="variables_set3" id="@@WqGKyJX}r@#*3QW$OC">
+                                <field name="VAR" id="]79NLOe#*7wrB-6Fhk/*">timer</field>
+                                <value name="DELTA">
+                                  <shadow type="math_number" id="Qgu`@lrqz~%0u$$dz[Jr">
+                                    <field name="NUM">0</field>
+                                  </shadow>
+                                  <block type="math_arithmetic" id="rGzHZHF}v+H?y]JNn3+;">
+                                    <field name="OP">ADD</field>
+                                    <value name="A">
+                                      <block type="millis" id="X6km`*`nUFW?Yl!}cj16"></block>
+                                    </value>
+                                    <value name="B">
+                                      <block type="math_number" id="5Q[_b}|J{-e13ACg9BOK">
+                                        <field name="NUM">60000</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="am7020_publish_mqtt" id="?,+WVF9YnMD(t!cy~l87">
+                                    <value name="TOPIC">
+                                      <block type="text" id="!MdO3G4$3W2iK?L7YkBf">
+                                        <field name="TEXT">ccwu0918/temperature</field>
+                                      </block>
+                                    </value>
+                                    <value name="MESSAGE">
+                                      <block type="ez_start_kit_dht" id="W[Oi!QWK8#|R@LD+SKw;">
+                                        <field name="EZ_DHT">ez_t</field>
+                                      </block>
+                                    </value>
+                                    <next>
+                                      <block type="am7020_publish_mqtt" id="`~}LD#z,Cx6ep?DiNUGY">
+                                        <value name="TOPIC">
+                                          <block type="text" id="$,e?k*d5oCkp%9$Uq^BZ">
+                                            <field name="TEXT">ccwu0918/humidity</field>
+                                          </block>
+                                        </value>
+                                        <value name="MESSAGE">
+                                          <block type="ez_start_kit_dht" id="#0XpA3`S9L7uH%U]jP+b">
+                                            <field name="EZ_DHT">ez_h</field>
+                                          </block>
+                                        </value>
+                                        <next>
+                                          <block type="serial_println" id="+Ne%R,*G3bNdC^0S_!hL">
+                                            <value name="CONTENT">
+                                              <block type="text_join" id="/qG.UCQHB^C(B=V%VB^q" inline="false">
+                                                <mutation items="2"></mutation>
+                                                <value name="ADD0">
+                                                  <block type="text" id="m4=~ek_9TcV%29~~dHF_">
+                                                    <field name="TEXT">Temperature: </field>
+                                                  </block>
+                                                </value>
+                                                <value name="ADD1">
+                                                  <block type="ez_start_kit_dht" id="`*k,peGezuQ{dzi0/;I*">
+                                                    <field name="EZ_DHT">ez_t</field>
+                                                  </block>
+                                                </value>
+                                              </block>
+                                            </value>
+                                            <next>
+                                              <block type="serial_println" id="}nk1Nq.;%LaZ][$O_e9G">
+                                                <value name="CONTENT">
+                                                  <block type="text_join" id="W@/H*b}rQR!Wl`xcuI5v" inline="false">
+                                                    <mutation items="2"></mutation>
+                                                    <value name="ADD0">
+                                                      <block type="text" id="`[/Ec.E1r!;aw7e!0G(M">
+                                                        <field name="TEXT">Humidity: </field>
+                                                      </block>
+                                                    </value>
+                                                    <value name="ADD1">
+                                                      <block type="ez_start_kit_dht" id="Lqnp:id||_Ew$,d=TQU`">
+                                                        <field name="EZ_DHT">ez_h</field>
+                                                      </block>
+                                                    </value>
+                                                  </block>
+                                                </value>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </statement>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+  <block type="am7020_mqtt_event" id="Rta.oha,#U]a:Q*FjFVk" x="830" y="-110">
+    <statement name="MSG_TOPIC_EQAL">
+      <block type="controls_if" id="8%X?yO0THr3D~/%Q|+}C">
+        <value name="IF0">
+          <block type="logic_compare" id="JhS,He+iesfO/+WZ?7)2">
+            <field name="OP">EQ</field>
+            <value name="A">
+              <block type="am7020_mqtt_received_topic" id=":lMEHeo{$P~p[KlhxrGb"></block>
+            </value>
+            <value name="B">
+              <block type="text" id="h.V%2.Ou3%D[wgiIUAL:">
+                <field name="TEXT">ccwu0918/msg</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="ez_start_kit_oled_display_draw_commands" id="Oz)Dqz2Av^3w{Ta:(6[l">
+            <statement name="DRAW_CMD">
+              <block type="oled_display_draw_text" id="gZ!nyMzKyOxgTNR,RY@Y">
+                <value name="START_X">
+                  <block type="math_number" id="_N9wO%:DZT)bRXj`iLi`">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+                <value name="START_Y">
+                  <block type="math_number" id="s]Q~6@M}_ghm{@Qg_2G9">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+                <value name="CONTENT">
+                  <block type="am7020_mqtt_received_msg" id="bnz:PrWC6aMhgcNSC~+L"></block>
+                </value>
+              </block>
+            </statement>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
+  <block type="text" id="9_I?MIi=/]TMW9=ai=y]" disabled="true" x="470" y="290">
+    <field name="TEXT">broker.emqx.io</field>
+  </block>
+</xml>
