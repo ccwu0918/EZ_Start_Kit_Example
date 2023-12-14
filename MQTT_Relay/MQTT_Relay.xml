@@ -1,11 +1,11 @@
-<xml version="F1" board="LinkIt 7697" xmlns="https://developers.google.com/blockly/xml">
+<xml xmlns="https://developers.google.com/blockly/xml">
   <block type="board_initializes_setup" id="0" x="-190" y="-350">
     <field name="BOARD_TYPE">7697</field>
     <statement name="CONTENT">
       <block type="linkit_wifi_wait_until_ready" id="1]h:OiwCi/qZIQX=6`;/">
         <value name="SSID">
           <block type="text" id="KV[R~*j:BW??IJy/MNXg">
-            <field name="TEXT">HUAWEI_E5576_A5C5</field>
+            <field name="TEXT">iPhone12Pro</field>
           </block>
         </value>
         <value name="PASSWORD">
@@ -17,7 +17,7 @@
           <block type="connect_mqtt" id="4du%28`o/Gw](#%i@!4H">
             <value name="BROKER">
               <block type="text" id="^|`-kqIRBEx!wWuwM)vR">
-                <field name="TEXT">broker.emqx.io</field>
+                <field name="TEXT">broker.mqttgo.io</field>
               </block>
             </value>
             <value name="PORT">
