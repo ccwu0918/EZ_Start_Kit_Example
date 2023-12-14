@@ -1,0 +1,37 @@
+[
+    {
+        "id": "968ca532f077d795",
+        "type": "ui_text",
+        "z": "9487ee4b8155232b",
+        "group": "9e9e80bf0b7f40b8",
+        "order": 7,
+        "width": 3,
+        "height": 1,
+        "name": "",
+        "label": "啟動值",
+        "format": "{{msg.payload}}",
+        "layout": "row-center",
+        "x": 810,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "9e9e80bf0b7f40b8",
+        "type": "ui_group",
+        "name": "條件設定",
+        "tab": "ee24a63f2ff3584e",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "ee24a63f2ff3584e",
+        "type": "ui_tab",
+        "name": "Dashboard CSS",
+        "icon": "dashboard",
+        "order": 114,
+        "disabled": false,
+        "hidden": false
+    }
+]
