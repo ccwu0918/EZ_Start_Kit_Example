@@ -3,13 +3,14 @@
     <field name="BOARD_TYPE">7697</field>
     <statement name="CONTENT">
       <block type="oled_display_setting_new" id="=#cPDh(5_?+R8+`UHZ`-">
+        <field name="OLED_TYPE">SSD1306</field>
         <next>
           <block type="oled_display_clear" id="|li]22nb!sk%;?PmE7=|">
             <next>
               <block type="linkit_wifi_wait_until_ready" id=":ix{n41|_suePr*K=wRf">
                 <value name="SSID">
                   <block type="text" id="$IFX9m65ALo@=*Uv~lu=">
-                    <field name="TEXT">HUAWEI_E5576_A5C5</field>
+                    <field name="TEXT">iPhone12Pro</field>
                   </block>
                 </value>
                 <value name="PASSWORD">
@@ -21,7 +22,7 @@
                   <block type="connect_mqtt" id="AkhnNM5=-?BaEVj,X4_,">
                     <value name="BROKER">
                       <block type="text" id="n~$UP11xtr;cH)4k`l*)">
-                        <field name="TEXT">broker.emqx.io</field>
+                        <field name="TEXT">broker.mqttgo.io</field>
                       </block>
                     </value>
                     <value name="PORT">
@@ -116,6 +117,7 @@
             </statement>
             <next>
               <block type="publish_mqtt" id="`B@(({d!u@1+64K(Xp9O">
+                <field name="RETAIN">FALSE</field>
                 <value name="TOPIC">
                   <block type="text" id="ts@X5@,=E$eN||JODe/1">
                     <field name="TEXT">ccwu0918/temp</field>
@@ -133,6 +135,7 @@
                 </value>
                 <next>
                   <block type="publish_mqtt" id="2C-N|`7Ls*!UFW3#r%ck">
+                    <field name="RETAIN">FALSE</field>
                     <value name="TOPIC">
                       <block type="text" id="vYg`=TzAd3;7L=Q7xBLN">
                         <field name="TEXT">ccwu0918/humid</field>
