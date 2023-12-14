@@ -1,16 +1,14 @@
-/*
- * Generated using BlocklyDuino:
- *
- * https://github.com/MediaTek-Labs/BlocklyDuino-for-LinkIt
- *
- * Date: Sun, 05 Dec 2021 15:12:01 GMT
- */
-/*  部份程式由吉哥積木產生  */
-/*  https://sites.google.com/jes.mlc.edu.tw/ljj/linkit7697  */
+//Generated Date: Thu, 14 Dec 2023 04:48:54 GMT
+
 #include "Wire.h"
 #include "U8g2lib.h"
 #include <LWiFi.h>
 #include <PubSubClient.h>
+#define MQTT_SERVER_IP "broker.mqttgo.io"
+#define MQTT_SERVER_PORT 1883
+#define MQTT_ID ""
+#define MQTT_USERNAME ""
+#define MQTT_PASSWORD ""
 #include <DHT.h>
 
 U8G2_SSD1306_128X64_NONAME_F_HW_I2C u8g2(U8G2_R0, /* reset=*/ U8X8_PIN_NONE);
@@ -18,11 +16,6 @@ int clock_center_x=64;
 int clock_center_y=32;
 char _lwifi_ssid[] = "iPhone12Pro";
 char _lwifi_pass[] = "0972866968";
-#define MQTT_SERVER_IP "broker.emqx.io"
-#define MQTT_SERVER_PORT 1883
-#define MQTT_ID ""
-#define MQTT_USERNAME ""
-#define MQTT_PASSWORD ""
 String receivedTopic="";
 String receivedMsg="";
 bool waitForE=true;
@@ -32,6 +25,7 @@ bool pubCtrl=false;
 WiFiClient mqttClient;
 PubSubClient myClient(mqttClient);
 
+DHT dht11_p10(10, DHT11);
 void connectMQTT(){
   while (!myClient.connected()){
     if (!myClient.connect(MQTT_ID,MQTT_USERNAME,MQTT_PASSWORD))
@@ -41,14 +35,12 @@ void connectMQTT(){
   }
 }
 
-DHT dht11_p10(10, DHT11);
-
 void mqttCallback(char* topic, byte* payload, unsigned int length){
   receivedTopic=String(topic);
   receivedMsg="";
   for (unsigned int myIndex = 0; myIndex < length; myIndex++)
   {
-      receivedMsg += (char)payload[myIndex];
+    receivedMsg += (char)payload[myIndex];
   }
   receivedMsg.trim();
   if (receivedTopic == "ccwu0918/relay") {
@@ -79,7 +71,6 @@ void setup()
   pinMode(16, INPUT);
   pinMode(5, OUTPUT);
 }
-
 
 void loop()
 {
