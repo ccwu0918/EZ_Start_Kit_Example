@@ -3,6 +3,7 @@
     <field name="BOARD_TYPE">7697</field>
     <statement name="CONTENT">
       <block type="oled_display_setting_new" id="U4t`CJddLcPYU/;)3/m-">
+        <field name="OLED_TYPE">SSD1306</field>
         <next>
           <block type="oled_display_clear" id="KDg$eA(#*g5-KG,Y*^vc">
             <next>
@@ -21,7 +22,7 @@
                   <block type="connect_mqtt" id="4du%28`o/Gw](#%i@!4H">
                     <value name="BROKER">
                       <block type="text" id="^|`-kqIRBEx!wWuwM)vR">
-                        <field name="TEXT">broker.emqx.io</field>
+                        <field name="TEXT">broker.mqttgo.io</field>
                       </block>
                     </value>
                     <value name="PORT">
@@ -210,6 +211,7 @@
             </statement>
             <next>
               <block type="publish_mqtt" id=".g@j9~$*7~-L`?/J:5:t">
+                <field name="RETAIN">FALSE</field>
                 <value name="TOPIC">
                   <block type="text" id="w)eV9%{7lK?n0]R3;`Rz">
                     <field name="TEXT">ccwu0918/temp</field>
@@ -227,6 +229,7 @@
                 </value>
                 <next>
                   <block type="publish_mqtt" id="-6[#N6VqY-Gh6f|GuT`Y">
+                    <field name="RETAIN">FALSE</field>
                     <value name="TOPIC">
                       <block type="text" id="6HNkKC+*]md{%i~ekv8R">
                         <field name="TEXT">ccwu0918/humid</field>
@@ -244,6 +247,7 @@
                     </value>
                     <next>
                       <block type="publish_mqtt" id="Y-6uphp`Op(HF7F1TEa8">
+                        <field name="RETAIN">FALSE</field>
                         <value name="TOPIC">
                           <block type="text" id="(]llrgLDZjgj_cng9vI4">
                             <field name="TEXT">ccwu0918/phr</field>
@@ -261,6 +265,7 @@
                         </value>
                         <next>
                           <block type="publish_mqtt" id="ix7@}G7JvQm0XhV5$s,|">
+                            <field name="RETAIN">FALSE</field>
                             <value name="TOPIC">
                               <block type="text" id="XNR/X]]yTiM*SJ*!`VeS">
                                 <field name="TEXT">ccwu0918/vr</field>
