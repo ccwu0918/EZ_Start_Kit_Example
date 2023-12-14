@@ -1,4 +1,4 @@
-<xml version="F1" board="LinkIt 7697" xmlns="https://developers.google.com/blockly/xml">
+<xml xmlns="https://developers.google.com/blockly/xml">
   <variables>
     <variable id="]79NLOe#*7wrB-6Fhk/*">timer</variable>
   </variables>
@@ -6,6 +6,7 @@
     <field name="BOARD_TYPE">7697</field>
     <statement name="CONTENT">
       <block type="oled_display_setting_new" id="g#uVF?Vw+sra+g(hz[s,">
+        <field name="OLED_TYPE">SSD1306</field>
         <next>
           <block type="oled_display_clear" id="x1^;t,ks{wR%+6HLSw#2">
             <next>
@@ -86,7 +87,7 @@
                                               <block type="am7020_connect_mqtt" id="v+3/;.4@?.;VtW#;UV~B">
                                                 <value name="BROKER">
                                                   <block type="text" id="9p2682dGA}7*B89`%3F)">
-                                                    <field name="TEXT">broker.hivemq.com</field>
+                                                    <field name="TEXT">broker.mqttgo.com</field>
                                                   </block>
                                                 </value>
                                                 <value name="PORT">
