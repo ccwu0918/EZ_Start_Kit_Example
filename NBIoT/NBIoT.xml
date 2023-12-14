@@ -82,7 +82,7 @@
                                       <block type="am7020_connect_mqtt" id="v+3/;.4@?.;VtW#;UV~B">
                                         <value name="BROKER">
                                           <block type="text" id="9p2682dGA}7*B89`%3F)">
-                                            <field name="TEXT">broker.hivemq.com</field>
+                                            <field name="TEXT">broker.mqttgo.com</field>
                                           </block>
                                         </value>
                                         <value name="PORT">

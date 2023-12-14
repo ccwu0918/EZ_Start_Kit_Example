@@ -1,12 +1,5 @@
-/*
- * Generated using BlocklyDuino:
- *
- * https://github.com/MediaTek-Labs/BlocklyDuino-for-LinkIt
- *
- * Date: Sun, 09 Jan 2022 21:44:50 GMT
- */
-/*  部份程式由吉哥積木產生  */
-/*  https://sites.google.com/jes.mlc.edu.tw/ljj/linkit7697  */
+//Generated Date: Thu, 14 Dec 2023 04:52:28 GMT
+
 #include <Adafruit_NeoPixel.h>
 
 #include "Wire.h"
@@ -16,7 +9,6 @@
 #include <DHT.h>
 
 unsigned long timer = 0;
-
 Adafruit_NeoPixel pixels = Adafruit_NeoPixel(3, 4,NEO_GRB + NEO_KHZ800);
 
 U8G2_SSD1306_128X64_NONAME_F_HW_I2C u8g2(U8G2_R0, /* reset=*/ U8X8_PIN_NONE);
@@ -39,7 +31,7 @@ void nbConnect(void)
     Serial.println(F(" success"));
 }
 
-const char* broker = "broker.hivemq.com";
+const char* broker = "broker.mqttgo.com";
 const int port = 1883;
 const char* mqtt_id = "";
 const char* mqtt_username = "";
@@ -152,7 +144,6 @@ void setup()
   dht11_p10.begin();
 
 }
-
 
 void loop()
 {
