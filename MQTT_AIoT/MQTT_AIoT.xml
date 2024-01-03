@@ -1,0 +1,790 @@
+<xml version="F2" board="LinkIt 7697" xmlns="https://developers.google.com/blockly/xml">
+  <variables>
+    <variable id="Y-WgWEbI}=04fuH)1p2p">總金額</variable>
+    <variable id=".T_m`t4Q1r_1uUJ=HAP|">樂事</variable>
+    <variable id="[JULBSVmYMVZD(IP#h:{">奶茶</variable>
+    <variable id=")p2;u!LZz#mN9ZR$wxU^">POCKY</variable>
+    <variable id="ou{9m+f@8$morS]Nj_zo">可樂</variable>
+    <variable id="-^osF+;e5/g1uD#{X2ep">其它</variable>
+  </variables>
+  <block type="board_initializes_setup" id="GKII*hepO:qC1U)Sy=61" x="-250" y="-230">
+    <field name="BOARD_TYPE">7697</field>
+    <statement name="CONTENT">
+      <block type="oled_display_setting_new" id="uArYN^om%GOQ1L,THzji">
+        <field name="OLED_TYPE">U8G2_SSD1306_128X64_NONAME_F_HW_I2C</field>
+        <next>
+          <block type="oled_display_set_chinese_font" id="F=SrZ}[;r1.Arw;Il-F7">
+            <next>
+              <block type="oled_display_clear" id="Wu*,(V2u|z5AELo;.E9S">
+                <next>
+                  <block type="linkit_wifi_wait_until_ready" id="Wqbst`EbKhB#1]5D{[}`">
+                    <value name="SSID">
+                      <block type="text" id="WcISX^#46E)q0PyZC3cp">
+                        <field name="TEXT">Xiaomi_7C2C</field>
+                      </block>
+                    </value>
+                    <value name="PASSWORD">
+                      <block type="text" id="kg=OGwpchjpqzBnv09l`">
+                        <field name="TEXT">082322586</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="oled_display_draw_commands" id=":*.`vt*#cGG,?gyd1Ns)">
+                        <statement name="DRAW_CMD">
+                          <block type="oled_display_draw_text" id="kLME`W`G(.jLE$fNh6Qd">
+                            <value name="START_X">
+                              <block type="math_number" id="5=!*4oFSfFv[%En+9zz.">
+                                <field name="NUM">0</field>
+                              </block>
+                            </value>
+                            <value name="START_Y">
+                              <block type="math_number" id="A#2rxRq{1LC3C;p}SSOQ">
+                                <field name="NUM">10</field>
+                              </block>
+                            </value>
+                            <value name="CONTENT">
+                              <block type="text" id="0}+S/asxOE}76JM*j}~R">
+                                <field name="TEXT">Wi-Fi 連線中.....</field>
+                              </block>
+                            </value>
+                          </block>
+                        </statement>
+                        <next>
+                          <block type="connect_mqtt" id=")bhTJ,Ti*YTg?nDcpo+p">
+                            <value name="BROKER">
+                              <block type="text" id="e=}%|Mvm|=psef;jpFD:">
+                                <field name="TEXT">broker.mqttgo.io</field>
+                              </block>
+                            </value>
+                            <value name="PORT">
+                              <block type="math_number" id="P-KQSa!+edJMUHz%T!;!">
+                                <field name="NUM">1883</field>
+                              </block>
+                            </value>
+                            <value name="ID">
+                              <block type="text" id="Ab|rZ0QGr%V*hB?/%H9.">
+                                <field name="TEXT"></field>
+                              </block>
+                            </value>
+                            <value name="USERNAME">
+                              <block type="text" id="8.Kd6,sbq@mX1C`Z@[8N">
+                                <field name="TEXT"></field>
+                              </block>
+                            </value>
+                            <value name="PASSWORD">
+                              <block type="text" id="OU!d2FwYQ9l%JSV8AuG3">
+                                <field name="TEXT"></field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="oled_display_draw_commands" id="LQ3N%ev.r{_o=gI]c~k=">
+                                <statement name="DRAW_CMD">
+                                  <block type="oled_display_draw_text" id="q/]Jtk.C5Uc6pQ;!G@(i">
+                                    <value name="START_X">
+                                      <block type="math_number" id="tSkAo%}pDqCY4%yXEUfj">
+                                        <field name="NUM">0</field>
+                                      </block>
+                                    </value>
+                                    <value name="START_Y">
+                                      <block type="math_number" id="!?x4~r@0_K}7!3{d3ttD">
+                                        <field name="NUM">10</field>
+                                      </block>
+                                    </value>
+                                    <value name="CONTENT">
+                                      <block type="text" id="jb+P)[5zKqi$m[X}sVvx">
+                                        <field name="TEXT">Wi-Fi 連線成功。</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </statement>
+                                <next>
+                                  <block type="subscribe_mqtt" id="hraMyZVO|PU.V%*[K;z7">
+                                    <value name="TOPIC">
+                                      <block type="text" id="dKpK={?U_}s|A9}]a,PV">
+                                        <field name="TEXT">nquiem/lays</field>
+                                      </block>
+                                    </value>
+                                    <next>
+                                      <block type="subscribe_mqtt" id="##ei0]wD#lj,$j2Hgtg=">
+                                        <value name="TOPIC">
+                                          <block type="text" id="4@Oz{,N_CZv#8c-M1.z^">
+                                            <field name="TEXT">nquiem/milk_tea</field>
+                                          </block>
+                                        </value>
+                                        <next>
+                                          <block type="subscribe_mqtt" id="aK}X!fNU_ER26JlGSYir">
+                                            <value name="TOPIC">
+                                              <block type="text" id="-:AN^6_F+eQ(w!/DEIN$">
+                                                <field name="TEXT">nquiem/pocky</field>
+                                              </block>
+                                            </value>
+                                            <next>
+                                              <block type="subscribe_mqtt" id="^?ly@roH;:(}hBblh$`Z">
+                                                <value name="TOPIC">
+                                                  <block type="text" id="Z}z]b:SR$:FT?Qjd/O}(">
+                                                    <field name="TEXT">nquiem/cola</field>
+                                                  </block>
+                                                </value>
+                                                <next>
+                                                  <block type="subscribe_mqtt" id="Fk=~E4X9IZ[1zpZ~s2^D">
+                                                    <value name="TOPIC">
+                                                      <block type="text" id="Pud,WZr#[{:RV^a$Z#,L">
+                                                        <field name="TEXT">nquiem/other</field>
+                                                      </block>
+                                                    </value>
+                                                    <next>
+                                                      <block type="variables_set" id="mHb~g]8=aPf3HqU{CgWo">
+                                                        <field name="POSITION">global</field>
+                                                        <field name="TYPE">int</field>
+                                                        <field name="VAR" id=".T_m`t4Q1r_1uUJ=HAP|">樂事</field>
+                                                        <value name="VALUE">
+                                                          <shadow type="math_number" id="*xVaK$,ahk$-eXUgX?-b">
+                                                            <field name="NUM">0</field>
+                                                          </shadow>
+                                                        </value>
+                                                        <next>
+                                                          <block type="variables_set" id="0{7J4;-5=NoADSDl!;t2">
+                                                            <field name="POSITION">global</field>
+                                                            <field name="TYPE">int</field>
+                                                            <field name="VAR" id="[JULBSVmYMVZD(IP#h:{">奶茶</field>
+                                                            <value name="VALUE">
+                                                              <shadow type="math_number" id="|@y)Bb5Bb*}U,mepR}o6">
+                                                                <field name="NUM">0</field>
+                                                              </shadow>
+                                                            </value>
+                                                            <next>
+                                                              <block type="variables_set" id="@V3D27n[EaAmu1mG`rNQ">
+                                                                <field name="POSITION">global</field>
+                                                                <field name="TYPE">int</field>
+                                                                <field name="VAR" id=")p2;u!LZz#mN9ZR$wxU^">POCKY</field>
+                                                                <value name="VALUE">
+                                                                  <shadow type="math_number" id="Hu=c^DFe/_VH!t[0MVH/">
+                                                                    <field name="NUM">0</field>
+                                                                  </shadow>
+                                                                </value>
+                                                                <next>
+                                                                  <block type="variables_set" id="uzBF4:I%hNWc)MnoN.ny">
+                                                                    <field name="POSITION">global</field>
+                                                                    <field name="TYPE">int</field>
+                                                                    <field name="VAR" id="ou{9m+f@8$morS]Nj_zo">可樂</field>
+                                                                    <value name="VALUE">
+                                                                      <shadow type="math_number" id="sB``cb#c`o0Y$H~Oy`Q!">
+                                                                        <field name="NUM">0</field>
+                                                                      </shadow>
+                                                                    </value>
+                                                                    <next>
+                                                                      <block type="variables_set" id="JK-Th1yty/teN88n!AOW">
+                                                                        <field name="POSITION">global</field>
+                                                                        <field name="TYPE">int</field>
+                                                                        <field name="VAR" id="-^osF+;e5/g1uD#{X2ep">其它</field>
+                                                                        <value name="VALUE">
+                                                                          <shadow type="math_number" id="0sLvfU8.Bb?nr?.orUk#">
+                                                                            <field name="NUM">0</field>
+                                                                          </shadow>
+                                                                        </value>
+                                                                        <next>
+                                                                          <block type="variables_set" id="+[bk5q8SwECFi,rao7cg">
+                                                                            <field name="POSITION">global</field>
+                                                                            <field name="TYPE">int</field>
+                                                                            <field name="VAR" id="Y-WgWEbI}=04fuH)1p2p">總金額</field>
+                                                                            <value name="VALUE">
+                                                                              <shadow type="math_number" id="JPIbKX?X_G[/d^|rl./;">
+                                                                                <field name="NUM">0</field>
+                                                                              </shadow>
+                                                                            </value>
+                                                                          </block>
+                                                                        </next>
+                                                                      </block>
+                                                                    </next>
+                                                                  </block>
+                                                                </next>
+                                                              </block>
+                                                            </next>
+                                                          </block>
+                                                        </next>
+                                                      </block>
+                                                    </next>
+                                                  </block>
+                                                </next>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <next>
+      <block type="initializes_loop" id="t~QMt7zpvvcK^g+)S_R5">
+        <statement name="CONTENT">
+          <block type="startPlus_button" id="2b3QXvMw5~i3WEvxz1W$">
+            <field name="AB_BUTTON">C</field>
+            <statement name="MSG_BUTTON_CALL">
+              <block type="variables_set3" id="?ai2%}8w|O0U~#IVn;om">
+                <field name="VAR" id=".T_m`t4Q1r_1uUJ=HAP|">樂事</field>
+                <value name="DELTA">
+                  <shadow type="math_number" id="9Q6$Ps(P?+0h`,t4)![f">
+                    <field name="NUM">0</field>
+                  </shadow>
+                  <block type="math_number" id="u{FM7%CN6|uCe5)R+!x^">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="variables_set3" id="*UOM~}z-=]3NjQM%%SUM">
+                    <field name="VAR" id="[JULBSVmYMVZD(IP#h:{">奶茶</field>
+                    <value name="DELTA">
+                      <shadow type="math_number" id="RH^d6OwzER14-WK%#4cX">
+                        <field name="NUM">0</field>
+                      </shadow>
+                      <block type="math_number" id="~|Xn}3$2H32.,a)CAa4h">
+                        <field name="NUM">0</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="variables_set3" id="ybctqRp)=:dd]Enr;r-^">
+                        <field name="VAR" id=")p2;u!LZz#mN9ZR$wxU^">POCKY</field>
+                        <value name="DELTA">
+                          <shadow type="math_number" id="lBl`,d9b81f_1=*]!ZFP">
+                            <field name="NUM">0</field>
+                          </shadow>
+                          <block type="math_number" id="[G_O1gNP%56n6D;]s,ul">
+                            <field name="NUM">0</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="variables_set3" id="UDH:v(]9E:soALIUvwf4">
+                            <field name="VAR" id="ou{9m+f@8$morS]Nj_zo">可樂</field>
+                            <value name="DELTA">
+                              <shadow type="math_number" id="N@qxqaUdQ+,AZ7?PAOWo">
+                                <field name="NUM">0</field>
+                              </shadow>
+                              <block type="math_number" id="l{BT}/%i39S?d4_}3)6V">
+                                <field name="NUM">0</field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="variables_set3" id="n3$KO:G91rGrNe3SwG9Q">
+                                <field name="VAR" id="-^osF+;e5/g1uD#{X2ep">其它</field>
+                                <value name="DELTA">
+                                  <shadow type="math_number" id="lql~#IkNn/7|n7n5UI/_">
+                                    <field name="NUM">0</field>
+                                  </shadow>
+                                  <block type="math_number" id="O{AVri/5yPJyK3o{fvQO">
+                                    <field name="NUM">0</field>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="variables_set3" id="+47s@Glp~|=blCPkdx0e">
+                                    <field name="VAR" id="Y-WgWEbI}=04fuH)1p2p">總金額</field>
+                                    <value name="DELTA">
+                                      <shadow type="math_number" id="?uyL^9|#m_{FY0|vK6RF">
+                                        <field name="NUM">0</field>
+                                      </shadow>
+                                      <block type="math_number" id="zg{~hcX}G-Q_SSW3zj8,">
+                                        <field name="NUM">0</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </statement>
+            <next>
+              <block type="startPlus_button" id="{/=:)0Es%QD`H,`2{de1">
+                <field name="AB_BUTTON">A</field>
+                <statement name="MSG_BUTTON_CALL">
+                  <block type="variables_set3" id="i`m98kK;b2@b$JaS%Cz:">
+                    <field name="VAR" id="Y-WgWEbI}=04fuH)1p2p">總金額</field>
+                    <value name="DELTA">
+                      <shadow type="math_number">
+                        <field name="NUM">0</field>
+                      </shadow>
+                      <block type="math_arithmetic" id="8|Y;v~Ige??ir1Ul,~a[" inline="false">
+                        <field name="OP">ADD</field>
+                        <value name="A">
+                          <block type="math_arithmetic" id="BN=5r=(k^3J5eHpz_(ZX" inline="false">
+                            <field name="OP">ADD</field>
+                            <value name="A">
+                              <block type="math_arithmetic" id="_YDPw2:~8[[,,BzlAT_O">
+                                <field name="OP">MULTIPLY</field>
+                                <value name="A">
+                                  <block type="variables_get" id="P##%PbKopkL[cgGb`I6:">
+                                    <field name="VAR" id=".T_m`t4Q1r_1uUJ=HAP|">樂事</field>
+                                  </block>
+                                </value>
+                                <value name="B">
+                                  <block type="math_number" id="H?=tOBFHAKcBTS#0NtUW">
+                                    <field name="NUM">30</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <block type="math_arithmetic" id="g+dwQC~Lut1=~uB}F]Ll">
+                                <field name="OP">MULTIPLY</field>
+                                <value name="A">
+                                  <block type="variables_get" id="5hHIBU[Y3VNfWDV;U%Dw">
+                                    <field name="VAR" id="[JULBSVmYMVZD(IP#h:{">奶茶</field>
+                                  </block>
+                                </value>
+                                <value name="B">
+                                  <block type="math_number" id="k[?3`1%Op0}im0htcJ5+">
+                                    <field name="NUM">10</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="math_arithmetic" id="z*h)s!S?dFmF4*@~(%H~" inline="false">
+                            <field name="OP">ADD</field>
+                            <value name="A">
+                              <block type="math_arithmetic" id="z3cAW+L|*%QY?JMJ2W8t">
+                                <field name="OP">MULTIPLY</field>
+                                <value name="A">
+                                  <block type="variables_get" id="z~G!9A=^YcBv]Y4#p-!O">
+                                    <field name="VAR" id=")p2;u!LZz#mN9ZR$wxU^">POCKY</field>
+                                  </block>
+                                </value>
+                                <value name="B">
+                                  <block type="math_number" id="n9l|GQtG?(E6A/+QP@^I">
+                                    <field name="NUM">40</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <block type="math_arithmetic" id="d_/h2a~Z_{tp88p`G/|/">
+                                <field name="OP">MULTIPLY</field>
+                                <value name="A">
+                                  <block type="variables_get" id="2iBV3n8J$e9/o?F5Sz//">
+                                    <field name="VAR" id="ou{9m+f@8$morS]Nj_zo">可樂</field>
+                                  </block>
+                                </value>
+                                <value name="B">
+                                  <block type="math_number" id="kj`!h7!D3Xbre:Wp+{oD">
+                                    <field name="NUM">25</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                  </block>
+                </statement>
+                <next>
+                  <block type="oled_display_draw_commands" id="=|i#1L+*Sp%=rc+.%ie)">
+                    <statement name="DRAW_CMD">
+                      <block type="oled_display_draw_text" id="N,Nmk5I4IO5/FvQY]QN+">
+                        <value name="START_X">
+                          <block type="math_number" id="5?!Hs2lNbdTlnzGsu.S3">
+                            <field name="NUM">0</field>
+                          </block>
+                        </value>
+                        <value name="START_Y">
+                          <block type="math_number" id="9rndNtVqq+Pks.Azb8W1">
+                            <field name="NUM">5</field>
+                          </block>
+                        </value>
+                        <value name="CONTENT">
+                          <block type="text_join" id="Zwy;e_$T5R1sRR:BZL4%">
+                            <mutation items="2"></mutation>
+                            <value name="ADD0">
+                              <block type="text" id="O`O/muK:w|{AMwmV;3Nx">
+                                <field name="TEXT">樂事: </field>
+                              </block>
+                            </value>
+                            <value name="ADD1">
+                              <block type="variables_get" id="}8L.u}:tYh(_~xLFroCM">
+                                <field name="VAR" id=".T_m`t4Q1r_1uUJ=HAP|">樂事</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="oled_display_draw_text" id="lmtXG@a69X!In{jZ3csI">
+                            <value name="START_X">
+                              <block type="math_number" id="XosIa#T+GBg,Q2HAN$}k">
+                                <field name="NUM">65</field>
+                              </block>
+                            </value>
+                            <value name="START_Y">
+                              <block type="math_number" id="Yz}Q@A4P-/Y,N4Tw:v=L">
+                                <field name="NUM">5</field>
+                              </block>
+                            </value>
+                            <value name="CONTENT">
+                              <block type="text_join" id="f@;i1eyNU7gJ]S4bj*n$">
+                                <mutation items="2"></mutation>
+                                <value name="ADD0">
+                                  <block type="text" id="Y]`faj#2zf5)|Y{@;jDF">
+                                    <field name="TEXT">奶茶:  </field>
+                                  </block>
+                                </value>
+                                <value name="ADD1">
+                                  <block type="variables_get" id="cy2C:?*E;nEn:J7ysdD(">
+                                    <field name="VAR" id="[JULBSVmYMVZD(IP#h:{">奶茶</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="oled_display_draw_text" id="M+iPg~.ffw-+}F_JZnNC">
+                                <value name="START_X">
+                                  <block type="math_number" id="TAif*TE4W5|,KBY~m*!^">
+                                    <field name="NUM">0</field>
+                                  </block>
+                                </value>
+                                <value name="START_Y">
+                                  <block type="math_number" id="-o3f{f6@/Mqf,2jvhh0e">
+                                    <field name="NUM">25</field>
+                                  </block>
+                                </value>
+                                <value name="CONTENT">
+                                  <block type="text_join" id="TLB;9NrRS!S;rs}Gw*0r">
+                                    <mutation items="2"></mutation>
+                                    <value name="ADD0">
+                                      <block type="text" id="VP%*:_egX?k!g]D|)#{^">
+                                        <field name="TEXT">Pocky: </field>
+                                      </block>
+                                    </value>
+                                    <value name="ADD1">
+                                      <block type="variables_get" id="nOzIM%O.7Vj[6^Hca}[G">
+                                        <field name="VAR" id=")p2;u!LZz#mN9ZR$wxU^">POCKY</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="oled_display_draw_text" id="fC#X74%?RRmPvtsPQDO#">
+                                    <value name="START_X">
+                                      <block type="math_number" id="MOk,26|+B,w#lpQtj02k">
+                                        <field name="NUM">65</field>
+                                      </block>
+                                    </value>
+                                    <value name="START_Y">
+                                      <block type="math_number" id=")F1yXA_1)-7-@!UMfim,">
+                                        <field name="NUM">25</field>
+                                      </block>
+                                    </value>
+                                    <value name="CONTENT">
+                                      <block type="text_join" id="+}B/6PGf|O)|QR(aMj{)">
+                                        <mutation items="2"></mutation>
+                                        <value name="ADD0">
+                                          <block type="text" id="Zd#zYCu+:Yjvh-C]5I84">
+                                            <field name="TEXT">可樂: </field>
+                                          </block>
+                                        </value>
+                                        <value name="ADD1">
+                                          <block type="variables_get" id="dZB([o~E.SXZ,@KWKZ_;">
+                                            <field name="VAR" id="ou{9m+f@8$morS]Nj_zo">可樂</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                    <next>
+                                      <block type="oled_display_draw_text" id="R;*~d!8G?M!9Fkwg#1hd">
+                                        <value name="START_X">
+                                          <block type="math_number" id="2k4dWcQ^4we^!P9TN3L/">
+                                            <field name="NUM">0</field>
+                                          </block>
+                                        </value>
+                                        <value name="START_Y">
+                                          <block type="math_number" id="mxeV`X|w0Hz6w#4StyW}">
+                                            <field name="NUM">45</field>
+                                          </block>
+                                        </value>
+                                        <value name="CONTENT">
+                                          <block type="text_join" id="W5Ko}W`yORg+G-#C;eqw">
+                                            <mutation items="2"></mutation>
+                                            <value name="ADD0">
+                                              <block type="text" id="557|S|E{}Z#S0q}#c;%U">
+                                                <field name="TEXT">總金額: </field>
+                                              </block>
+                                            </value>
+                                            <value name="ADD1">
+                                              <block type="variables_get" id="|`;^Pcb3}Qru$.9H|q8L">
+                                                <field name="VAR" id="Y-WgWEbI}=04fuH)1p2p">總金額</field>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </statement>
+                    <next>
+                      <block type="delay_custom" id=")(mU#mqn`;Xk+)E,v*yI">
+                        <value name="DELAY_TIME">
+                          <block type="math_number" id="0t0%2ih^;x~9u~PtSCq4">
+                            <field name="NUM">200</field>
+                          </block>
+                        </value>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+  <block type="mqtt_event" id="a[[pTqvP+T{s[K?xEJr9" x="670" y="-170">
+    <statement name="MSG_TOPIC_EQAL">
+      <block type="controls_if" id="+gSNZ!8%xbDfNFb.uHC=">
+        <mutation elseif="4"></mutation>
+        <value name="IF0">
+          <block type="logic_compare" id="7JF@YP6o%PiTPu}MV7=b">
+            <field name="OP">EQ</field>
+            <value name="A">
+              <block type="mqtt_received_topic" id="^rx:Re)2d0u,INU[?SzJ"></block>
+            </value>
+            <value name="B">
+              <block type="text" id="qKF[Cx*11S.v`7y167kB">
+                <field name="TEXT">nquiem/other</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="math_change" id="/@e^:$DL?b.MO/bEWmZg">
+            <value name="VAR">
+              <block type="variables_get" id="?Wyt|i~pg_#;7n2RjBpG">
+                <field name="VAR" id="-^osF+;e5/g1uD#{X2ep">其它</field>
+              </block>
+            </value>
+            <value name="DELTA">
+              <block type="math_number" id="bua1utpnWOf%[8D![%-D">
+                <field name="NUM">1</field>
+              </block>
+            </value>
+          </block>
+        </statement>
+        <value name="IF1">
+          <block type="logic_compare" id="/-e2XJGQGJ$Q-lPy8-]E">
+            <field name="OP">EQ</field>
+            <value name="A">
+              <block type="mqtt_received_topic" id="o-{mByx$Ih3}F5)cQN!M"></block>
+            </value>
+            <value name="B">
+              <block type="text" id="Y(`2*M{:NX-*|{P4`$vn">
+                <field name="TEXT">nquiem/lays</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO1">
+          <block type="math_change" id="iz!J0X,)~H]XAD!.b5n(">
+            <value name="VAR">
+              <block type="variables_get" id="U#vs(5DMM+|o7BKlo-)0">
+                <field name="VAR" id=".T_m`t4Q1r_1uUJ=HAP|">樂事</field>
+              </block>
+            </value>
+            <value name="DELTA">
+              <block type="math_number" id="^)z*YU:$x}?_KuQB6]Kp">
+                <field name="NUM">1</field>
+              </block>
+            </value>
+          </block>
+        </statement>
+        <value name="IF2">
+          <block type="logic_compare" id="8@AdJ$,vl;t9kRd}h[~|">
+            <field name="OP">EQ</field>
+            <value name="A">
+              <block type="mqtt_received_topic" id="BfB~rP3DXi2?/6v]UglH"></block>
+            </value>
+            <value name="B">
+              <block type="text" id="Tj@qf(1bW^1ya.6#F~T3">
+                <field name="TEXT">nquiem/milk_tea</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO2">
+          <block type="math_change" id="BitbfZ5fxav@w6Py@e|7">
+            <value name="VAR">
+              <block type="variables_get" id="QO4%sE8z-/0ZjDwf1O0-">
+                <field name="VAR" id="[JULBSVmYMVZD(IP#h:{">奶茶</field>
+              </block>
+            </value>
+            <value name="DELTA">
+              <block type="math_number" id="Eg0{#fHomP@ZUdd8MbrK">
+                <field name="NUM">1</field>
+              </block>
+            </value>
+          </block>
+        </statement>
+        <value name="IF3">
+          <block type="logic_compare" id="s4Wutg$e[4Ss+8seDdKy">
+            <field name="OP">EQ</field>
+            <value name="A">
+              <block type="mqtt_received_topic" id="NNX=(CbEO:)|NUp]pBv-"></block>
+            </value>
+            <value name="B">
+              <block type="text" id="[=SOjXI*)vV#l9)[`|rW">
+                <field name="TEXT">nquiem/pocky</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO3">
+          <block type="math_change" id="W7=|+YQ*O~=H.Usrq[*~">
+            <value name="VAR">
+              <block type="variables_get" id="mrok*m1.V9#2HBisJEdn">
+                <field name="VAR" id=")p2;u!LZz#mN9ZR$wxU^">POCKY</field>
+              </block>
+            </value>
+            <value name="DELTA">
+              <block type="math_number" id="O{ikQ,m,yVX3JN.r2Gzf">
+                <field name="NUM">1</field>
+              </block>
+            </value>
+          </block>
+        </statement>
+        <value name="IF4">
+          <block type="logic_compare" id="U8ow9:(o$~=c#J69QEf-">
+            <field name="OP">EQ</field>
+            <value name="A">
+              <block type="mqtt_received_topic" id="$}qk_T5cGhCD~Hc!PtQ/"></block>
+            </value>
+            <value name="B">
+              <block type="text" id="c8Kt8bSJg/FYmip%rxi~">
+                <field name="TEXT">nquiem/cola</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO4">
+          <block type="math_change" id="6b~6B.%w0([{jn(S2BrE">
+            <value name="VAR">
+              <block type="variables_get" id="U0E!ZP5qri/xb~Pg?NBM">
+                <field name="VAR" id="ou{9m+f@8$morS]Nj_zo">可樂</field>
+              </block>
+            </value>
+            <value name="DELTA">
+              <block type="math_number" id="J9wQZ-oP9N[WKW8nK|5i">
+                <field name="NUM">1</field>
+              </block>
+            </value>
+          </block>
+        </statement>
+        <next>
+          <block type="variables_set3" id="4i#_5oM3pJRbuyj|R81Z">
+            <field name="VAR" id="Y-WgWEbI}=04fuH)1p2p">總金額</field>
+            <value name="DELTA">
+              <shadow type="math_number">
+                <field name="NUM">0</field>
+              </shadow>
+              <block type="math_arithmetic" id="]-zifQ@Je{t40,seXWb{" inline="false">
+                <field name="OP">ADD</field>
+                <value name="A">
+                  <block type="math_arithmetic" id="Clu/tH#=1*{Y`@DuaTRy" inline="false">
+                    <field name="OP">ADD</field>
+                    <value name="A">
+                      <block type="math_arithmetic" id="QVcIQN8tzc55sb,3Ao?-">
+                        <field name="OP">MULTIPLY</field>
+                        <value name="A">
+                          <block type="variables_get" id="efHnezXDEO#gy7h-BFan">
+                            <field name="VAR" id=".T_m`t4Q1r_1uUJ=HAP|">樂事</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="math_number" id="z^zGeS-Lx+EK3D.[r{~-">
+                            <field name="NUM">30</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="math_arithmetic" id="0mY%hLL1+84(zLWvKF@e">
+                        <field name="OP">MULTIPLY</field>
+                        <value name="A">
+                          <block type="variables_get" id="IzJb3!jd@GrP@wQ]S#Q8">
+                            <field name="VAR" id="[JULBSVmYMVZD(IP#h:{">奶茶</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="math_number" id="MZ`sn:les??ZRHzG`h/{">
+                            <field name="NUM">10</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="math_arithmetic" id="db2nYYt6i~*HHy5p#:x#" inline="false">
+                    <field name="OP">ADD</field>
+                    <value name="A">
+                      <block type="math_arithmetic" id="z$_te+HNAc%%](?s4FgL">
+                        <field name="OP">MULTIPLY</field>
+                        <value name="A">
+                          <block type="variables_get" id="QM.Z8xo/9EmCHr_M=es-">
+                            <field name="VAR" id=")p2;u!LZz#mN9ZR$wxU^">POCKY</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="math_number" id="[8^Lt@M16k:oe5X^ZfCK">
+                            <field name="NUM">40</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="math_arithmetic" id="k|1qon9k0UcTI;~|5^2V">
+                        <field name="OP">MULTIPLY</field>
+                        <value name="A">
+                          <block type="variables_get" id="!bsDnQh;Ub[NSv2S;B*A">
+                            <field name="VAR" id="ou{9m+f@8$morS]Nj_zo">可樂</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="math_number" id="]YFXQ0Iu8x/`*Z?PQ^nf">
+                            <field name="NUM">25</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+              </block>
+            </value>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>
