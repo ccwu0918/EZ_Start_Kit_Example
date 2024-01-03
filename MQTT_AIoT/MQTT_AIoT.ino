@@ -1,4 +1,4 @@
-//Generated Date: Wed, 03 Jan 2024 17:17:51 GMT
+//Generated Date: Wed, 03 Jan 2024 17:39:55 GMT
 
 #include "Wire.h"
 #include "U8g2lib.h"
@@ -104,6 +104,7 @@ void mqttCallback(char* topic, byte* payload, unsigned int length){
     _E5_8F_AF_E6_A8_82 = _E5_8F_AF_E6_A8_82 + 1;
   }
   _E7_B8_BD_E9_87_91_E9_A1_8D = ((_E6_A8_82_E4_BA_8B * 30) + (_E5_A5_B6_E8_8C_B6 * 10)) + ((POCKY * 40) + (_E5_8F_AF_E6_A8_82 * 25));
+  myClient.publish(String("nquiem/totals").c_str(),String(_E7_B8_BD_E9_87_91_E9_A1_8D).c_str());
 
 }
 

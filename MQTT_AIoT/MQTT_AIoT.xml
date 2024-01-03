@@ -782,6 +782,21 @@
                 </value>
               </block>
             </value>
+            <next>
+              <block type="publish_mqtt" id="V)jGvHCYOljS(D%dKi$D">
+                <field name="RETAIN">FALSE</field>
+                <value name="TOPIC">
+                  <block type="text" id="=vOtB@yn?@I)w%j5GuHy">
+                    <field name="TEXT">nquiem/totals</field>
+                  </block>
+                </value>
+                <value name="MESSAGE">
+                  <block type="variables_get" id="Hmeo?0Vdb=v77GyEngUI">
+                    <field name="VAR" id="Y-WgWEbI}=04fuH)1p2p">總金額</field>
+                  </block>
+                </value>
+              </block>
+            </next>
           </block>
         </next>
       </block>
