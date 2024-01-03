@@ -1,4 +1,4 @@
-//Generated Date: Wed, 03 Jan 2024 17:15:30 GMT
+//Generated Date: Wed, 03 Jan 2024 17:17:51 GMT
 
 #include "Wire.h"
 #include "U8g2lib.h"
@@ -169,9 +169,9 @@ void loop()
     u8g2.setCursor(0, 5);
     u8g2.print(String(String("樂事: ")+String(_E6_A8_82_E4_BA_8B)).c_str());
     u8g2.setCursor(65, 5);
-    u8g2.print(String(String("奶茶:  ")+String(_E5_A5_B6_E8_8C_B6)).c_str());
+    u8g2.print(String(String("奶茶: ")+String(_E5_A5_B6_E8_8C_B6)).c_str());
     u8g2.setCursor(0, 25);
-    u8g2.print(String(String("Pocky: ")+String(POCKY)).c_str());
+    u8g2.print(String(String("百奇: ")+String(POCKY)).c_str());
     u8g2.setCursor(65, 25);
     u8g2.print(String(String("可樂: ")+String(_E5_8F_AF_E6_A8_82)).c_str());
     u8g2.setCursor(0, 45);

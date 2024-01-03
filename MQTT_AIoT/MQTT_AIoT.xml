@@ -443,7 +443,7 @@
                                 <mutation items="2"></mutation>
                                 <value name="ADD0">
                                   <block type="text" id="Y]`faj#2zf5)|Y{@;jDF">
-                                    <field name="TEXT">奶茶:  </field>
+                                    <field name="TEXT">奶茶: </field>
                                   </block>
                                 </value>
                                 <value name="ADD1">
@@ -470,7 +470,7 @@
                                     <mutation items="2"></mutation>
                                     <value name="ADD0">
                                       <block type="text" id="VP%*:_egX?k!g]D|)#{^">
-                                        <field name="TEXT">Pocky: </field>
+                                        <field name="TEXT">百奇: </field>
                                       </block>
                                     </value>
                                     <value name="ADD1">
