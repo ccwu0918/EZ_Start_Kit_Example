@@ -1,4 +1,4 @@
-<xml version="F2" board="LinkIt 7697" xmlns="https://developers.google.com/blockly/xml">
+<xml xmlns="https://developers.google.com/blockly/xml">
   <variables>
     <variable id="Y-WgWEbI}=04fuH)1p2p">總金額</variable>
     <variable id=".T_m`t4Q1r_1uUJ=HAP|">樂事</variable>
@@ -17,86 +17,86 @@
             <next>
               <block type="oled_display_clear" id="Wu*,(V2u|z5AELo;.E9S">
                 <next>
-                  <block type="linkit_wifi_wait_until_ready" id="Wqbst`EbKhB#1]5D{[}`">
-                    <value name="SSID">
-                      <block type="text" id="WcISX^#46E)q0PyZC3cp">
-                        <field name="TEXT">Xiaomi_7C2C</field>
-                      </block>
-                    </value>
-                    <value name="PASSWORD">
-                      <block type="text" id="kg=OGwpchjpqzBnv09l`">
-                        <field name="TEXT">082322586</field>
-                      </block>
-                    </value>
-                    <next>
-                      <block type="oled_display_draw_commands" id=":*.`vt*#cGG,?gyd1Ns)">
-                        <statement name="DRAW_CMD">
-                          <block type="oled_display_draw_text" id="kLME`W`G(.jLE$fNh6Qd">
-                            <value name="START_X">
-                              <block type="math_number" id="5=!*4oFSfFv[%En+9zz.">
-                                <field name="NUM">0</field>
-                              </block>
-                            </value>
-                            <value name="START_Y">
-                              <block type="math_number" id="A#2rxRq{1LC3C;p}SSOQ">
-                                <field name="NUM">10</field>
-                              </block>
-                            </value>
-                            <value name="CONTENT">
-                              <block type="text" id="0}+S/asxOE}76JM*j}~R">
-                                <field name="TEXT">Wi-Fi 連線中.....</field>
-                              </block>
-                            </value>
+                  <block type="oled_display_draw_commands" id=":*.`vt*#cGG,?gyd1Ns)">
+                    <statement name="DRAW_CMD">
+                      <block type="oled_display_draw_text" id="kLME`W`G(.jLE$fNh6Qd">
+                        <value name="START_X">
+                          <block type="math_number" id="5=!*4oFSfFv[%En+9zz.">
+                            <field name="NUM">0</field>
                           </block>
-                        </statement>
+                        </value>
+                        <value name="START_Y">
+                          <block type="math_number" id="A#2rxRq{1LC3C;p}SSOQ">
+                            <field name="NUM">10</field>
+                          </block>
+                        </value>
+                        <value name="CONTENT">
+                          <block type="text" id="0}+S/asxOE}76JM*j}~R">
+                            <field name="TEXT">Wi-Fi 連線中.....</field>
+                          </block>
+                        </value>
+                      </block>
+                    </statement>
+                    <next>
+                      <block type="linkit_wifi_wait_until_ready" id="Wqbst`EbKhB#1]5D{[}`">
+                        <value name="SSID">
+                          <block type="text" id="WcISX^#46E)q0PyZC3cp">
+                            <field name="TEXT">Xiaomi_7C2C</field>
+                          </block>
+                        </value>
+                        <value name="PASSWORD">
+                          <block type="text" id="kg=OGwpchjpqzBnv09l`">
+                            <field name="TEXT">082322586</field>
+                          </block>
+                        </value>
                         <next>
-                          <block type="connect_mqtt" id=")bhTJ,Ti*YTg?nDcpo+p">
-                            <value name="BROKER">
-                              <block type="text" id="e=}%|Mvm|=psef;jpFD:">
-                                <field name="TEXT">broker.mqttgo.io</field>
-                              </block>
-                            </value>
-                            <value name="PORT">
-                              <block type="math_number" id="P-KQSa!+edJMUHz%T!;!">
-                                <field name="NUM">1883</field>
-                              </block>
-                            </value>
-                            <value name="ID">
-                              <block type="text" id="Ab|rZ0QGr%V*hB?/%H9.">
-                                <field name="TEXT"></field>
-                              </block>
-                            </value>
-                            <value name="USERNAME">
-                              <block type="text" id="8.Kd6,sbq@mX1C`Z@[8N">
-                                <field name="TEXT"></field>
-                              </block>
-                            </value>
-                            <value name="PASSWORD">
-                              <block type="text" id="OU!d2FwYQ9l%JSV8AuG3">
-                                <field name="TEXT"></field>
-                              </block>
-                            </value>
-                            <next>
-                              <block type="oled_display_draw_commands" id="LQ3N%ev.r{_o=gI]c~k=">
-                                <statement name="DRAW_CMD">
-                                  <block type="oled_display_draw_text" id="q/]Jtk.C5Uc6pQ;!G@(i">
-                                    <value name="START_X">
-                                      <block type="math_number" id="tSkAo%}pDqCY4%yXEUfj">
-                                        <field name="NUM">0</field>
-                                      </block>
-                                    </value>
-                                    <value name="START_Y">
-                                      <block type="math_number" id="!?x4~r@0_K}7!3{d3ttD">
-                                        <field name="NUM">10</field>
-                                      </block>
-                                    </value>
-                                    <value name="CONTENT">
-                                      <block type="text" id="jb+P)[5zKqi$m[X}sVvx">
-                                        <field name="TEXT">Wi-Fi 連線成功。</field>
-                                      </block>
-                                    </value>
+                          <block type="oled_display_draw_commands" id="LQ3N%ev.r{_o=gI]c~k=">
+                            <statement name="DRAW_CMD">
+                              <block type="oled_display_draw_text" id="q/]Jtk.C5Uc6pQ;!G@(i">
+                                <value name="START_X">
+                                  <block type="math_number" id="tSkAo%}pDqCY4%yXEUfj">
+                                    <field name="NUM">0</field>
                                   </block>
-                                </statement>
+                                </value>
+                                <value name="START_Y">
+                                  <block type="math_number" id="!?x4~r@0_K}7!3{d3ttD">
+                                    <field name="NUM">10</field>
+                                  </block>
+                                </value>
+                                <value name="CONTENT">
+                                  <block type="text" id="jb+P)[5zKqi$m[X}sVvx">
+                                    <field name="TEXT">Wi-Fi 連線成功。</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </statement>
+                            <next>
+                              <block type="connect_mqtt" id=")bhTJ,Ti*YTg?nDcpo+p">
+                                <value name="BROKER">
+                                  <block type="text" id="e=}%|Mvm|=psef;jpFD:">
+                                    <field name="TEXT">broker.mqttgo.io</field>
+                                  </block>
+                                </value>
+                                <value name="PORT">
+                                  <block type="math_number" id="P-KQSa!+edJMUHz%T!;!">
+                                    <field name="NUM">1883</field>
+                                  </block>
+                                </value>
+                                <value name="ID">
+                                  <block type="text" id="Ab|rZ0QGr%V*hB?/%H9.">
+                                    <field name="TEXT"></field>
+                                  </block>
+                                </value>
+                                <value name="USERNAME">
+                                  <block type="text" id="8.Kd6,sbq@mX1C`Z@[8N">
+                                    <field name="TEXT"></field>
+                                  </block>
+                                </value>
+                                <value name="PASSWORD">
+                                  <block type="text" id="OU!d2FwYQ9l%JSV8AuG3">
+                                    <field name="TEXT"></field>
+                                  </block>
+                                </value>
                                 <next>
                                   <block type="subscribe_mqtt" id="hraMyZVO|PU.V%*[K;z7">
                                     <value name="TOPIC">
@@ -141,6 +141,9 @@
                                                           <shadow type="math_number" id="*xVaK$,ahk$-eXUgX?-b">
                                                             <field name="NUM">0</field>
                                                           </shadow>
+                                                          <block type="math_number" id="jJAckS.*$UN@g8(i|J2%">
+                                                            <field name="NUM">0</field>
+                                                          </block>
                                                         </value>
                                                         <next>
                                                           <block type="variables_set" id="0{7J4;-5=NoADSDl!;t2">
@@ -151,6 +154,9 @@
                                                               <shadow type="math_number" id="|@y)Bb5Bb*}U,mepR}o6">
                                                                 <field name="NUM">0</field>
                                                               </shadow>
+                                                              <block type="math_number" id="5uMZKa{}Dgx6!Z-`bV;L">
+                                                                <field name="NUM">0</field>
+                                                              </block>
                                                             </value>
                                                             <next>
                                                               <block type="variables_set" id="@V3D27n[EaAmu1mG`rNQ">
@@ -161,6 +167,9 @@
                                                                   <shadow type="math_number" id="Hu=c^DFe/_VH!t[0MVH/">
                                                                     <field name="NUM">0</field>
                                                                   </shadow>
+                                                                  <block type="math_number" id="jiGOckxKM+R%]*L3p[cP">
+                                                                    <field name="NUM">0</field>
+                                                                  </block>
                                                                 </value>
                                                                 <next>
                                                                   <block type="variables_set" id="uzBF4:I%hNWc)MnoN.ny">
@@ -171,6 +180,9 @@
                                                                       <shadow type="math_number" id="sB``cb#c`o0Y$H~Oy`Q!">
                                                                         <field name="NUM">0</field>
                                                                       </shadow>
+                                                                      <block type="math_number" id="GA8e_lkQ%}JRAox~?AsR">
+                                                                        <field name="NUM">0</field>
+                                                                      </block>
                                                                     </value>
                                                                     <next>
                                                                       <block type="variables_set" id="JK-Th1yty/teN88n!AOW">
@@ -181,6 +193,9 @@
                                                                           <shadow type="math_number" id="0sLvfU8.Bb?nr?.orUk#">
                                                                             <field name="NUM">0</field>
                                                                           </shadow>
+                                                                          <block type="math_number" id="FKJdrH|$WkcN%3qmtb:(">
+                                                                            <field name="NUM">0</field>
+                                                                          </block>
                                                                         </value>
                                                                         <next>
                                                                           <block type="variables_set" id="+[bk5q8SwECFi,rao7cg">
@@ -191,6 +206,9 @@
                                                                               <shadow type="math_number" id="JPIbKX?X_G[/d^|rl./;">
                                                                                 <field name="NUM">0</field>
                                                                               </shadow>
+                                                                              <block type="math_number" id="fKejB,NM|:p%2=A(MC**">
+                                                                                <field name="NUM">0</field>
+                                                                              </block>
                                                                             </value>
                                                                           </block>
                                                                         </next>
@@ -299,6 +317,21 @@
                                         <field name="NUM">0</field>
                                       </block>
                                     </value>
+                                    <next>
+                                      <block type="publish_mqtt" id=")~/)4-mqOJb,6X8V81;_">
+                                        <field name="RETAIN">FALSE</field>
+                                        <value name="TOPIC">
+                                          <block type="text" id="?dPK@g^0pa%gkoSe1F*A">
+                                            <field name="TEXT">nquiem/totals</field>
+                                          </block>
+                                        </value>
+                                        <value name="MESSAGE">
+                                          <block type="variables_get" id="9vss/~LTAbpj4]h6:{e;">
+                                            <field name="VAR" id="Y-WgWEbI}=04fuH)1p2p">總金額</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </next>
                                   </block>
                                 </next>
                               </block>
@@ -395,6 +428,21 @@
                         </value>
                       </block>
                     </value>
+                    <next>
+                      <block type="publish_mqtt" id="p^Y^)hap0+u;Lz9Bjqbg">
+                        <field name="RETAIN">FALSE</field>
+                        <value name="TOPIC">
+                          <block type="text" id="_1#3Jjr1RkOS;6];OihU">
+                            <field name="TEXT">nquiem/totals</field>
+                          </block>
+                        </value>
+                        <value name="MESSAGE">
+                          <block type="variables_get" id="(#$bRABP|N}VUse2avI|">
+                            <field name="VAR" id="Y-WgWEbI}=04fuH)1p2p">總金額</field>
+                          </block>
+                        </value>
+                      </block>
+                    </next>
                   </block>
                 </statement>
                 <next>
@@ -562,7 +610,7 @@
       </block>
     </next>
   </block>
-  <block type="mqtt_event" id="a[[pTqvP+T{s[K?xEJr9" x="670" y="-170">
+  <block type="mqtt_event" id="a[[pTqvP+T{s[K?xEJr9" x="550" y="-230">
     <statement name="MSG_TOPIC_EQAL">
       <block type="controls_if" id="+gSNZ!8%xbDfNFb.uHC=">
         <mutation elseif="4"></mutation>
@@ -580,17 +628,56 @@
           </block>
         </value>
         <statement name="DO0">
-          <block type="math_change" id="/@e^:$DL?b.MO/bEWmZg">
-            <value name="VAR">
-              <block type="variables_get" id="?Wyt|i~pg_#;7n2RjBpG">
-                <field name="VAR" id="-^osF+;e5/g1uD#{X2ep">其它</field>
+          <block type="publish_mqtt" id="n7B9qa)MsMCk[ieba=-v">
+            <field name="RETAIN">FALSE</field>
+            <value name="TOPIC">
+              <block type="text" id="H?ZQyDE?@{f)K7h*_^`B">
+                <field name="TEXT">nquiem/alert</field>
               </block>
             </value>
-            <value name="DELTA">
-              <block type="math_number" id="bua1utpnWOf%[8D![%-D">
-                <field name="NUM">1</field>
+            <value name="MESSAGE">
+              <block type="text" id="LQiCDqscz!f@`2(Gy{KQ">
+                <field name="TEXT">On</field>
               </block>
             </value>
+            <next>
+              <block type="delay_custom" id="QHbIEdH0UAC=hTPZF0Nk">
+                <value name="DELAY_TIME">
+                  <block type="math_number" id="/kVct[Np)Gx|$}%ZTzYt">
+                    <field name="NUM">5000</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="publish_mqtt" id="s-HyV]yy9p):v3qQwqFi">
+                    <field name="RETAIN">FALSE</field>
+                    <value name="TOPIC">
+                      <block type="text" id="F*1:HQ5:CJ/!Aj8-0_|-">
+                        <field name="TEXT">nquiem/alert</field>
+                      </block>
+                    </value>
+                    <value name="MESSAGE">
+                      <block type="text" id="A`5fjUFSqOMU)SYQzHXa">
+                        <field name="TEXT">Off</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="math_change" id="/@e^:$DL?b.MO/bEWmZg">
+                        <value name="VAR">
+                          <block type="variables_get" id="?Wyt|i~pg_#;7n2RjBpG">
+                            <field name="VAR" id="-^osF+;e5/g1uD#{X2ep">其它</field>
+                          </block>
+                        </value>
+                        <value name="DELTA">
+                          <block type="math_number" id="bua1utpnWOf%[8D![%-D">
+                            <field name="NUM">1</field>
+                          </block>
+                        </value>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
           </block>
         </statement>
         <value name="IF1">
@@ -607,17 +694,47 @@
           </block>
         </value>
         <statement name="DO1">
-          <block type="math_change" id="iz!J0X,)~H]XAD!.b5n(">
-            <value name="VAR">
-              <block type="variables_get" id="U#vs(5DMM+|o7BKlo-)0">
-                <field name="VAR" id=".T_m`t4Q1r_1uUJ=HAP|">樂事</field>
+          <block type="startPlus_led" id=")09pfj_cM=`yE7rg(V^M">
+            <field name="LED">r_pin</field>
+            <value name="ON_OFF">
+              <block type="inout_highlow" id="%`SA[0Oe{P=0ovBv(Qw+">
+                <field name="BOOL">HIGH</field>
               </block>
             </value>
-            <value name="DELTA">
-              <block type="math_number" id="^)z*YU:$x}?_KuQB6]Kp">
-                <field name="NUM">1</field>
+            <next>
+              <block type="startPlus_led" id="T_PM_A661Bj74x$G:g2G">
+                <field name="LED">y_pin</field>
+                <value name="ON_OFF">
+                  <block type="inout_highlow" id="i@T9Wuj6lbv-#_qL^Mxk">
+                    <field name="BOOL">LOW</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="startPlus_led" id="a*}aGU(f63eWz1k5Pgl8">
+                    <field name="LED">g_pin</field>
+                    <value name="ON_OFF">
+                      <block type="inout_highlow" id="RG-H}89V5HtO)@G37yH/">
+                        <field name="BOOL">LOW</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="math_change" id="iz!J0X,)~H]XAD!.b5n(">
+                        <value name="VAR">
+                          <block type="variables_get" id="U#vs(5DMM+|o7BKlo-)0">
+                            <field name="VAR" id=".T_m`t4Q1r_1uUJ=HAP|">樂事</field>
+                          </block>
+                        </value>
+                        <value name="DELTA">
+                          <block type="math_number" id="^)z*YU:$x}?_KuQB6]Kp">
+                            <field name="NUM">1</field>
+                          </block>
+                        </value>
+                      </block>
+                    </next>
+                  </block>
+                </next>
               </block>
-            </value>
+            </next>
           </block>
         </statement>
         <value name="IF2">
@@ -634,17 +751,47 @@
           </block>
         </value>
         <statement name="DO2">
-          <block type="math_change" id="BitbfZ5fxav@w6Py@e|7">
-            <value name="VAR">
-              <block type="variables_get" id="QO4%sE8z-/0ZjDwf1O0-">
-                <field name="VAR" id="[JULBSVmYMVZD(IP#h:{">奶茶</field>
+          <block type="startPlus_led" id="V`Z2|[?c^vu!(tJi/+Ih">
+            <field name="LED">r_pin</field>
+            <value name="ON_OFF">
+              <block type="inout_highlow" id="t*PwG}$O;:UQ_uBho}{S">
+                <field name="BOOL">LOW</field>
               </block>
             </value>
-            <value name="DELTA">
-              <block type="math_number" id="Eg0{#fHomP@ZUdd8MbrK">
-                <field name="NUM">1</field>
+            <next>
+              <block type="startPlus_led" id="?gn`wZjU0kE].:dF)+:3">
+                <field name="LED">y_pin</field>
+                <value name="ON_OFF">
+                  <block type="inout_highlow" id="TTomcgZ2;^egedR;Fp@?">
+                    <field name="BOOL">HIGH</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="startPlus_led" id="WF2^Lc]+#%oI0Uywzy}s">
+                    <field name="LED">g_pin</field>
+                    <value name="ON_OFF">
+                      <block type="inout_highlow" id="0g|q2sgHD8k}a1Q]X0?3">
+                        <field name="BOOL">LOW</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="math_change" id="BitbfZ5fxav@w6Py@e|7">
+                        <value name="VAR">
+                          <block type="variables_get" id="QO4%sE8z-/0ZjDwf1O0-">
+                            <field name="VAR" id="[JULBSVmYMVZD(IP#h:{">奶茶</field>
+                          </block>
+                        </value>
+                        <value name="DELTA">
+                          <block type="math_number" id="Eg0{#fHomP@ZUdd8MbrK">
+                            <field name="NUM">1</field>
+                          </block>
+                        </value>
+                      </block>
+                    </next>
+                  </block>
+                </next>
               </block>
-            </value>
+            </next>
           </block>
         </statement>
         <value name="IF3">
@@ -661,17 +808,47 @@
           </block>
         </value>
         <statement name="DO3">
-          <block type="math_change" id="W7=|+YQ*O~=H.Usrq[*~">
-            <value name="VAR">
-              <block type="variables_get" id="mrok*m1.V9#2HBisJEdn">
-                <field name="VAR" id=")p2;u!LZz#mN9ZR$wxU^">POCKY</field>
+          <block type="startPlus_led" id=",MTqH_.f!SD#Xgd*C|+D">
+            <field name="LED">r_pin</field>
+            <value name="ON_OFF">
+              <block type="inout_highlow" id="969XV=m?/(KaCmcaoD6;">
+                <field name="BOOL">LOW</field>
               </block>
             </value>
-            <value name="DELTA">
-              <block type="math_number" id="O{ikQ,m,yVX3JN.r2Gzf">
-                <field name="NUM">1</field>
+            <next>
+              <block type="startPlus_led" id="^q)`tviykCHp2F_DZj95">
+                <field name="LED">y_pin</field>
+                <value name="ON_OFF">
+                  <block type="inout_highlow" id="i6c?eh!y9:X1K}i4FjHx">
+                    <field name="BOOL">LOW</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="startPlus_led" id="r-fdFC-?)/%M]O{hFD$H">
+                    <field name="LED">g_pin</field>
+                    <value name="ON_OFF">
+                      <block type="inout_highlow" id="zvC`N)YwEsh}QbB/XydF">
+                        <field name="BOOL">HIGH</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="math_change" id="W7=|+YQ*O~=H.Usrq[*~">
+                        <value name="VAR">
+                          <block type="variables_get" id="mrok*m1.V9#2HBisJEdn">
+                            <field name="VAR" id=")p2;u!LZz#mN9ZR$wxU^">POCKY</field>
+                          </block>
+                        </value>
+                        <value name="DELTA">
+                          <block type="math_number" id="O{ikQ,m,yVX3JN.r2Gzf">
+                            <field name="NUM">1</field>
+                          </block>
+                        </value>
+                      </block>
+                    </next>
+                  </block>
+                </next>
               </block>
-            </value>
+            </next>
           </block>
         </statement>
         <value name="IF4">
@@ -688,17 +865,47 @@
           </block>
         </value>
         <statement name="DO4">
-          <block type="math_change" id="6b~6B.%w0([{jn(S2BrE">
-            <value name="VAR">
-              <block type="variables_get" id="U0E!ZP5qri/xb~Pg?NBM">
-                <field name="VAR" id="ou{9m+f@8$morS]Nj_zo">可樂</field>
+          <block type="startPlus_led" id="v1dA]s]n{/tp:3Vwl|P!">
+            <field name="LED">r_pin</field>
+            <value name="ON_OFF">
+              <block type="inout_highlow" id="cwp)YigdeW`hlc2r8GZ*">
+                <field name="BOOL">HIGH</field>
               </block>
             </value>
-            <value name="DELTA">
-              <block type="math_number" id="J9wQZ-oP9N[WKW8nK|5i">
-                <field name="NUM">1</field>
+            <next>
+              <block type="startPlus_led" id="xHlT!gmaV}q[/4PoAo;c">
+                <field name="LED">y_pin</field>
+                <value name="ON_OFF">
+                  <block type="inout_highlow" id="DRgpUjL.wjNq]YN{8jas">
+                    <field name="BOOL">HIGH</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="startPlus_led" id="*5hQ!1m}Bb3V)j+s_8*r">
+                    <field name="LED">g_pin</field>
+                    <value name="ON_OFF">
+                      <block type="inout_highlow" id="2ax*?{JXaF,b}%mV)n_=">
+                        <field name="BOOL">HIGH</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="math_change" id="6b~6B.%w0([{jn(S2BrE">
+                        <value name="VAR">
+                          <block type="variables_get" id="U0E!ZP5qri/xb~Pg?NBM">
+                            <field name="VAR" id="ou{9m+f@8$morS]Nj_zo">可樂</field>
+                          </block>
+                        </value>
+                        <value name="DELTA">
+                          <block type="math_number" id="J9wQZ-oP9N[WKW8nK|5i">
+                            <field name="NUM">1</field>
+                          </block>
+                        </value>
+                      </block>
+                    </next>
+                  </block>
+                </next>
               </block>
-            </value>
+            </next>
           </block>
         </statement>
         <next>

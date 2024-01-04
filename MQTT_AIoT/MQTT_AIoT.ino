@@ -1,4 +1,4 @@
-//Generated Date: Wed, 03 Jan 2024 17:39:55 GMT
+//Generated Date: Thu, 04 Jan 2024 06:38:41 GMT
 
 #include "Wire.h"
 #include "U8g2lib.h"
@@ -75,6 +75,10 @@ char getBtnStatus(){
   return buttonStatus;
 }
 
+byte r_pin=13;
+byte y_pin=12;
+byte g_pin=11;
+
 void connectMQTT(){
   while (!myClient.connected()){
     if (!myClient.connect(MQTT_ID,MQTT_USERNAME,MQTT_PASSWORD))
@@ -93,14 +97,29 @@ void mqttCallback(char* topic, byte* payload, unsigned int length){
   }
   receivedMsg.trim();
   if (receivedTopic == "nquiem/other") {
+    myClient.publish(String("nquiem/alert").c_str(),String("On").c_str());
+    delay(5000);
+    myClient.publish(String("nquiem/alert").c_str(),String("Off").c_str());
     _E5_85_B6_E5_AE_83 = _E5_85_B6_E5_AE_83 + 1;
   } else if (receivedTopic == "nquiem/lays") {
+    digitalWrite(r_pin, HIGH);
+    digitalWrite(y_pin, LOW);
+    digitalWrite(g_pin, LOW);
     _E6_A8_82_E4_BA_8B = _E6_A8_82_E4_BA_8B + 1;
   } else if (receivedTopic == "nquiem/milk_tea") {
+    digitalWrite(r_pin, LOW);
+    digitalWrite(y_pin, HIGH);
+    digitalWrite(g_pin, LOW);
     _E5_A5_B6_E8_8C_B6 = _E5_A5_B6_E8_8C_B6 + 1;
   } else if (receivedTopic == "nquiem/pocky") {
+    digitalWrite(r_pin, LOW);
+    digitalWrite(y_pin, LOW);
+    digitalWrite(g_pin, HIGH);
     POCKY = POCKY + 1;
   } else if (receivedTopic == "nquiem/cola") {
+    digitalWrite(r_pin, HIGH);
+    digitalWrite(y_pin, HIGH);
+    digitalWrite(g_pin, HIGH);
     _E5_8F_AF_E6_A8_82 = _E5_8F_AF_E6_A8_82 + 1;
   }
   _E7_B8_BD_E9_87_91_E9_A1_8D = ((_E6_A8_82_E4_BA_8B * 30) + (_E5_A5_B6_E8_8C_B6 * 10)) + ((POCKY * 40) + (_E5_8F_AF_E6_A8_82 * 25));
@@ -123,7 +142,6 @@ void setup()
 
   u8g2.setFont(u8g2_font_unifont_t_chinese1);
   u8g2.clearDisplay();
-  while (WiFi.begin(_lwifi_ssid, _lwifi_pass) != WL_CONNECTED) { delay(1000); }
   u8g2.firstPage();
   do {
     u8g2.setCursor(0, 10);
@@ -131,7 +149,7 @@ void setup()
 
     u8g2.sendBuffer();
   } while (u8g2.nextPage());
-  connectMQTT();
+  while (WiFi.begin(_lwifi_ssid, _lwifi_pass) != WL_CONNECTED) { delay(1000); }
   u8g2.firstPage();
   do {
     u8g2.setCursor(0, 10);
@@ -139,6 +157,7 @@ void setup()
 
     u8g2.sendBuffer();
   } while (u8g2.nextPage());
+  connectMQTT();
   myClient.subscribe(String("nquiem/lays").c_str());
   myClient.subscribe(String("nquiem/milk_tea").c_str());
   myClient.subscribe(String("nquiem/pocky").c_str());
@@ -146,6 +165,9 @@ void setup()
   myClient.subscribe(String("nquiem/other").c_str());
   pinMode(A_Pin, INPUT);
   pinMode(B_Pin, INPUT);
+  pinMode(r_pin, OUTPUT);
+  pinMode(y_pin, OUTPUT);
+  pinMode(g_pin, OUTPUT);
 }
 
 void loop()
@@ -159,10 +181,12 @@ void loop()
     _E5_8F_AF_E6_A8_82 = 0;
     _E5_85_B6_E5_AE_83 = 0;
     _E7_B8_BD_E9_87_91_E9_A1_8D = 0;
+    myClient.publish(String("nquiem/totals").c_str(),String(_E7_B8_BD_E9_87_91_E9_A1_8D).c_str());
     while(buttonPressed('C')){}
   }
   if (myBtnStatus=='A'){
     _E7_B8_BD_E9_87_91_E9_A1_8D = ((_E6_A8_82_E4_BA_8B * 30) + (_E5_A5_B6_E8_8C_B6 * 10)) + ((POCKY * 40) + (_E5_8F_AF_E6_A8_82 * 25));
+    myClient.publish(String("nquiem/totals").c_str(),String(_E7_B8_BD_E9_87_91_E9_A1_8D).c_str());
     while(buttonPressed('A')){}
   }
   u8g2.firstPage();
